@@ -2,6 +2,7 @@
 layout: post
 title: LAMP+WordPress，用自己的电脑搭个小网站
 ---
+
 <b style="color:MidnightBlue">LAMP</b>
 sudo apt-get install apache2 #服务器
 sudo apt-get install php5 libapache2-mod-php5 #超文本
@@ -29,14 +30,14 @@ sudo apt-get install phpmyadmin #图形管理数据库
 删除 sudo rm /var/www/test.php
 
 <b style="color:MidnightBlue">Mysql #数据库管理系统</b>
-安装 sudo apt-get install mysql-server #安装过程设置 root 密码(如 1234)
+安装 sudo apt-get install mysql-server <b style="color:MidnightBlue">#安装过程设置 root 密码(如 1234)</b>
 重启 sudo /etc/init.d/mysql restart
 默认只有 127.0.0.1 可以访问
 修改 sudo gedit /etc/mysql/my.cnf,将其中的 “bind-address = 127.0.0.1”注释掉
 
 <b style="color:MidnightBlue">phpmyadmin #图形化操作 Mysql</b>
 安装 sudo apt-get install phpmyadmin
-安装过程选 apache2,确定,输入 Mysql 数据库密码、连接密码(如 1234)
+安装过程选 apache2,确定,<b style="color:MidnightBlue">输入</b> Mysql <b style="color:MidnightBlue">数据库密码、连接密码(如 1234)</b>
 新建数据库 应用程序>编程>phpMyAdmin>数据库>新建数据库>起个名(如 Blog)>创建
 
 <b style="color:MidnightBlue">LAMP+WordPress</b>
@@ -48,10 +49,10 @@ WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog �
 解压 sudo tar -pzxvf wordpress-3.4.1-zh_CN.tar.gz -C /var/www/
 
 配置 gedit /var/www/wordpress/wp-config-sample.php 找到以下几行:
-1. define(’DB_NAME’, ‘数据库名字 ’); // 在' '中输入数据库的名字(如 Blog)
-2. define(’DB_USER’, ‘ 数据库用户名 ’); // 数据库的用户名 (如 root)
-3. define(’DB_PASSWORD’, ‘ 数据库密码’); // ...密码 (如 1234)
-4. define(’DB_HOST’, ‘ 数据库地址’); //数据库地址,比如 localhost
+1. define(’DB_NAME’, ‘<b style="color:MidnightBlue">数据库名字</b> ’); // 在' '中输入数据库的名字(如 Blog)
+2. define(’DB_USER’, ‘ <b style="color:MidnightBlue">数据库用户名 </b>’); // 数据库的用户名 (如 root)
+3. define(’DB_PASSWORD’, ‘ <b style="color:MidnightBlue">数据库密码</b>’); // ...密码 (如 1234)
+4. define(’DB_HOST’, ‘ <b style="color:MidnightBlue">数据库地址</b>’); //数据库地址,比如 localhost
 
 改名 mv wp-config-sample.php wp-config.php
 读我 双击 readme.html
@@ -78,8 +79,8 @@ sudo vim /etc/apache2/sites-enabled/000-default
 <b style="color:MidnightBlue">动态域名解析</b>
 网站 http://www.3322.org 跳转到 http://www.pubyun.com/
 申请 如:用户名 ubuntu
-密码:123
-域名:ubuntu
+密码:<b style="color:MidnightBlue">123</b>
+域名:<b style="color:MidnightBlue">ubuntu</b>
 更新 sudo apt-get install lynx
-lynx -mime_header -auth=kkk:123 " http://www.3322.org/dyndns/update?
-system=dyndns&ho stname=ubuntu.3322.org"
+lynx -mime_header -auth=kkk:<b style="color:Red">123</b> " http://www.3322.org/dyndns/update?
+system=dyndns&ho stname=<b style="color:Red">ubuntu</b>.3322.org"
