@@ -14,7 +14,7 @@ tags : [显示,安装,运行]
 {% for tag in site.tags %} 
   <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
   <ul>
-    <li>{% include posts/pages_list %}</li>
+    <li>{% site.tags.TAG %}</li>
   </ul>
 {% endfor %}
 
