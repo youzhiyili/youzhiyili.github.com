@@ -3,14 +3,14 @@ layout: post
 title: 花屏
 ---
 <hr>原文<a href=http://wiki.ubuntu-tw.org/index.php?title=FAQinstall>http://wiki.ubuntu-tw.org/index.php?title=FAQinstall</a>
-<hr><b>安装时───>临时解决</b>
+<hr><b style="color:SteelBlue">安装时───>临时解决</b>
 1 安装时按任一键，将出现选单“就是有试用和安装”那个界面
 2 选语言后，光标移到“试用和安装”，按F6【其他选项】，再按ESC跳出来
 3 此时屏幕下方会有一行“开机选项”【一段可编辑的文字】
 4 找到“quite splash”,在其后空一格输入nomodeset
 5 按enter，就进入“试用和安装”界面
 
-<hr><b>安装后───>彻底解决</b>
+<hr><b  style="color:SteelBlue">安装后───>彻底解决</b>
 1 GRUB界面，按e，找到“quite splash”，空一格输入nomodeset
 2 CTRL+X 启动系统
 3 sudo gedit /etc/default/grub【如果是XUBUNTU: sudo leafpad /etc/default/grub】
@@ -18,7 +18,7 @@ title: 花屏
 5 改成：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset" 保存文档
 6 更新GRUB： sudo update-grub\
 
-<hr><b>不同显卡───>不同参数</b>
+<hr><b  style="color:SteelBlue">不同显卡───>不同参数</b>
 a. Intel 82852/82855 或8系列顯示晶片： i915.modeset=1 或 i915.modeset=0
 b. Nvidia: nomodeset
 c. 其它廠牌(如ATI): xforcevesa 或 radeon.modeset=0 xforcevesa
