@@ -110,8 +110,9 @@ Jekyll expects your website directory to be laid out like so:
 	You can have different layouts for different pages or page sections.
 
 - **\_posts**  
-	This folder contains your dynamic content/posts.
-	the naming format is required to be `@YEAR-MONTH-DATE-title.MARKUP@`.
+	这个文件夹存放动态内容/网页
+	命名格式为:年-月-日-标题.标记
+	例如：2012-12-27-今天心情不错.html
 
 - **\_site**  
 	This is where the generated site will be placed once Jekyll is done transforming it. 
