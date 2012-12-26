@@ -12,7 +12,7 @@ header: Posts By Tag
 {% for tag in site.tags %} 
   <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
   <ul>
-<li><a href="{{ site.baseurl }}{{ tag .url }}" style="text-decoration:none" target="_blank">{{ tag .title }}</a></li>
+<li><a href="{{ site.baseurl }}{{ tag.url }}" style="text-decoration:none" target="_blank">{{ tag.title }}</a></li>
   </ul>
 {% endfor %}
 
