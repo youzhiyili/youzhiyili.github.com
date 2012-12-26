@@ -1,0 +1,35 @@
+---
+layout: post
+title: Swap
+tags: WiKi
+---
+<hr><h3>基础概念</h3>swap───>交换空间───>内存紧张时，不急用的数据暂时挪到这里
+swap用了这么多───>free -m
+swap优先值───>cat /proc/sys/vm/swappiness───>vm.swappiness=60<───[0~100][100尽量使用swap]
+
+<hr><h3>例：调整swap优先值为10</h3>调整───>临时───>sudo sysctl vm.swappiness=10<───默认为60,调整为10
+调整───>永久───>sudo sed -i '$a\vm.swappiness=10' /etc/sysctl.conf && sudo reboot
+
+<hr><h3>例：使用/dev/sda7为swap</h3>创建───>sudo mkswap -c /dev/sda7
+启用───临时───>sudo swapon /dev/sda7
+启用───永久───>sudo sed -i '$a\/dev/sda7 swap swap defaults 0 0' /etc/fstab
+停用───临时───>sudo swapoff /dev/sda7
+停用───永久───>sudo swapoff /dev/sda7 && sudo sed -i '/sda7/d' /etc/fstab
+
+<hr><h3>例：创建大小为1G的文件用于swap，文件名swapfile，路径/</h3>创建───>sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 && sudo chmod 600 /swapfile && sudo mkswap /swapfile
+启用───临时───>sudo swapon /swapfile
+启用───永久───>sudo sed -i '$a\/swapfile swap swap defaults 0 0' /etc/fstab
+停用───临时───>sudo swapoff /swapfile
+停用───永久───>sudo swapoff /swapfile && sudo rm /swapfile && sudo sed -i '/swapfile/d' /etc/fstab
+
+<hr><h3>swap在/etc/fstab</h3>可以───>这样───>/dev/sda7 swap swap defaults 0 0
+或者───>这样───>UUID=640c30e6-d120-4300-8fe9-6ee94d5cc83d swap swap defaults 0 0
+
+<hr><h3>swap可以有多个</h3>优先───>这个───>sudo swapon -v -p 1 /dev/sda7<───[-p设定优先级-v输出信息]
+或者───>这个───>sudo swapon -v -p 1 /swapfile
+或者───>都用───>sudo swapon -a
+查看───>谁用───>swapon -s
+
+<hr><h3>重装系统设置swap</h3>替换───>swap───>UUID───>/etc/fstab
+替换───>swap───>UUID───>/etc/initramfs-tools/conf.d/resume
+sudo update-initramfs -u
