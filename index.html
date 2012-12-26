@@ -5,7 +5,7 @@ header: Posts By Tag
 tags : [显示,安装,运行]
 ---
 <h2>{{ page.title }}</h2>
-<p>最新文章</p>
+<p><h3>最新文章</h3></p>
 {% for post in site.posts %}
 	<li><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none">{{ post.title }}</a></li>
 {% endfor %}
