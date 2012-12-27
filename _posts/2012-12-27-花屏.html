@@ -2,15 +2,15 @@
 layout: post
 title: 花屏
 ---
-<hr>原文<a href=http://wiki.ubuntu-tw.org/index.php?title=FAQinstall>http://wiki.ubuntu-tw.org/index.php?title=FAQinstall</a>
-<hr><b style="color:MidnightBlue">安装时───>临时解决</b>
+<hr><hr><font color=Yellow>原文<a href=http://wiki.ubuntu-tw.org/index.php?title=FAQinstall>http://wiki.ubuntu-tw.org/index.php?title=FAQinstall</font>
+<hr><font color=Yellow>安装时───>临时解决</font>
 1 安装时按任一键，将出现选单“就是有试用和安装”那个界面
 2 选语言后，光标移到“试用和安装”，按F6【其他选项】，再按ESC跳出来
 3 此时屏幕下方会有一行“开机选项”【一段可编辑的文字】
 4 找到“quite splash”,在其后空一格输入nomodeset
 5 按enter，就进入“试用和安装”界面
 
-<hr><font color=Gold>安装后───>彻底解决</font>
+<hr><font color=Yellow>安装后───>彻底解决</font>
 1 GRUB界面，按e，找到“quite splash”，空一格输入nomodeset
 2 CTRL+X 启动系统
 3 sudo gedit /etc/default/grub【如果是XUBUNTU: sudo leafpad /etc/default/grub】
