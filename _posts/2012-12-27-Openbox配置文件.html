@@ -4,7 +4,7 @@ title: Openbox配置文件
 ---
 <hr>
 /
-├────/home/用户/
+├────/home/<font color=Red>meme</font>/
 │	│
 │	├────  .xinitrc
 │	│		│ 
@@ -36,37 +36,57 @@ title: Openbox配置文件
 │	│ 
 │	├────  .config
 │	│ 	│ 
-│	│ 	├────openbox
-│	│ 	│		│ 
-│	│ 	│		├────menu.xml
-│	│ 	│		│ 		│ 
-│	│ 	│		│		│<b style="color:MidnightBlue">Openbox右键菜单</b>
-│	│ 	│  		│
-│	│ 	│		├────rc.xml
-│	│ 	│		│ 		│ 
-│	│ 	│		│		│<b style="color:MidnightBlue">Openbox键绑定、桌面名和窗口行为</b>
-│	│ 	│  		│
-│	│ 	│		├────autostart.sh
-│	│ 	│		│ 		│ 
-│	│ 	│		│		│<b style="color:MidnightBlue">Openbox会话内容</b>
-│	│ 	│		│		│./.wallpaper/wallpaper_conf/wallpaper.sh
-│	│ 	│		│		│tint2 &
-│	│ 	│		│		│(sleep 0.03 && cairo-dock) &
-│	│ 	│		│		│(sleep 1.50 && fcitx) &
-│	│ 	│		│		│(sleep 1.90 && obmixer) &
-│	│ 	│		│		│(sleep 1.91 && tilda) &
-│	│ 	│  		│
-│	│ 	│		├────environment
-│	│ 	│		│ 		│ 
-│	│ 	│		│		│<b style="color:MidnightBlue">Openbox环境变量</b>
-│	│ 	│		│		│export LANG=zh_CN.UTF-8
-│	│ 	│		│		│export LANGUAGE=zh_CN:zh
-│	│ 	│		│		│export XMODIFIERS=@im=fcitx
-│	│ 	│		│		│export GTK_IM_MODULE=fcitx
-│	│ 	│		│		│export QT_IM_MODULE=fcitx
-│	│ 	│		│		│
+│	│ 	└────openbox
+│	│ 			│ 
+│	│ 			├────menu.xml
+│	│ 			│ 		│ 
+│	│ 			│		│<b style="color:MidnightBlue">Openbox右键菜单</b>
+│	│ 	 		│
+│	│ 			├────rc.xml
+│	│ 			│ 		│ 
+│	│ 			│		│<b style="color:MidnightBlue">Openbox键绑定、桌面名和窗口行为</b>
+│	│ 	 		│
+│	│ 			├────autostart.sh
+│	│ 			│ 		│ 
+│	│ 			│		│<b style="color:MidnightBlue">Openbox会话内容</b>
+│	│ 			│		│./.wallpaper/wallpaper_conf/wallpaper.sh
+│	│ 			│		│tint2 &
+│	│ 			│		│(sleep 0.03 && cairo-dock) &
+│	│ 			│		│(sleep 1.50 && fcitx) &
+│	│ 			│		│(sleep 1.90 && obmixer) &
+│	│ 			│		│(sleep 1.91 && tilda) &
+│	│ 	  		│
+│	│ 			└────environment
+│	│ 			 		│ 
+│	│ 					│<b style="color:MidnightBlue">Openbox环境变量</b>
+│	│ 					│export LANG=zh_CN.UTF-8
+│	│ 					│export LANGUAGE=zh_CN:zh
+│	│ 					│export XMODIFIERS=@im=fcitx
+│	│ 					│export GTK_IM_MODULE=fcitx
+│	│ 					│export QT_IM_MODULE=fcitx
+│	│ 					
+│	└────  .profilec
+│			│ 
+│			│<b style="color:MidnightBlue">tty1登录时自动startx，加上以下几句</b>
+│			│#auto startx
+│			│if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
+│			│             startx
+│			│fi
+│
+├────/usr/bin/<font color=Red>autologin</font>
+│			│
+│			│<b style="color:MidnightBlue">tty1不输密码、自动登录，创建<font color=Red>autologin</font>放到/usr/bin/</b>
+│			│#!/bin/bash
+│			│/bin/login -f <font color=Red>meme</font>
+│
+├────/etc/init/tty1.conf
+│			│
+│			│<b style="color:MidnightBlue">tty1不输密码、自动登录，编辑tty1.conf执行<font color=Red>autologin</font></b>
+│			│<font color=Red>exec /sbin/getty 38400 tty1换成exec</font> /sbin/getty -n -l /usr/bin/autologin 38400  tty1
 
 
+
+ 
 
 
 
