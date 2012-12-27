@@ -1,7 +1,13 @@
----
-layout: default
-title: Linux学习笔记
----
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="google-site-verification" content="pKvvLKBb3u6CA8vDbJlY48ZOKDNVohvUZjQTepeAmY8" />
+		<h2 style="color:SteelBlue">{{ page.title }}</h2>
+	</head>
+	<body bgcolor="#333336">
+		{{ content }}
+	</body>
+</html>
 {% for post in site.posts %}
 	<li><a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration:none"><font color=SteelBlue>{{ post.title }}</font></a></li>
 {% endfor %}
