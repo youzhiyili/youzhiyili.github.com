@@ -29,7 +29,7 @@ sudo apt-get install phpmyadmin #图形管理数据库
 删除 sudo rm /var/www/test.php
 
 <hr><b style="color:MidnightBlue">Mysql #数据库管理系统</b>
-安装 sudo apt-get install mysql-server <b style="color:Red">#安装过程设置 root 密码(如 1234)</b>
+安装 sudo apt-get install mysql-server <font color=Red>"#安装过程设置 root 密码(如 1234)</font>
 重启 sudo /etc/init.d/mysql restart
 默认只有 127.0.0.1 可以访问
 修改 sudo gedit /etc/mysql/my.cnf,将其中的 “bind-address = 127.0.0.1”注释掉
@@ -48,7 +48,7 @@ WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog �
 解压 sudo tar -pzxvf wordpress-3.4.1-zh_CN.tar.gz -C /var/www/
 
 配置 gedit /var/www/wordpress/wp-config-sample.php 找到以下几行:
-1. define(’DB_NAME’, ‘<font color=Red>">数据库名字</font> ’); // 在' '中输入数据库的名字(如 Blog)
+1. define(’DB_NAME’, ‘<font color=Red>"数据库名字</font> ’); // 在' '中输入数据库的名字(如 Blog)
 2. define(’DB_USER’, ‘<font color=Red>数据库用户名</font>’); // 数据库的用户名 (如 root)
 3. define(’DB_PASSWORD’, ‘<font color=Red>数据库密码</font>’); // ...密码 (如 1234)
 4. define(’DB_HOST’, ‘<font color=Red>数据库地址</font>’); //数据库地址,比如 localhost
