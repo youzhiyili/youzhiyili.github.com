@@ -82,9 +82,8 @@ title: Openbox配置文件
 ├────/etc/init/tty1.conf
 │			│
 │			│<b style="color:MidnightBlue">tty1不输密码、自动登录，编辑tty1.conf执行<font color=Red>autologin</font></b>
-│			│<font color=Red>exec /sbin/getty 38400 tty1换成</font>exec /sbin/getty -n -l /usr/bin/autologin 38400  tty1
-
-
+│			│<b style="color:MidnightBlue">删除这行exec /sbin/getty 38400 tty1<font color=Red>autologin</font></b><font color=Red>换成下面这行</font>
+│			│<font color=Red>exec /sbin/getty -n -l /usr/bin/autologin 38400  tty1</font>
 
  
 
