@@ -1,5 +1,5 @@
 ---
-# Remember to set production_url in your _config.yml file!
+layout: default
 title : Sitemap
 ---
 {% for post in site.posts %}
