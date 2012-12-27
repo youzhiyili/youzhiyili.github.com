@@ -36,7 +36,7 @@ sudo apt-get install phpmyadmin #图形管理数据库
 
 <hr><b style="color:MidnightBlue">phpmyadmin #图形化操作 Mysql</b>
 安装 sudo apt-get install phpmyadmin
-安装过程选 apache2,确定,<b style="color:Red">输入</b> Mysql <b style="color:Red">数据库密码、连接密码(如 1234)</b>
+安装过程选 apache2,确定,<font color=Red>">输入</font> Mysql <font color=Red>">数据库密码、连接密码(如 1234)</font>
 新建数据库 应用程序>编程>phpMyAdmin>数据库>新建数据库>起个名(如 Blog)>创建
 
 <hr><b style="color:MidnightBlue">LAMP+WordPress</b>
@@ -48,10 +48,10 @@ WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog �
 解压 sudo tar -pzxvf wordpress-3.4.1-zh_CN.tar.gz -C /var/www/
 
 配置 gedit /var/www/wordpress/wp-config-sample.php 找到以下几行:
-1. define(’DB_NAME’, ‘<b style="color:Red">数据库名字</b> ’); // 在' '中输入数据库的名字(如 Blog)
-2. define(’DB_USER’, ‘ <b style="color:Red">数据库用户名 </b>’); // 数据库的用户名 (如 root)
-3. define(’DB_PASSWORD’, ‘ <b style="color:Red">数据库密码</b>’); // ...密码 (如 1234)
-4. define(’DB_HOST’, ‘ <b style="color:Red">数据库地址</b>’); //数据库地址,比如 localhost
+1. define(’DB_NAME’, ‘<font color=Red>">数据库名字</font> ’); // 在' '中输入数据库的名字(如 Blog)
+2. define(’DB_USER’, ‘<font color=Red>数据库用户名</font>’); // 数据库的用户名 (如 root)
+3. define(’DB_PASSWORD’, ‘<font color=Red>数据库密码</font>’); // ...密码 (如 1234)
+4. define(’DB_HOST’, ‘<font color=Red>数据库地址</font>’); //数据库地址,比如 localhost
 
 改名 mv wp-config-sample.php wp-config.php
 读我 双击 readme.html
@@ -78,8 +78,8 @@ sudo vim /etc/apache2/sites-enabled/000-default
 <hr><b style="color:MidnightBlue">动态域名解析</b>
 网站 http://www.3322.org 跳转到 http://www.pubyun.com/
 申请 如:用户名 ubuntu
-密码:<b style="color:Red">123</b>
-域名:<b style="color:Red">ubuntu</b>
+密码:<font color=Red>123</font>
+域名:<font color=Red>ubuntu</font>
 更新 sudo apt-get install lynx
-lynx -mime_header -auth=kkk:<b style="color:Red">123</b> " http://www.3322.org/dyndns/update?
-system=dyndns&ho stname=<b style="color:Red">ubuntu</b>.3322.org"
+lynx -mime_header -auth=kkk:<font color=Red>123</font>" http://www.3322.org/dyndns/update?
+system=dyndns&ho stname=<font color=Red>ubuntu</font>.3322.org"
