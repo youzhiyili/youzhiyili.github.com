@@ -2,84 +2,126 @@
 layout: post
 title: LAMP+WordPress，用自己的电脑搭个小网站
 ---
-<hr><b style="color:MidnightBlue">LAMP</b>
-sudo apt-get install apache2 #服务器
-sudo apt-get install php5 libapache2-mod-php5 #超文本
-sudo apt-get install mysql-server #数据库
-sudo apt-get install phpmyadmin #图形管理数据库
+<hr><h3 style="color:SteelBlue">LAMP</h3>
+	sudo apt-get install apache2 #服务器
 
-<hr><b style="color:MidnightBlue">Apache #服务器</b>
-安装 sudo apt-get install apache2
-测试 http://localhost/ 出现"It works!" 安装成功
-启动 sudo /etc/init.d/apache2 start
-停止 sudo /etc/init.d/apache2 stop
-杀死 sudo killall apache2
-配置文件 /etc/apache2
-主配置文件 /etc/apache2/apache2.conf
-默认编码 /etc/apache2/conf.d/charset #AddDefaultCharset UTF-8 #可改为 GB2312
-配置端口 /etc/apache2/ports.conf
+	sudo apt-get install php5 libapache2-mod-php5 #超文本
 
-<hr><b style="color:MidnightBlue">PHP #超文本预处理器</b>
-原名 Personal Home Page 个人主页
-现名 Hypertext Preprocessor 超文本预处理器
-安装 sudo apt-get install php5 libapache2-mod-php5
-测试 重启 apache2 sudo /etc/init.d/apache2 restart
-测试 sudo gedit /var/www/test.php #内容 <?php phpinfo(); ?>
-测试 http://localhost/test.php
-删除 sudo rm /var/www/test.php
+	sudo apt-get install mysql-server #数据库
 
-<hr><b style="color:MidnightBlue">Mysql #数据库管理系统</b>
-安装 sudo apt-get install mysql-server <font color=Red>"#安装过程设置 root 密码(如 1234)</font>
-重启 sudo /etc/init.d/mysql restart
-默认只有 127.0.0.1 可以访问
-修改 sudo gedit /etc/mysql/my.cnf,将其中的 “bind-address = 127.0.0.1”注释掉
+	sudo apt-get install phpmyadmin #图形管理数据库
 
-<hr><b style="color:MidnightBlue">phpmyadmin #图形化操作 Mysql</b>
-安装 sudo apt-get install phpmyadmin
-安装过程选 apache2,确定,<font color=Red>">输入</font> Mysql <font color=Red>">数据库密码、连接密码(如 1234)</font>
-新建数据库 应用程序>编程>phpMyAdmin>数据库>新建数据库>起个名(如 Blog)>创建
+<hr><h3 style="color:SteelBlue">Apache #服务器</h3>
+	安装 sudo apt-get install apache2
 
-<hr><b style="color:MidnightBlue">LAMP+WordPress</b>
-WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog 引擎
-用户可以在支持 PHP 和 MySQL 数据库的服务器上建立自己的 Blog
+	测试 http://localhost/ 出现"It works!" 安装成功
 
-官网 http://wordpress.org/download/选中文页面
-下载 wordpress 的最新版本,如:wordpress-3.4.1-zh_CN.tar.gz
-解压 sudo tar -pzxvf wordpress-3.4.1-zh_CN.tar.gz -C /var/www/
+	启动 sudo /etc/init.d/apache2 start
 
-配置 gedit /var/www/wordpress/wp-config-sample.php 找到以下几行:
-1. define(’DB_NAME’, ‘<font color=Red>"数据库名字</font> ’); // 在' '中输入数据库的名字(如 Blog)
-2. define(’DB_USER’, ‘<font color=Red>数据库用户名</font>’); // 数据库的用户名 (如 root)
-3. define(’DB_PASSWORD’, ‘<font color=Red>数据库密码</font>’); // ...密码 (如 1234)
-4. define(’DB_HOST’, ‘<font color=Red>数据库地址</font>’); //数据库地址,比如 localhost
+	停止 sudo /etc/init.d/apache2 stop
 
-改名 mv wp-config-sample.php wp-config.php
-读我 双击 readme.html
-安装 http://127.0.0.1/wordpress/wp-admin/install
-设置 博客标题,博客管理员用户名(默认 admin)、密码
-访问 http://localhost/wordpress/
-属主 sudo chown -R www-data:www-data /var/www/wordpress
-权限 sudo chmod -R 777 /var/www/wordpress
+	杀死 sudo killall apache2
 
-<hr><b style="color:MidnightBlue">上传 2M 限制</b>
-1 sudo gedit /etc/php5/apache2/php.ini
-搜索 upload_max_filesize = 2M 替换为 upload_max_filesize = 100M
-搜索 post_max_size = 8M 替换为 post_max_size = 100M
-2 sudo gedit /var/www/wordpress/wp-config.php
-添加 define('WP_MEMORY_LIMIT', '100M');
-3 sudo service apache2 restart
+	配置文件 /etc/apache2
 
-<hr><b style="color:MidnightBlue">伪静态默认未开启</b>
-1 加载rewrite模块
-sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
-2 修改AllowOverride属性 None改为All
-sudo vim /etc/apache2/sites-enabled/000-default
+	主配置文件 /etc/apache2/apache2.conf
 
-<hr><b style="color:MidnightBlue">动态域名解析</b>
-网站 http://www.3322.org 跳转到 http://www.pubyun.com/
-申请 如:用户名 ubuntu
-密码:<font color=Red>123</font>
-域名:<font color=Red>ubuntu</font>
-更新 sudo apt-get install lynx
-lynx -mime_header -auth=kkk:<font color=Red>123</font>" http://www.3322.org/dyndns/update?
-system=dyndns&ho stname=<font color=Red>ubuntu</font>.3322.org"
+	默认编码 /etc/apache2/conf.d/charset #AddDefaultCharset UTF-8 #可改为 GB2312
+
+	配置端口 /etc/apache2/ports.conf
+
+<hr><h3 style="color:SteelBlue">PHP #超文本预处理器</h3>
+	原名 Personal Home Page 个人主页
+
+	现名 Hypertext Preprocessor 超文本预处理器
+
+	安装 sudo apt-get install php5 libapache2-mod-php5
+
+	测试 重启 apache2 sudo /etc/init.d/apache2 restart
+
+	测试 sudo gedit /var/www/test.php #内容 <?php phpinfo(); ?>
+
+	测试 http://localhost/test.php
+
+	删除 sudo rm /var/www/test.php
+
+<hr><h3 style="color:SteelBlue">Mysql #数据库管理系统</h3>
+	安装 sudo apt-get install mysql-server <font color=Red>"#安装过程设置 root 密码(如 1234)</font>
+
+	重启 sudo /etc/init.d/mysql restart
+
+	默认只有 127.0.0.1 可以访问
+
+	修改 sudo gedit /etc/mysql/my.cnf,将其中的 “bind-address = 127.0.0.1”注释掉
+
+<hr><h3 style="color:SteelBlue">phpmyadmin #图形化操作 Mysql</h3>
+	安装 sudo apt-get install phpmyadmin
+
+	安装过程选 apache2,确定,<font color=Red>">输入</font> Mysql <font color=Red>">数据库密码、连接密码(如 1234)</font>
+
+	新建数据库 应用程序>编程>phpMyAdmin>数据库>新建数据库>起个名(如 Blog)>创建
+
+<hr><h3 style="color:SteelBlue">LAMP+WordPress</h3>
+	WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog 引擎
+
+	用户可以在支持 PHP 和 MySQL 数据库的服务器上建立自己的 Blog
+
+		官网 http://wordpress.org/download/选中文页面
+
+		下载 wordpress 的最新版本,如:wordpress-3.4.1-zh_CN.tar.gz
+
+		解压 sudo tar -pzxvf wordpress-3.4.1-zh_CN.tar.gz -C /var/www/
+
+	配置 gedit /var/www/wordpress/wp-config-sample.php 找到以下几行:
+
+	1. define(’DB_NAME’, ‘<font color=Red>"数据库名字</font> ’); // 在' '中输入数据库的名字(如 Blog)
+
+	2. define(’DB_USER’, ‘<font color=Red>数据库用户名</font>’); // 数据库的用户名 (如 root)
+
+	3. define(’DB_PASSWORD’, ‘<font color=Red>数据库密码</font>’); // ...密码 (如 1234)
+
+	4. define(’DB_HOST’, ‘<font color=Red>数据库地址</font>’); //数据库地址,比如 localhost
+
+		改名 mv wp-config-sample.php wp-config.php
+
+		读我 双击 readme.html
+
+		安装 http://127.0.0.1/wordpress/wp-admin/install
+
+		设置 博客标题,博客管理员用户名(默认 admin)、密码
+
+		访问 http://localhost/wordpress/
+
+		属主 sudo chown -R www-data:www-data /var/www/wordpress
+
+		权限 sudo chmod -R 777 /var/www/wordpress
+
+<hr><h3 style="color:SteelBlue">上传 2M 限制</h3>
+	1 sudo gedit /etc/php5/apache2/php.ini
+		搜索 upload_max_filesize = 2M 替换为 upload_max_filesize = 100M
+		搜索 post_max_size = 8M 替换为 post_max_size = 100M
+
+	2 sudo gedit /var/www/wordpress/wp-config.php
+		添加 define('WP_MEMORY_LIMIT', '100M');
+
+	3 sudo service apache2 restart
+
+<hr><h3 style="color:SteelBlue">伪静态默认未开启</h3>
+	1 加载rewrite模块
+		sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
+
+	2 修改AllowOverride属性 None改为All
+		sudo vim /etc/apache2/sites-enabled/000-default
+
+<hr><h3 style="color:SteelBlue">动态域名解析</h3>
+	网站 http://www.3322.org 跳转到 http://www.pubyun.com/
+
+	申请 如:用户名 ubuntu
+
+	密码:<font color=Red>123</font>
+
+	域名:<font color=Red>ubuntu</font>
+
+	更新 sudo apt-get install lynx
+
+	lynx -mime_header -auth=kkk:<font color=Red>123</font>" http://www.3322.org/dyndns/update?system=dyndns&ho stname=<font color=Red>ubuntu</font>.3322.org"
