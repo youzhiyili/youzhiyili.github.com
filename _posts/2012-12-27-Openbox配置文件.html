@@ -7,29 +7,29 @@ title: Openbox配置文件
 ├────/home/用户/
 	│
 	├────  .xinitrc
-	│			│ 
-	│			│启动openbox会话
-	│			│exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
+	│		│ 
+	│		│启动openbox会话
+	│		│exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
 	│
 	├────  .xserverrc
-				│ 
-				│指定X服务器
-				│exec /usr/bin/X :0
-
+	│ 		│ 
+	│ 		│指定X服务器
+	│ 		│exec /usr/bin/X :0
+	│ 
 	├────  .wallpaper
-		│ 
-		├────wallpaper_conf 
-		│		│ 
-		│		└────wallpaper.sh
-		│					│ 
-		│					│脚本内容
-		│					│#!/bin/bash
-		│					│WALLPAPERS="$HOME/.wallpaper/wallpapers"
-		│					│ALIST=( `ls -w1 $WALLPAPERS` )
-		│					│RANGE=${#ALIST[*]}
-		│					│SHOW=$(( $RANDOM % $RANGE ))
-		│					│feh --bg-scale $WALLPAPERS/${ALIST[$SHOW]}
-		│ 
-		└────wallpapers
-				│ 
-				└────喜欢的壁纸扔到里面
+	│ 	│ 
+	│ 	├────wallpaper_conf 
+	│ 	│		│ 
+	│ 	│		└────wallpaper.sh
+	│ 	│					│ 
+	│ 	│					│脚本内容
+	│ 	│					│#!/bin/bash
+	│ 	│					│WALLPAPERS="$HOME/.wallpaper/wallpapers"
+	│ 	│					│ALIST=( `ls -w1 $WALLPAPERS` )
+	│ 	│					│RANGE=${#ALIST[*]}
+	│ 	│					│SHOW=$(( $RANDOM % $RANGE ))
+	│ 	│					│feh --bg-scale $WALLPAPERS/${ALIST[$SHOW]}
+	│ 	│ 
+	│ 	└────wallpapers
+	│ 			│ 
+	│ 			└────喜欢的壁纸扔到里面
