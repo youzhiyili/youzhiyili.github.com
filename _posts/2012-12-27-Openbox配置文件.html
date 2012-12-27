@@ -82,8 +82,14 @@ title: Openbox配置文件
 ├────/etc/init/tty1.conf
 │			│
 │			│<b style="color:MidnightBlue">tty1不输密码、自动登录，让tty1.conf执行autologin</b>
-│			│<b style="color:MidnightBlue">删除这行：exec /sbin/getty 38400 tty1</b><font color=Red>换成下面这行</font>
+│			│<b style="color:MidnightBlue">找到这行：exec /sbin/getty 38400 tty1</b><font color=Red>换成下面这行</font>
 │			│<font color=Red>exec /sbin/getty -n -l /usr/bin/autologin 38400  tty1</font>
+│			│
+├────/etc/default/grub
+│			│
+│			│<b style="color:MidnightBlue">编辑GRUB2，开机自动进tty1</b>
+│			│<b style="color:MidnightBlue">找到这行：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"</b><font color=Red>换成下面这行</font>
+│			│GRUB_CMDLINE_LINUX_DEFAULT="text"
 │
 ├────/etc/environment
 │			│
