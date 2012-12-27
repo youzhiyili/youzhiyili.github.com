@@ -11,7 +11,7 @@ sudo sed -e 's/interval 30/interval 300000/' -e 's/failure 4/failure 40000/' -i 
 sudo sed -e '/auto eth0/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/network/interfaces
 sudo sed -e '/192.168/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/resolv.conf
 
-<b style="color:MidnightBlue">#加速----------->取消开机配置网络等待60秒</b>
+<b style="color:MidnightBlue">#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" style="text-decoration:none" target="_blank">取消开机配置网络等待60秒</a></b>
 sudo sed -e 's/sleep 20/sleep 0/' -e 's/sleep 40/sleep 0/' -e 's/sleep 59/sleep 0/' -e 's/sleep 1/sleep 0/' -i /etc/init/failsafe.conf
 
 <b style="color:MidnightBlue">#时间----------->设置地区、同步时间、写入硬件</b>
@@ -20,7 +20,7 @@ sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/loca
 <b style="color:MidnightBlue">#换源----------->网易源http://mirrors.163.com/</b>
 sudo wget http://ubuntuone.com/4CaJOYzm68pPmTJOwhwRRb -O /etc/apt/sources.list && sudo apt-get update
 
-<b style="color:MidnightBlue">#公钥----------->extras.ubuntu.com precise Release:没有公钥无法验证签名：16126D3A3E5C1192</b>
+<b style="color:MidnightBlue">#公钥----------->extras.ubuntu.com precise Release:<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=150633" style="text-decoration:none" target="_blank">没有公钥无法验证签名</a>：16126D3A3E5C1192</b>
 sudo gpg --keyserver subkeys.pgp.net --recv 16126D3A3E5C1192 && sudo gpg --export --armor 16126D3A3E5C1192 | sudo apt-key add -
 sudo apt-get update
 
@@ -33,7 +33,7 @@ sudo sed -n -e '1 i\LANG="zh_CN.UTF-8"' -e 'a\LANGUAGE="zh_CN:zh:en_US:en"' -i /
 sudo sed '1 i\zh_CN.UTF-8 UTF-8' -i /var/lib/locales/supported.d/local
 sudo apt-get install language-pack-zh-hans fcitx ttf-wqy-microhei && fc-cache -fv && sudo locale-gen
 
-<b style="color:MidnightBlue">#图形----------->X环境+显卡驱动+openbox套件</b>
+<b style="color:MidnightBlue">#图形----------->X环境+显卡驱动+<a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Openbox/zh" style="text-decoration:none" target="_blank">openbox套件</a></b>
 sudo apt-get install xorg nvidia-current openbox tint2 tilda feh scrot thunar lxappearance cairo-dock
 
 <b style="color:MidnightBlue">#声音----------->ALSA+[obmixer+pavucontrol]<---------面板音量控制</b>
@@ -49,14 +49,14 @@ moc smplayer xbmc \
 leafpad mupdf \
 zip unzip rar unrar p7zip p7zip-full p7zip-rar
 
-<b style="color:MidnightBlue">#挂载----------->给Thunar挂载设备权限</b>
+<b style="color:MidnightBlue">#挂载-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=155&t=343256" style="text-decoration:none" target="_blank">给Thunar挂载设备权限</a></b>
 sudo sed -e 's/any>no/any>yes/' -e 's/auth_admin_keep/yes/' -e 's/auth_admin/yes/' -i /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
 
-<b style="color:MidnightBlue">#登录----------->tty1自动登录</b>
+<b style="color:MidnightBlue">#登录-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=39&t=250150&p=2008292" style="text-decoration:none" target="_blank">tty1自动登录</a></b>
 echo -e '#!/bin/bash \n/bin/login -f meme' > autologin && chmod +x autologin && sudo cp autologin /usr/bin/autologin && rm autologin
 sudo sed '$d' -i /etc/init/tty1.conf && sudo sed '$a\exec /sbin/getty -n -l /usr/bin/autologin 38400 tty1' -i /etc/init/tty1.conf
 
-<b style="color:MidnightBlue">#引导----------->设置启动选项、启用framebuffer、终端分辨率</b>
+<b style="color:MidnightBlue">#引导----------->设置启动选项、<a href="http://qyiyunso.blog.163.com/blog/static/35077686201123121442468/" style="text-decoration:none" target="_blank">启用framebuffer</a>、终端分辨率</b>
 sudo sed -e 's/=10/=2/' -e 's/quiet splash/text/' -e 's/""/"vga=792"/' -e '/640x480/s/#//' -e 's/640x480/1204x768/' -i /etc/default/grub
 sudo update-grub
 
@@ -67,7 +67,7 @@ wget http://ubuntuone.com/2n2bkjQZUcgA3YPXPhv2kR -O conf.home.tgz && tar zxvf *h
 <b style="color:MidnightBlue">#化蝶</b>
 ###wget http://ubuntuone.com/933bu8H9H4B7S2O97GP6U15zN6dswtE -O goa.zip && unzip goa.zip && rm goa.zip
 
-<b style="color:MidnightBlue">#swap----------->创建大小为1G的文件用于swap，文件名swapfile，路径/</b>
+<b style="color:MidnightBlue">#<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=395656" style="text-decoration:none" target="_blank">swap</a>----------->创建大小为1G的文件用于swap，文件名swapfile，路径/</b>
 #sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 && sudo chmod 600 /swapfile && sudo mkswap /swapfile
 #sudo sed -i '$a\/swapfile swap swap defaults 0 0' /etc/fstab
 
