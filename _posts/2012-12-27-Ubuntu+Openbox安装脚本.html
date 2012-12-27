@@ -2,7 +2,12 @@
 layout: post
 title: Ubuntu+Openbox还原脚本
 ---
-<hr>
+<hr><b style="color:MidnightBlue">第一步：安装ubuntu基本系统</b>
+<a href="http://releases.ubuntu.com/12.04/ubuntu-12.04.1-alternate-i386.iso" style="text-decoration:none" target="_blank">下载ubuntu-12.04.1-alternate-i386.iso</a>
+安装基本的命令行系统，选英文。
+装好重启后马上把系统tar备份(只有186M)，下次重装1分钟就可以解压
+
+<hr><b style="color:MidnightBlue">第二步：执行脚本</b>
 #!/bin/bash
 
 <b style="color:MidnightBlue">#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" style="text-decoration:none" target="_blank">解决掉线</a>、网络接口</b>
@@ -27,7 +32,7 @@ sudo apt-get update
 <b style="color:MidnightBlue">#调包----------->从U盘还原软件包</b>
 #sudo tar zxvf /mnt/back/deb.tgz -C /
 
-<b style="color:MidnightBlue">#中文----------->中文包、输入法、字体、Local</b>
+<b style="color:MidnightBlue">#中文----------->中文包、输入法、字体、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=376858" style="text-decoration:none" target="_blank">Local</a></b>
 sudo sed -e '$a\LANG="zh_CN.UTF-8"' -e '$a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/environment
 sudo sed -n -e '1 i\LANG="zh_CN.UTF-8"' -e 'a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/default/locale
 sudo sed '1 i\zh_CN.UTF-8 UTF-8' -i /var/lib/locales/supported.d/local
@@ -36,7 +41,7 @@ sudo apt-get install language-pack-zh-hans fcitx ttf-wqy-microhei && fc-cache -f
 <b style="color:MidnightBlue">#图形----------->X环境+显卡驱动+<a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Openbox/zh" style="text-decoration:none" target="_blank">openbox套件</a></b>
 sudo apt-get install xorg nvidia-current openbox tint2 tilda feh scrot thunar lxappearance cairo-dock
 
-<b style="color:MidnightBlue">#声音----------->ALSA+[obmixer+pavucontrol]<---------面板音量控制</b>
+<b style="color:MidnightBlue">#声音----------->ALSA+[obmixer+pavucontrol]<---------<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=393406&p=2885561" style="text-decoration:none" target="_blank">面板音量控制</a></b>
 sudo apt-get install alsa pavucontrol && sudo gpasswd -a meme audio && alsamixer
 wget http://jpegserv.com/linux/obmixer/obmix ... 1_i386.deb && sudo dpkg -i o*deb && rm o*deb
 
@@ -74,5 +79,5 @@ wget http://ubuntuone.com/2n2bkjQZUcgA3YPXPhv2kR -O conf.home.tgz && tar zxvf *h
 <b style="color:MidnightBlue">#重启</b>
 sudo reboot 
 
-<hr><b style="color:MidnightBlue">享受Ubuntu</b>
+<hr><b style="color:MidnightBlue">第三步：享受Ubuntu</b>
 <img src="/images/ubuntu.openbox.png">
