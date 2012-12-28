@@ -71,6 +71,7 @@ sudo sed '$d' -i /etc/init/tty1.conf && sudo sed '$a\exec /sbin/getty -n -l /usr
 
 <hr><b>#引导----------->设置启动选项、<a href="http://qyiyunso.blog.163.com/blog/static/35077686201123121442468/" target="_blank"><font color=Yellow>启用framebuffer</font></a>、终端分辨率</b>
 sudo sed -e 's/=10/=2/' -e 's/quiet splash/text/' -e 's/""/"vga=792"/' -e '/640x480/s/#//' -e 's/640x480/1204x768/' -i /etc/default/grub
+
 sudo update-grub
 
 <hr><b>#配置----------->家目录配置文件</b>
