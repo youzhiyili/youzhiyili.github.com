@@ -62,19 +62,23 @@ leafpad mupdf \
 zip unzip rar unrar p7zip p7zip-full p7zip-rar
 
 <hr><b>#挂载-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=155&t=343256" target="_blank"><font color=Yellow>给Thunar挂载设备权限</font></a></b>
+
 sudo sed -e 's/any>no/any>yes/' -e 's/auth_admin_keep/yes/' -e 's/auth_admin/yes/' -i /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
 
 <hr><b>#登录-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=39&t=250150&p=2008292" target="_blank"><font color=Yellow>tty1自动登录</font></a></b>
+
 echo -e '#!/bin/bash \n/bin/login -f meme' > autologin && chmod +x autologin && sudo cp autologin /usr/bin/autologin && rm autologin
 
 sudo sed '$d' -i /etc/init/tty1.conf && sudo sed '$a\exec /sbin/getty -n -l /usr/bin/autologin 38400 tty1' -i /etc/init/tty1.conf
 
 <hr><b>#引导----------->设置启动选项、<a href="http://qyiyunso.blog.163.com/blog/static/35077686201123121442468/" target="_blank"><font color=Yellow>启用framebuffer</font></a>、终端分辨率</b>
+
 sudo sed -e 's/=10/=2/' -e 's/quiet splash/text/' -e 's/""/"vga=792"/' -e '/640x480/s/#//' -e 's/640x480/1204x768/' -i /etc/default/grub
 
 sudo update-grub
 
 <hr><b>#配置----------->家目录配置文件</b>
+
 <font color=Red>#</font>tar zxvf /mnt/back/conf.home.tgz -C ~/
 
 wget http://ubuntuone.com/2n2bkjQZUcgA3YPXPhv2kR -O conf.home.tgz && tar zxvf *home.tgz -C ~/ && rm *home.tgz
