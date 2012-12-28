@@ -9,6 +9,7 @@ title: Ubuntu+Openbox还原脚本
 <hr><h3 style="color:SteelBlue">第二步：执行脚本</h3>
 #!/bin/bash
 <hr><b>#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" target="_blank"><font color=Yellow>解决掉线</font></a>、网络接口</b>
+
 sudo apt-get -y purge isc-dhcp-client && sudo pppoeconf && sudo pon dsl-provider && sudo /etc/init.d/networking restart
 
 sudo sed -e 's/interval 30/interval 300000/' -e 's/failure 4/failure 40000/' -i /etc/ppp/options
@@ -18,23 +19,29 @@ sudo sed -e '/auto eth0/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/network/interfaces
 sudo sed -e '/192.168/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/resolv.conf
 
 <hr><b>#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" target="_blank"><font color=Yellow>取消开机配置网络等待60秒</font></a></b>
+
 sudo sed -e 's/sleep 20/sleep 0/' -e 's/sleep 40/sleep 0/' -e 's/sleep 59/sleep 0/' -e 's/sleep 1/sleep 0/' -i /etc/init/failsafe.conf
 
 <hr><b>#时间----------->设置地区、同步时间、写入硬件</b>
+
 sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && sudo ntpdate-debian && sudo hwclock -w
 
 <hr><b>#换源----------->网易源http://mirrors.163.com/</b>
+
 sudo wget http://ubuntuone.com/4CaJOYzm68pPmTJOwhwRRb -O /etc/apt/sources.list && sudo apt-get update
 
 <hr><b>#公钥----------->extras.ubuntu.com precise Release:<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=150633" target="_blank"><font color=Yellow>没有公钥无法验证签名</font></a>：<font color=Red>16126D3A3E5C1192</font></b>
+
 sudo gpg --keyserver subkeys.pgp.net --recv <font color=Red>16126D3A3E5C1192</font> && sudo gpg --export --armor <font color=Red>16126D3A3E5C1192</font> | sudo apt-key add -
 
 sudo apt-get update
 
 <hr><b>#调包----------->从U盘还原软件包</b>
+
 <font color=Red>#</font>sudo tar zxvf /mnt/back/deb.tgz -C /
 
 <hr><b>#中文----------->中文包、输入法、字体、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=376858" target="_blank"><font color=Yellow>Local</font></a></b>
+
 sudo sed -e '$a\LANG="zh_CN.UTF-8"' -e '$a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/environment
 
 sudo sed -n -e '1 i\LANG="zh_CN.UTF-8"' -e 'a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/default/locale
@@ -44,9 +51,11 @@ sudo sed '1 i\zh_CN.UTF-8 UTF-8' -i /var/lib/locales/supported.d/local
 sudo apt-get install language-pack-zh-hans fcitx ttf-wqy-microhei && fc-cache -fv && sudo locale-gen
 
 <hr><b>#图形----------->X环境+显卡驱动+<a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Openbox/zh" target="_blank"><font color=Yellow>openbox套件</font></a></b>
+
 sudo apt-get install xorg <font color=Red>nvidia-current</font> openbox tint2 tilda feh scrot thunar lxappearance cairo-dock
 
 <hr><b>#声音----------->ALSA+[obmixer+pavucontrol]<---------<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=393406&p=2885561" target="_blank"><font color=Yellow>面板音量控制</font></a></b>
+
 sudo apt-get install alsa pavucontrol && sudo gpasswd -a meme audio && alsamixer
 
 wget http://jpegserv.com/linux/obmixer/obmix ... 1_i386.deb && sudo dpkg -i o*deb && rm o*deb
