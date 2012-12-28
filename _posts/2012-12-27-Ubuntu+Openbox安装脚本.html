@@ -18,13 +18,13 @@ sudo sed -e '/auto eth0/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/network/interfaces
 
 sudo sed -e '/192.168/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/resolv.conf
 
-<b>#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" style="text-decoration:none" target="_blank"><font color=Yellow>取消开机配置网络等待60秒</font></a></b>
+<hr><b>#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" style="text-decoration:none" target="_blank"><font color=Yellow>取消开机配置网络等待60秒</font></a></b>
 sudo sed -e 's/sleep 20/sleep 0/' -e 's/sleep 40/sleep 0/' -e 's/sleep 59/sleep 0/' -e 's/sleep 1/sleep 0/' -i /etc/init/failsafe.conf
 
-<b>#时间----------->设置地区、同步时间、写入硬件</b>
+<hr><b>#时间----------->设置地区、同步时间、写入硬件</b>
 sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && sudo ntpdate-debian && sudo hwclock -w
 
-<b>#换源----------->网易源http://mirrors.163.com/</b>
+<hr><b>#换源----------->网易源http://mirrors.163.com/</b>
 sudo wget http://ubuntuone.com/4CaJOYzm68pPmTJOwhwRRb -O /etc/apt/sources.list && sudo apt-get update
 
 <b>#公钥----------->extras.ubuntu.com precise Release:<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=150633" style="text-decoration:none" target="_blank"><font color=Yellow>没有公钥无法验证签名</font></a>：<font color=Red>16126D3A3E5C1192</font></b>
