@@ -28,16 +28,3 @@ title: Linux学习笔记
 &emsp;<li  style="display:inline;"><a href="http://youzhiyili.github.com/2012/12/27/%E7%BD%91%E5%9D%80%E6%94%B6%E8%97%8F.html"  style="text-decoration:none"><font color=Yellow>网址收藏</font></a></li>
 </ul>
 
-<br />
-<!列出最新文章>
-<div id="post-part">
-	<fieldset>
-		<legend><font color=Yellow>最新笔记</font></legend>
-		<ul>
-			{% for post in site.posts %}
-				<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-			{% endfor %}
-		</ul>
-	</fieldset>
-</div>
-
