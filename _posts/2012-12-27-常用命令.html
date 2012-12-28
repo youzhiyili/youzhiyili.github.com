@@ -2,11 +2,11 @@
 layout:  post
 title:  Ubuntu常用命令
 ---
-<hr><b>同步时间</b>
-<b>sudo ntpdate-debian && sudo hwclock -w</b>
-<hr><b>全部复制</b>
+<hr><font color=MediumAquaMarine>同步时间</font>
+<b>sudo ntpdate-debian && sudo hwclock -w</font>
+<hr><font color=MediumAquaMarine>全部复制</font>
 <b>cp -r * .[!.]*</b>
-<hr><b>备份软件包</b>
+<hr><font color=MediumAquaMarine>备份软件包</font>
 <b>tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock</b>
-<hr><b>备份整个系统</b>
+<hr><font color=MediumAquaMarine>备份整个系统</font>
 <b>sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</b>
