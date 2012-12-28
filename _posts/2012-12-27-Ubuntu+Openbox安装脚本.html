@@ -24,23 +24,23 @@ sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/loca
 <b>#换源----------->网易源http://mirrors.163.com/</b>
 sudo wget http://ubuntuone.com/4CaJOYzm68pPmTJOwhwRRb -O /etc/apt/sources.list && sudo apt-get update
 
-<b>#公钥----------->extras.ubuntu.com precise Release:<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=150633" style="text-decoration:none" target="_blank">没有公钥无法验证签名</a>：<font color=Red>16126D3A3E5C1192</font></b>
+<b>#公钥----------->extras.ubuntu.com precise Release:<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=50&t=150633" style="text-decoration:none" target="_blank"><font color=Yellow>没有公钥无法验证签名</font></a>：<font color=Red>16126D3A3E5C1192</font></b>
 sudo gpg --keyserver subkeys.pgp.net --recv <font color=Red>16126D3A3E5C1192</font> && sudo gpg --export --armor <font color=Red>16126D3A3E5C1192</font> | sudo apt-key add -
 sudo apt-get update
 
 <b>#调包----------->从U盘还原软件包</b>
 <font color=Red>#</font>sudo tar zxvf /mnt/back/deb.tgz -C /
 
-<b>#中文----------->中文包、输入法、字体、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=376858" style="text-decoration:none" target="_blank">Local</a></b>
+<b>#中文----------->中文包、输入法、字体、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=376858" style="text-decoration:none" target="_blank"><font color=Yellow>Local</font></a></b>
 sudo sed -e '$a\LANG="zh_CN.UTF-8"' -e '$a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/environment
 sudo sed -n -e '1 i\LANG="zh_CN.UTF-8"' -e 'a\LANGUAGE="zh_CN:zh:en_US:en"' -i /etc/default/locale
 sudo sed '1 i\zh_CN.UTF-8 UTF-8' -i /var/lib/locales/supported.d/local
 sudo apt-get install language-pack-zh-hans fcitx ttf-wqy-microhei && fc-cache -fv && sudo locale-gen
 
-<b>#图形----------->X环境+显卡驱动+<a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Openbox/zh" style="text-decoration:none" target="_blank">openbox套件</a></b>
+<b>#图形----------->X环境+显卡驱动+<a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Openbox/zh" style="text-decoration:none" target="_blank"><font color=Yellow>openbox套件</font></a></b>
 sudo apt-get install xorg <font color=Red>nvidia-current</font> openbox tint2 tilda feh scrot thunar lxappearance cairo-dock
 
-<b>#声音----------->ALSA+[obmixer+pavucontrol]<---------<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=393406&p=2885561" style="text-decoration:none" target="_blank">面板音量控制</a></b>
+<b>#声音----------->ALSA+[obmixer+pavucontrol]<---------<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=393406&p=2885561" style="text-decoration:none" target="_blank"><font color=Yellow>面板音量控制</font></a></b>
 sudo apt-get install alsa pavucontrol && sudo gpasswd -a meme audio && alsamixer
 wget http://jpegserv.com/linux/obmixer/obmix ... 1_i386.deb && sudo dpkg -i o*deb && rm o*deb
 
@@ -53,14 +53,14 @@ moc smplayer xbmc \
 leafpad mupdf \
 zip unzip rar unrar p7zip p7zip-full p7zip-rar
 
-<b>#挂载-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=155&t=343256" style="text-decoration:none" target="_blank">给Thunar挂载设备权限</a></b>
+<b>#挂载-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=155&t=343256" style="text-decoration:none" target="_blank"><font color=Yellow>给Thunar挂载设备权限</font></a></b>
 sudo sed -e 's/any>no/any>yes/' -e 's/auth_admin_keep/yes/' -e 's/auth_admin/yes/' -i /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
 
-<b>#登录-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=39&t=250150&p=2008292" style="text-decoration:none" target="_blank">tty1自动登录</a></b>
+<b>#登录-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=39&t=250150&p=2008292" style="text-decoration:none" target="_blank"><font color=Yellow>tty1自动登录</font></a></b>
 echo -e '#!/bin/bash \n/bin/login -f meme' > autologin && chmod +x autologin && sudo cp autologin /usr/bin/autologin && rm autologin
 sudo sed '$d' -i /etc/init/tty1.conf && sudo sed '$a\exec /sbin/getty -n -l /usr/bin/autologin 38400 tty1' -i /etc/init/tty1.conf
 
-<b>#引导----------->设置启动选项、<a href="http://qyiyunso.blog.163.com/blog/static/35077686201123121442468/" style="text-decoration:none" target="_blank">启用framebuffer</a>、终端分辨率</b>
+<b>#引导----------->设置启动选项、<a href="http://qyiyunso.blog.163.com/blog/static/35077686201123121442468/" style="text-decoration:none" target="_blank"><font color=Yellow>启用framebuffer</font></a>、终端分辨率</b>
 sudo sed -e 's/=10/=2/' -e 's/quiet splash/text/' -e 's/""/"vga=792"/' -e '/640x480/s/#//' -e 's/640x480/1204x768/' -i /etc/default/grub
 sudo update-grub
 
