@@ -2,3 +2,7 @@
     float: left;
     width: 70%;
 }
+
+.sub-ulist {
+    margin: 0 auto auto -25px;
+}
