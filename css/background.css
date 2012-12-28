@@ -15,18 +15,10 @@ hr {
 }
 
 <style type="text/css">
-<!--
-a:link {
- text-decoration: none;
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
 }
-a:visited {
- text-decoration: none;
+a:hover{
+ text-decoration:underline;  /*鼠标放上去有下划线*/
 }
-a:hover {
- text-decoration: none;
-}
-a:active {
- text-decoration: none;
-}
--->
 </style>
