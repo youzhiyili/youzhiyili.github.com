@@ -8,12 +8,12 @@ title: Openbox配置文件
 │	│
 │	├────  .xinitrc
 │	│		│ 
-│	│		│<font color=Yellow>X启动呼叫openbox会话</font>
+│	│		│<font color=MediumAquaMarine>X启动呼叫openbox会话</font>
 │	│		│exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
 │	│
 │	├────  .xserverrc
 │	│ 		│ 
-│	│ 		│<font color=Yellow>指定X服务器</font>
+│	│ 		│<font color=MediumAquaMarine>指定X服务器</font>
 │	│ 		│exec /usr/bin/X :0
 │	│ 
 │	├────  .wallpaper
@@ -22,7 +22,7 @@ title: Openbox配置文件
 │	│ 	│		│ 
 │	│ 	│		└────wallpaper.sh
 │	│ 	│				│ 
-│	│ 	│				│<font color=Yellow>随机壁纸脚本内容</font>
+│	│ 	│				│<font color=MediumAquaMarine>随机壁纸脚本内容</font>
 │	│ 	│				│#!/bin/bash
 │	│ 	│				│WALLPAPERS="$HOME/.wallpaper/wallpapers"
 │	│ 	│				│ALIST=( `ls -w1 $WALLPAPERS` )
@@ -32,7 +32,7 @@ title: Openbox配置文件
 │	│ 	│ 
 │	│ 	└────wallpapers
 │	│ 			│ 
-│	│ 			└────<font color=Yellow>喜欢的壁纸扔到里面</font>
+│	│ 			└────<font color=MediumAquaMarine>喜欢的壁纸扔到里面</font>
 │	│ 
 │	├────  .config
 │	│ 	│ 
@@ -40,15 +40,15 @@ title: Openbox配置文件
 │	│ 			│ 
 │	│ 			├────menu.xml
 │	│ 			│ 		│ 
-│	│ 			│		│<font color=Yellow>Openbox右键菜单</font>
+│	│ 			│		│<font color=MediumAquaMarine>Openbox右键菜单</font>
 │	│ 	 		│
 │	│ 			├────rc.xml
 │	│ 			│ 		│ 
-│	│ 			│		│<font color=Yellow>Openbox键绑定、桌面名和窗口行为</font>
+│	│ 			│		│<font color=MediumAquaMarine>Openbox键绑定、桌面名和窗口行为</font>
 │	│ 	 		│
 │	│ 			├────autostart.sh
 │	│ 			│ 		│ 
-│	│ 			│		│<font color=Yellow>Openbox会话内容</font>
+│	│ 			│		│<font color=MediumAquaMarine>Openbox会话内容</font>
 │	│ 			│		│./.wallpaper/wallpaper_conf/wallpaper.sh
 │	│ 			│		│tint2 &
 │	│ 			│		│(sleep 0.03 && cairo-dock) &
@@ -58,7 +58,7 @@ title: Openbox配置文件
 │	│ 	  		│
 │	│ 			└────environment
 │	│ 			 		│ 
-│	│ 					│<font color=Yellow>Openbox环境变量</font>
+│	│ 					│<font color=MediumAquaMarine>Openbox环境变量</font>
 │	│ 					│export LANG=zh_CN.UTF-8
 │	│ 					│export LANGUAGE=zh_CN:zh
 │	│ 					│export XMODIFIERS=@im=fcitx
@@ -67,7 +67,7 @@ title: Openbox配置文件
 │	│ 					
 │	└────  .profile
 │			│ 
-│			│<font color=Yellow>tty1登录时自动startx，加上以下几句</font>
+│			│<font color=MediumAquaMarine>tty1登录时自动startx，加上以下几句</font>
 │			│#auto startx
 │			│if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty1 ]; then
 │			│             startx
@@ -75,38 +75,38 @@ title: Openbox配置文件
 │
 ├────/usr/bin/<font color=Red>autologin</font>
 │			│
-│			│<font color=Yellow>tty1不输密码、自动登录，创建<font color=Red>autologin</font>放到/usr/bin/</font>
+│			│<font color=MediumAquaMarine>tty1不输密码、自动登录，创建<font color=Red>autologin</font>放到/usr/bin/</font>
 │			│#!/bin/bash
 │			│/bin/login -f <font color=Red>meme</font>
 │
 ├────/etc/init/tty1.conf
 │			│
-│			│<font color=Yellow>tty1不输密码、自动登录，让tty1.conf执行autologin</font>
-│			│<font color=Yellow>找到这行：exec /sbin/getty 38400 tty1</font><font color=Red>换成下面这行</font>
+│			│<font color=MediumAquaMarine>tty1不输密码、自动登录，让tty1.conf执行autologin</font>
+│			│<font color=MediumAquaMarine>找到这行：exec /sbin/getty 38400 tty1</font><font color=Red>换成下面这行</font>
 │			│<font color=Red>exec /sbin/getty -n -l /usr/bin/autologin 38400  tty1</font>
 │			│
 ├────/etc/default/grub
 │			│
-│			│<font color=Yellow>编辑GRUB2，开机自动进tty1</font>
-│			│<font color=Yellow>找到这行：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"</font><font color=Red>换成下面这行</font>
+│			│<font color=MediumAquaMarine>编辑GRUB2，开机自动进tty1</font>
+│			│<font color=MediumAquaMarine>找到这行：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"</font><font color=Red>换成下面这行</font>
 │			│GRUB_CMDLINE_LINUX_DEFAULT="text"
 │
 ├────/etc/environment
 │			│
-│			│<font color=Yellow>设置中文环境</font>
+│			│<font color=MediumAquaMarine>设置中文环境</font>
 │			│PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 │			│LANG="zh_CN.UTF-8"
 │			│LANGUAGE="zh_CN:zh:en_US:en"
 │
 ├────/etc/default/locale
 │			│
-│			│<font color=Yellow>设置中文环境</font>
+│			│<font color=MediumAquaMarine>设置中文环境</font>
 │			│LANG="zh_CN.UTF-8"
 │			│LANGUAGE="zh_CN:zh:en_US:en"
 │
 └────/var/lib/locales/supported.d/local
 			│
-			│<font color=Yellow>设置中文环境</font>
+			│<font color=MediumAquaMarine>设置中文环境</font>
 			│zh_CN.UTF-8 UTF-8
 			│en_US.UTF-8 UTF-8
 
