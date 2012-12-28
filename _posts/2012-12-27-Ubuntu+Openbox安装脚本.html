@@ -9,7 +9,7 @@ title: Ubuntu+Openbox还原脚本
 <hr><h3 style="color:SteelBlue">第二步：执行脚本</h3>
 #!/bin/bash
 
-<b style="color:MidnightBlue">#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" style="text-decoration:none" target="_blank">解决掉线</a>、网络接口</b>
+<b>#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" style="text-decoration:none" target="_blank">解决掉线</a>、网络接口</b>
 sudo apt-get -y purge isc-dhcp-client && sudo pppoeconf && sudo pon dsl-provider && sudo /etc/init.d/networking restart
 sudo sed -e 's/interval 30/interval 300000/' -e 's/failure 4/failure 40000/' -i /etc/ppp/options
 sudo sed -e '/auto eth0/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/network/interfaces
