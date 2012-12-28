@@ -2,20 +2,20 @@
 layout: post
 title: Ubuntu+Openbox还原脚本
 ---
-<hr><h3 style="color:SteelBlue">第一步：安装<a href="http://releases.ubuntu.com/12.04/ubuntu-12.04.1-alternate-i386.iso" style="text-decoration:none" target="_blank">UBUNTU</a>基本系统</h3>
+<hr><h3 style="color:SteelBlue">第一步：安装<a href="http://releases.ubuntu.com/12.04/ubuntu-12.04.1-alternate-i386.iso" style="text-decoration:none" target="_blank">UBUNTU</a><font color=Yellow>基本系统</a></h3>
 	安装基本的命令行系统，选英文。
 	装好重启后马上把系统tar备份(只有186M)，下次重装1分钟就可以解压
 
 <hr><h3 style="color:SteelBlue">第二步：执行脚本</h3>
 #!/bin/bash
 
-<b>#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" style="text-decoration:none" target="_blank">解决掉线</a>、网络接口</b>
+<b>#联网----------->卸载DHCP、配置拨号、<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=116&t=382878&p=2807776#p2807776" style="text-decoration:none" target="_blank"><font color=Yellow>解决掉线</font></a>、网络接口</b>
 sudo apt-get -y purge isc-dhcp-client && sudo pppoeconf && sudo pon dsl-provider && sudo /etc/init.d/networking restart
 sudo sed -e 's/interval 30/interval 300000/' -e 's/failure 4/failure 40000/' -i /etc/ppp/options
 sudo sed -e '/auto eth0/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/network/interfaces
 sudo sed -e '/192.168/s/^/#&/' -e '/dhcp/s/^/#/' -i /etc/resolv.conf
 
-<b>#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" style="text-decoration:none" target="_blank">取消开机配置网络等待60秒</a></b>
+<b>#加速-----------><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=383665" style="text-decoration:none" target="_blank"><font color=Yellow>取消开机配置网络等待60秒</font></a></b>
 sudo sed -e 's/sleep 20/sleep 0/' -e 's/sleep 40/sleep 0/' -e 's/sleep 59/sleep 0/' -e 's/sleep 1/sleep 0/' -i /etc/init/failsafe.conf
 
 <b>#时间----------->设置地区、同步时间、写入硬件</b>
