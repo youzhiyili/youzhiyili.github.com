@@ -81,7 +81,7 @@ wget http://ubuntuone.com/2n2bkjQZUcgA3YPXPhv2kR -O conf.home.tgz && tar zxvf *h
 <hr><b style="color:Red">#化蝶</b>
 <font color=Red>#</font>wget http://ubuntuone.com/933bu8H9H4B7S2O97GP6U15zN6dswtE -O goa.zip && unzip goa.zip && rm goa.zip
 
-<hr><b>#<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=395656" style="text-decoration:none" target="_blank">swap</a>----------->创建大小为1G的文件用于swap，文件名swapfile，路径/</b>
+<hr><b>#<a href="http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=395656" style="text-decoration:none" target="_blank"><font color=Yellow>swap</font></a>----------->创建大小为1G的文件用于swap，文件名swapfile，路径/</b>
 <font color=Red>#</font>sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 && sudo chmod 600 /swapfile && sudo mkswap /swapfile
 
 <font color=Red>#</font>sudo sed -i '$a\/swapfile swap swap defaults 0 0' /etc/fstab
