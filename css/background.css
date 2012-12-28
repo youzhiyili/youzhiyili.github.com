@@ -15,5 +15,5 @@ hr {
 }
 
 
-a{ text-decoration: none;}
+a{ color:SteelBlue;text-decoration: none;}
 a:hover{text-decoration:underline;}
