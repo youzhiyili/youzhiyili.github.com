@@ -2,34 +2,43 @@
 layout: post
 title: 花屏
 ---
-<hr><a href=http://wiki.ubuntu-tw.org/index.php?title=FAQinstall>原文链接</a>
-<hr><h3 style="color:SteelBlue">安装时───>临时解决</h3>
-	1 安装时按任一键，将出现选单“就是有试用和安装”那个界面
+<div id="post-part">
+	<fieldset>
+		<legend><a href="http://youzhiyili.github.com/2012/12/27/%E7%BD%91%E5%9D%80%E6%94%B6%E8%97%8F.html"  style="text-decoration:none"><font color=Yellow>网址收藏</font></a></legend>
+		<ul>
+			<li><h4 style="color:MediumAquaMarine">Linux教程</h4></li>
+				<ul>
+					&emsp;<li  style="display:inline;"><a href="http://www.cnblogs.com/fnng/archive/2012/01/07/2315685.html" target="_blank">Github初级运用</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://www.w3school.com.cn/html/" target="_blank"><font color=SteelBlue>HTML教程</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://teliute.org/" target="_blank">Teliute基础教程网</a></li>
+				</ul>
 
-	2 选语言后，光标移到“试用和安装”，按F6【其他选项】，再按ESC跳出来
+			<hr><li><h4 style="color:MediumAquaMarine">Ubuntu</h4></li>
+				<ul>
+					&emsp;<li  style="display:inline;"><a href="http://releases.ubuntu.com/" target="_blank">Ubuntu各版本下载</a></li>
+					&emsp;<li  style="display:inline;"><a href="https://one.ubuntu.com/" target="_blank">Ubuntu One单点登录</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://forum.ubuntu.org.cn/" target="_blank">Ubuntu中文论坛</a></li>
+				</ul>
 
-	3 此时屏幕下方会有一行“开机选项”【一段可编辑的文字】
+			<hr><li><h4 style="color:MediumAquaMarine">LFS</h4></li>
+				<ul>
+					&emsp;<li  style="display:inline;"><a href="http://www.linuxfromscratch.org/" target="_blank">LFS官网</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://www.linuxfromscratch.org/lfs/view/6.4/" target="_blank">LFS手册</a></li>
+				</ul>
 
-	4 找到“quite splash”,在其后空一格输入nomodeset
-
-	5 按enter，就进入“试用和安装”界面
-
-<hr><h3 style="color:SteelBlue">安装后───>彻底解决</h3>
-	1 GRUB界面，按e，找到“quite splash”，空一格输入nomodeset
-
-	2 CTRL+X 启动系统
-
-	3 sudo gedit /etc/default/grub【如果是XUBUNTU: sudo leafpad /etc/default/grub】
-
-	4 找到这行：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-
-	5 改成：GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset" 保存文档
-
-	6 更新GRUB： sudo update-grub
-
-<hr><h3 style="color:SteelBlue">不同显卡───>不同参数</h3>
-	a. Intel 82852/82855 或8系列顯示晶片： i915.modeset=1 或 i915.modeset=0
-
-	b. Nvidia: nomodeset
-
-	c. 其它廠牌(如ATI): xforcevesa 或 radeon.modeset=0 xforcevesa
+			<hr><li><h4 style="color:MediumAquaMarine">Linux工具</h4></li>
+				<ul>
+					&emsp;<li  style="display:inline;"><a href="http://unetbootin.sourceforge.net/" target="_blank">UNetbootin</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://www.pendrivelinux.com/" target="_blank">Pendrivelinux</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://robrene.deviantart.com/art/Baku-icon-theme-145678957" target="_blank">Baku图标主题</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://gnome-look.org/" target="_blank">GTK ICON主题</font></a></li>
+					&emsp;<li  style="display:inline;"><a href="http://www.deskcity.com/details/picture/2786.html" target="_blank">壁纸下载1</a></li>
+					&emsp;<li  style="display:inline;"><a href="http://www.pickywallpapers.com/?app#/" target="_blank">壁纸下载2</a></li>
+				</ul>
+			<hr><li><h4 style="color:MediumAquaMarine">谷歌</h4></li>
+				<ul>
+					&emsp;<li  style="display:inline;"><a href="https://www.google.com.hk/webmasters/" style="text-decoration:none" target="_blank"><font color=SteelBlue>网站管理员工具</font></a></li>
+				</ul>
+		</ul>
+	</fieldset>
+</div>
