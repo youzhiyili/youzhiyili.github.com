@@ -2,6 +2,16 @@
 layout: post
 title: 花屏
 ---
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'zh-CN'});
+  google.setOnLoadCallback(function() {
+    var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+      '001188850428308821618:WMX-1263465005', customSearchOptions);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
 <hr><a href=http://wiki.ubuntu-tw.org/index.php?title=FAQinstall>原文链接</a>
 <hr><h3 style="color:SteelBlue">安装时───>临时解决</h3>
 	1 安装时按任一键，将出现选单“就是有试用和安装”那个界面
