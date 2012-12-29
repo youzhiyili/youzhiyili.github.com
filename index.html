@@ -13,7 +13,6 @@ title: Linux学习笔记
 <script>
   (function() {
     var cx = '000932499768832929249:WMX-1377257178';
-var googleSearchFrameWidth = 600;
     var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
     gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
         '//www.google.com/cse/cse.js?cx=' + cx;
@@ -32,3 +31,13 @@ var googleSearchFrameWidth = 600;
 &emsp;<li  style="display:inline;">暂时空缺</li>
 </center>
 </ul>
+
+<!-- Google Custom Search Element -->
+<div id=”cse” style=”width:100%;”>Loading</div>
+<script src=”http://www.google.com/jsapi” type=”text/javascript”></script>
+<script type=”text/javascript”>
+google.load('search', '1');
+google.setOnLoadCallback(function(){
+new google.search.CustomSearchControl().draw('cse');
+}, true);
+</script>
