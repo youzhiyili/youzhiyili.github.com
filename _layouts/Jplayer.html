@@ -4,29 +4,9 @@
 		<meta charset='utf-8' />
 		<link href="/css/background.css" rel="stylesheet" type="text/css">
 		<center><h2 style="color:SteelBlue">{{ page.title }}</h2></center>
-
-<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-$("#jquery_jplayer_1").jPlayer({
-ready: function () {
-$(this).jPlayer("setMedia", {
-ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv",
-poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-}).jPlayer("play");
-},
-swfPath: "/js",
-supplied: "m4v, ogv"
-});
-});
-</script>
 	</head>
-
 	<body>
-		<font color=SteelBlue>{{ content }}</font>
+		{{ content }}
 		<br><center><a href="http://youzhiyili.github.com/">Linux学习笔记 @ youzhiyili</a></center>
 	</body>
 </html>
