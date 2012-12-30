@@ -9,18 +9,18 @@
   <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 
 
-<script>
-$(document).ready(function() {
   $("#jpId").jPlayer( {
-    ready: function () {
-      $(this).jPlayer("setMedia", {
-        mp3: "/js/我的歌声里.mp3" // Defines the mp3 url
-      });
-    }
+   ready: function () {
+    $(this).jPlayer("setMedia", {
+     m4a: "/js/a.m4a",
+     oga: "/media/mysound.ogg"
+    });
+   },
+   swfPath: "/js",
+   supplied: "m4a, oga"
   });
-});
-});
-  </script>
+ });
+</script>
 
 
 	</head>
