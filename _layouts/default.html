@@ -13,6 +13,7 @@
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
+	    mp3:"/a.mp3"
             m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
             oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
           });
@@ -22,31 +23,6 @@
       });
     });
   </script>
-
-<script type="text/javascript"><!-- 
-$(document).ready(function(){
-
-    // Local copy of jQuery selectors, for performance.
-    var jpPlayTime = $("#jplayer_play_time");
-    var jpTotalTime = $("#jplayer_total_time");
-
-    $("#jquery_jplayer").jPlayer({
-        ready: function () {
-            this.element.jPlayer("setFile", "/.mp3").jPlayer("play");
-        },  //必须有！！蓝色部分是mp3路径，绿色部分是歌词路径，最后那部分说明直接开始播放
-        volume: 50,
-        oggSupport: true,
-        preload: 'none'
-    })
-    .jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
-        jpPlayTime.text($.jPlayer.convertTime(playedTime));
-        jpTotalTime.text($.jPlayer.convertTime(totalTime));
-    })
-    .jPlayer("onSoundComplete", function() {
-        this.element.jPlayer("play");
-    });
-});
-// --></script>
 
 	</head>
 
