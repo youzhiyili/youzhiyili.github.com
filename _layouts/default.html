@@ -10,15 +10,14 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
+      $("#jpId").jPlayer( {
         ready: function () {
-          $(this).jPlayer("setMedia", {
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
-            m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a"
+          $(this).jPlayer("setFile", {
+mp3: "/js/我的歌声里.mp3"
           }).jPlayer("play");
         },
         swfPath: "/js",
-        supplied: "mp3,oga,m4a"
+        supplied: "mp3"
       });
     });
   </script>
