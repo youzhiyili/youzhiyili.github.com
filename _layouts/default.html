@@ -8,19 +8,27 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
   <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
-        ready: function () {
-          $(this).jPlayer("setMedia", {
-            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-          }).jPlayer("play");
-        },
-        swfPath: "/js",
-        supplied: "m4a, oga"
-      });
+<script type="text/javascript">
+ $(document).ready(function(){
+  $("#jquery_jplayer_1").jPlayer({
+   ready: function () {
+    $(this).jPlayer("setMedia", {
+     m4a: "/media/a.m4a",
+     oga: "/media/mysound.ogg"
     });
-  </script>
+   },
+   swfPath: "/js",
+   supplied: "m4a, oga"
+  });
+ });
+</script>
+<div id="jquery_jplayer_1"></div>
+<div id="jp_container_1">
+ <a href="#" class="jp-play">Play</a>
+ <a href="#" class="jp-pause">Pause</a>
+</div>
+
+
 
 	</head>
 
