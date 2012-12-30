@@ -21,25 +21,6 @@
         supplied: "m4a, oga"
       });
     });
-
-
-$("#jpId").jPlayer( {
-  ready: function() { // $.jPlayer.event.ready 事件
-    $(this).jPlayer("setMedia", { // 设置媒体
-      mp3: "/js/a.mp3"
-    }).jPlayer("play"); // 自动播放媒体
-  },
-  ended: function() { // The $.jPlayer.event.ended 事件
-    $(this).jPlayer("play"); //重复播放媒体
-  },
-  supplied: "mp3"
-);
-$("#jumpToTime").click( function() {
-  $("#jpId").jPlayer("play", 42); // 从媒体的42秒处开始播放.
-});
-
-
-
   </script>
 
 	</head>
