@@ -35,3 +35,9 @@ div.jp-video {
     float: left;
     width: 70%;
 }
+
+/* 设置一个块属性<div></div> */
+#post-part {
+    float: right;
+    width: 30%;
+}
