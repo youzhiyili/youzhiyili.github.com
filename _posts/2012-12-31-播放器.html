@@ -6,7 +6,11 @@
 	</head>
 	<body>
 <br /><br /><br /><br /><br />
-
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 <!--------Jplayer视屏播放器-------- head部分-----------初始化 -->
 <link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
