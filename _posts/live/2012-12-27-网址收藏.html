@@ -66,13 +66,13 @@ title: 网址收藏
 <ul>
 <li  style="display:inline;"><dev><b>同步时间</b><br />
 <textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea></dev></li>
-<li  style="display:inline;"><dev><b>全部复制</b>
+<li  style="display:inline;"><dev><b>全部复制</b><br />
 <textarea cols="50" rows="2">cp -r * .[!.]*</textarea></dev></li>
-<li  style="display:inline;"><dev><b>备份软件包</b>
+<li  style="display:inline;"><dev><b>备份软件包</b><br />
 <textarea cols="50" rows="2">
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
 </textarea></dev></li>
-<li  style="display:inline;"><dev><b>备份整个系统</font>
+<li  style="display:inline;"><dev><b>备份整个系统</b><br />
 <textarea cols="50" rows="2">sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</textarea>
 </dev></li>
 </ul>
