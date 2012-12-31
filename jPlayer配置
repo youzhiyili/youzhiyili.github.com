@@ -3,7 +3,7 @@ layout: post
 title: Swap_笔记
 ---
 <textarea>
-<!--------Jplayer音乐播放器-------- head部分-----------初始化 -->
+<!-------- jPlayer音乐播放器-------- head部分-----------初始化 -->
 <link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
@@ -17,7 +17,7 @@ swfPath: "/js",supplied: "mp3,m4a, oga"});});
 
 
 
-<!--------Jplayer音乐播放器-------- body部分-----------接口样式 -->
+<!-------- jPlayer音乐播放器-------- body部分-----------接口样式 -->
 <center>
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jp_container_1" class="jp-audio">
@@ -64,7 +64,7 @@ swfPath: "/js",supplied: "mp3,m4a, oga"});});
 
 
 <textarea>
-<!--------Jplayer视屏播放器-------- head部分-----------初始化 -->
+<!-------- jPlayer视屏播放器-------- head部分-----------初始化 -->
 <link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
@@ -84,7 +84,7 @@ supplied: "m4v, ogv"
 });
 </script>
 </textarea>
-<!--------Jplayer视屏播放器-------- body部分-----------接口样式 -->
+<!-------- jPlayer视屏播放器-------- body部分-----------接口样式 -->
 <center>
 <div id="jp_container_1" class="jp-video ">
     <div class="jp-type-single">
