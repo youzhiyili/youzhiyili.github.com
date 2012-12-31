@@ -64,10 +64,10 @@ title: 网址收藏
 </div>
 
 <ul>
-<li  style="display:inline;"><dev id="post-part"><b>同步时间</b><br />
-<textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea></dev></li>
-<li  style="display:inline;"><dev><b>全部复制</b><br />
-<textarea cols="50" rows="2">cp -r * .[!.]*</textarea></dev></li>
+<li  style="display:inline;"><dev id="post-part"><fieldset><b>同步时间</b><br />
+<textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea></fieldset></dev></li>
+<li  style="display:inline;"><dev id="post-part"><fieldset><b>全部复制</b><br />
+<textarea cols="50" rows="2">cp -r * .[!.]*</textarea></fieldset></dev></li>
 <li  style="display:inline;"><dev><b>备份软件包</b><br />
 <textarea cols="50" rows="2">
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
