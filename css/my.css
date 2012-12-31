@@ -8,6 +8,7 @@ html {
     margin: 0;
 }
 
+/* 设置横线属性 */
 hr {
     border: none;
     border-top: 3px double #035;
@@ -16,8 +17,8 @@ hr {
 }
 
 
-a{ color:SteelBlue;text-decoration: none;}
-a:hover{text-decoration:underline;}
+/* a{ color:SteelBlue;text-decoration: none;} */
+/* a:hover{text-decoration:underline;} */
 
 div.jp-audio,
 div.jp-video {
