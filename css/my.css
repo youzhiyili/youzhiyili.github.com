@@ -18,8 +18,10 @@ hr {
 
 /* 设置超链接字体颜色，并取消下划线 */
 a{ color:SteelBlue;text-decoration: none;}
-/* a:hover{text-decoration:underline;} */
+/* 当鼠标经过超链接字体时，显示下划线 */
+a:hover{text-decoration:underline;}
 
+/* 设置jPlayer字体 */
 div.jp-audio,
 div.jp-video {
   /* Edit the font-size to counteract inherited font sizing.
