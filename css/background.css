@@ -26,3 +26,9 @@ div.jp-video {
    */
   font-size:1.25em;
 }
+
+/* 设置一个块属性<div></div> */
+#post-part {
+    float: left;
+    width: 70%;
+}
