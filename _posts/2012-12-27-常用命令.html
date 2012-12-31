@@ -6,10 +6,10 @@ title:  Ubuntu常用命令
 <textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea>
 <b>全部复制</b>
 <textarea cols="50" rows="2">cp -r * .[!.]*</textarea>
-<hr><b>备份软件包</b>
+<b>备份软件包</b>
 <textarea cols="50" rows="2">
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
 </textarea>
-<hr><b>备份整个系统</font>
+<b>备份整个系统</font>
 <textarea cols="50" rows="2">sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</textarea>
 </div>
