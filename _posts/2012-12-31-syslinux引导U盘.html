@@ -64,23 +64,29 @@ syslinux安装会有两个动作
 
 	2复制ldlinux.sys到根目录
 
-引导
+<h3>引导</h3>
 默认载入名叫linux的内核文件，可以在syslinux.cfg修改
+
 也可以临时手动输入内核文件名，按Shift或Alt可以出现“boot”提示符
+
 关键是内核文件要在根目录
 
-大致思路：
+<h3>大致思路</h3>
 1 若U盘没有mbr就安装
-	sudo apt-get install mbr
-	sudo install-mbr /dev/sdb 
+<textarea cols="50" rows="2">sudo apt-get install mbr</textarea>
+<textarea cols="50" rows="2">sudo install-mbr /dev/sdb</textarea>
+
 2 u盘分两区并格式化，FAT和ext2
+
 3 安装引导到FAT，如：
-	sudo apt-get install syslinux mtools
-	sudo syslinux -f /dev/sdb1
+<textarea cols="50" rows="2">sudo apt-get install syslinux mtools</textarea>
+<textarea cols="50" rows="2">sudo syslinux -f /dev/sdb1</textarea>
+
 4 复制initrd.gz vmlinuz *.iso到FAT，应该包含：
-	initrd.gz vmlinuz *.iso ldlinux.sys
+<textarea cols="50" rows="2">initrd.gz vmlinuz *.iso ldlinux.sys</textarea>
+
 5 创建引导文件，如syslinux.cfg最少要包含下面两行
-	default vmlinuz
-	append initrd=initrd.gz ramdisk_size=1000000 vga=788
-6 将isolinux文件夹改名为syslinux，
-将syslinux文件夹中的isolinux.cfg文件改名为syslinux.cfg
+<textarea cols="50" rows="2">default vmlinuz</textarea>
+<textarea cols="50" rows="2">append initrd=initrd.gz ramdisk_size=1000000 vga=788</textarea>
+
+6 将isolinux文件夹改名为syslinux，将syslinux文件夹中的isolinux.cfg文件改名为syslinux.cfg
