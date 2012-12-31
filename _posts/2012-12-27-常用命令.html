@@ -2,6 +2,7 @@
 layout:  post
 title:  Ubuntu常用命令
 ---
+<ul>
 <li  style="display:inline;"><div><b>同步时间</b>
 <textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea></div>
 <li  style="display:inline;"><div><b>全部复制</b>
@@ -14,3 +15,4 @@ tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/part
 <textarea cols="50" rows="2">sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</textarea>
 </div>
 </li>
+</ul>
