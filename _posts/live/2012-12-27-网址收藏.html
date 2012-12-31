@@ -2,18 +2,6 @@
 layout: default
 title: 网址收藏
 ---
-<!站内搜索>
-<script>
-  (function() {
-    var cx = '000932499768832929249:WMX-1377257178';
-    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com.hk/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-
 <!网址搜藏>
 <div id="post-part">
 	<fieldset>
@@ -72,18 +60,6 @@ title: 网址收藏
 					&emsp;<li  style="display:inline;"><a href="http://www.mmonly.com/" style="text-decoration:none" target="_blank">美女之家</a></li>
 					&emsp;<li  style="display:inline;"><a href="http://www.soomm.com/" style="text-decoration:none" target="_blank">搜美眉图</a></li>
 				</ul>
-		</ul>
-	</fieldset>
-</div>
-
-<!列出最新文章>
-<div id="url-part">
-	<fieldset>
-		<legend><font color=Yellow>最新笔记</font></legend>
-		<ul class="posts">
-		 {% for post in site.posts %}
-		  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-		 {% endfor %}
 		</ul>
 	</fieldset>
 </div>
