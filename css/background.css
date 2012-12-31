@@ -33,7 +33,7 @@ div.jp-video {
 
 
 /* 下面这三段语句负责代码框的特效 */
-blockquote, pre {
+blockquote, p {
     padding: 0.8em;
     /*background: #39213E;
     background: rgba(255,30,120,0.12);
