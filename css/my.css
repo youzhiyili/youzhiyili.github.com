@@ -16,8 +16,8 @@ hr {
     margin: 20px 0;
 }
 
-
-/* a{ color:SteelBlue;text-decoration: none;} */
+/* 设置超链接字体颜色，并取消下划线 */
+a{ color:SteelBlue;text-decoration: none;}
 /* a:hover{text-decoration:underline;} */
 
 div.jp-audio,
