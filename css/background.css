@@ -26,32 +26,3 @@ div.jp-video {
    */
   font-size:1.25em;
 }
-
-
-
-
-
-
-/* 下面这三段语句负责代码框的特效 */
-blockquote, code {
-    padding: 0.8em;
-    /*background: #39213E;
-    background: rgba(255,30,120,0.12);
-    border: 1px solid #614;
-    position: relative;*/
-    z-index: 2;
-    font-family: 'Lucida Console', 'Courier New', Courier, monospace;
-    -webkit-transition: all 0.45s linear;
-    -moz-transition: all 0.45s linear;
-
-}
-
-blockquote {
-    background: rgba(255,30,120,0.1);
-    border: 1px solid rgba(230,0,20,0.2);
-}
-
-blockquote:hover, pre:hover {
-    color: #eee;
-    background: rgba(255,30,120,0.25);
-}
