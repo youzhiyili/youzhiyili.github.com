@@ -4,8 +4,8 @@ title:  Ubuntu常用命令
 ---
 <hr><div><b>同步时间</b>
 <textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w</textarea></div>
-<hr><b>全部复制</b>
-<textarea cols="50" rows="2">cp -r * .[!.]*</textarea>
+<div><b>全部复制</b>
+<textarea cols="50" rows="2">cp -r * .[!.]*</textarea></div>
 <hr><b>备份软件包</b>
 <textarea cols="50" rows="2">
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
