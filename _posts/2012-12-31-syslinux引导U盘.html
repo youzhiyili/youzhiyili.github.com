@@ -43,19 +43,19 @@ syslinux会按顺序在下列位置搜索配置文件：
 
 <h3>syslinux.cfg__示例</h3>
 
-DEFAULT	linux								#默认
+DEFAULT	linux	 #默认
 
-LABEL	linux								#标签
+LABEL	linux	 #标签
 
 SAY Now booting the kernel from SYSLINUX...
 
-KERNEL 	vmlinuz.img						#指定内核
+KERNEL 	vmlinuz.img #指定内核
 
-APPEND 	ro root=/dev/sda1 initrd=initrd.img	#附加选项
+APPEND 	ro root=/dev/sda1 initrd=initrd.img #附加选项
 
-PROMPT=1								#提示
+PROMPT=1 #提示
 
-TIMEOUT=0								#不限时
+TIMEOUT=0 #不限时
 
 <h3>创建可引导的磁盘</h3>
 syslinux安装会有两个动作
