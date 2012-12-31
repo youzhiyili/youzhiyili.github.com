@@ -33,11 +33,11 @@ div.jp-video {
 /* 设置一个块属性<div></div> */
 #post-part {
     float: left;
-    width: 60%;
+    width: 57%;
 }
 
 /* 设置一个块属性<div></div> */
 #url-part {
     float: right;
-    width: 40%;
+    width: 37%;
 }
