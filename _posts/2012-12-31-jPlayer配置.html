@@ -2,6 +2,26 @@
 layout: post
 title: jPlayer配置
 ---
+<!-------- jPlayer视屏播放器-------- head部分-----------初始化 -->
+<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#jquery_jplayer_1").jPlayer({
+ready: function () {
+$(this).jPlayer("setMedia", {
+ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv",
+poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+}).jPlayer("play");
+},
+swfPath: "/js",
+supplied: "m4v, ogv"
+});
+});
+</script>
+
 <!-------- jPlayer视屏播放器-------- body部分-----------接口样式 -->
 <center>
 <div id="jp_container_1" class="jp-video ">
