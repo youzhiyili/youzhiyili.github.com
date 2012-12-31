@@ -5,3 +5,5 @@ http://youzhiyili.github.com/2012/12/27/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.htm
 http://youzhiyili.github.com/2012/12/27/Ubuntu%2BOpenbox%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC.html
 http://youzhiyili.github.com/2012/12/27/Openbox%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html
 http://youzhiyili.github.com/2012/12/27/LAMP%2BWordPress.html
+http://youzhiyili.github.com/2012/12/31/jPlayer%E9%85%8D%E7%BD%AE.html
+http://youzhiyili.github.com/2012/12/31/syslinux%E5%BC%95%E5%AF%BCU%E7%9B%98.html
