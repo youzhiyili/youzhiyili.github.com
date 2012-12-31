@@ -4,6 +4,11 @@ title: Linux学习笔记
 ---
 <br /><br /><br /><br /><br />
 {% setup %}
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 <!------------------------------ 站内搜索框 --><br />
 <form action="http://youzhiyili.github.com" id="cse-search-box">
 	<center><div>
