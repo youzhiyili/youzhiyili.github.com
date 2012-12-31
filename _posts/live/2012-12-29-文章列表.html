@@ -7,7 +7,7 @@ title: 文章列表
 	<fieldset>
 		<legend><font color=Yellow>最新笔记</font></legend>
 		<ul>
-			{% for post in site.related_posts %}
+			{% for post in site.posts %}
 				<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 			{% endfor %}
 		</ul>
