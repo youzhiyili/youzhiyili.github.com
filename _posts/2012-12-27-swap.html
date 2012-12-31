@@ -5,7 +5,7 @@ title: Swap_笔记
 <hr><h3 style="color:SteelBlue">基础概念</h3>
 	swap───>交换空间───>内存紧张时，不急用的数据暂时挪到这里
 
-	swap用了这么多───><code>free -m</code>
+	swap用了这么多───>free -m
 
 	swap优先值───>cat /proc/sys/vm/swappiness───>vm.swappiness=60<───[0~100][100尽量使用swap]
 
@@ -17,13 +17,13 @@ title: Swap_笔记
 <hr><h3 style="color:SteelBlue">例：使用/dev/sda7为swap</h3>
 	创建───>sudo mkswap -c /dev/sda7
 
-	启用───临时───><code>sudo swapon /dev/sda7</code>
+	启用───临时───>sudo swapon /dev/sda7
 
 	启用───永久───>sudo sed -i '$a\/dev/sda7 swap swap defaults 0 0' /etc/fstab
 
 	停用───临时───>sudo swapoff /dev/sda7
 
-	停用───永久───><code>sudo swapoff /dev/sda7 && sudo sed -i '/sda7/d' /etc/fstab</code>
+	停用───永久───>sudo swapoff /dev/sda7 && sudo sed -i '/sda7/d' /etc/fstab
 
 <hr><h3 style="color:SteelBlue">例：创建大小为1G的文件用于swap，文件名swapfile，路径/</h3>
 	创建───>sudo dd if=/dev/zero of=/swapfile bs=1M count=1024 && sudo chmod 600 /swapfile && sudo mkswap /swapfile
