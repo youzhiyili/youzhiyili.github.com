@@ -1,0 +1,154 @@
+---
+layout: post
+title: 解决_ubuntu花屏
+---
+示例：http://browse.deviantart.com/?q=conky
+安装：sudo apt-get install conky
+配置：sudo leafpad ~/.conkyrc
+
+#<========Conky基本属性=============
+
+# 是否嵌入桌面，“no”表示不嵌入；“yes”表示嵌入
+background yes
+
+# 是否使用xft字体，一般为“yes”
+use_xft yes
+
+# 设置默认字体、大小、粗体
+xftfont 文泉驿等宽微米黑:size=9:style=Bold
+
+#设置默认颜色
+default_color slate grey
+
+xftalpha 0.8
+
+# 是否输出到控制台
+out_to_console no
+
+# 0.5秒刷新一次
+update_interval 0.5
+
+# 总共运行时间
+total_run_times 0
+
+
+#<========Conky边框设置=============
+
+# 要不要阴影？
+draw_shades no
+
+# 要不要边框外的轮廓？
+draw_outline no
+
+# 要不要边框？
+draw_borders no
+
+# 要不要图形边界？
+draw_graph_borders no
+
+# 边框宽度
+border_width 3
+
+# 边框内缘
+border_inner_margin 2
+
+# 边框用点点画虚线，每画几点长？
+stippled_borders 2
+
+#<========窗口属性================
+
+# 选no会一闪一闪的
+own_window yes
+
+#conky窗口类型，override覆盖，desktop壁纸
+own_window_type override
+
+#conky窗口完全透明
+own_window_transparent yes
+
+# 窗口颜色，暗红
+own_window_colour hotpink
+
+# 窗口提示
+own_window_hints sticky,undecorated,below,skip_taskbar,skip_pager
+
+# 双缓冲
+double_buffer yes
+
+# 没有缓冲区
+no_buffers no
+
+uppercase no
+
+# CPU平均样本
+cpu_avg_samples 2
+
+# NET平均样本
+net_avg_samples 2
+
+# 是否覆盖UTF8设置？
+override_utf8_locale yes
+
+# 使用间隔？
+use_spacer none
+
+#<========Conky窗口大小设置===========
+
+# 输出到屏幕顶部top、底部bottom、左边left、右边right
+alignment top_right
+
+# 横向离屏幕10像素，最小为10
+gap_x 10
+
+# 纵向离屏幕62像素，最小为10
+gap_y 62
+
+# 最小宽度199像素 最小高度 10像素
+minimum_size 199 10
+
+# 最大宽度350像素 最大高度 10像素
+maximum_width 250 10
+
+#<========Conky屏幕输出内容===========
+TEXT
+$color用户名称：${exec whoami}$alignr已运行：$uptime${color}
+$color内核版本：${alignr}$sysname $kernel ${exec uname -m}
+$color当前日期：${time %Y}年${exec date +%m}月${time %d}日 ${alignr}星期${time %a}
+${font 文泉驿等宽微米黑:size=28:style=Bold}${time %p}${time %l:%M:%S}$color${font 文泉驿等宽微米黑:size=9:style=Bold}
+
+$color双核状态：CPU 1:${cpu cpu1}% CPU 2:${cpu cpu2}%
+${cpubar 3,245}
+$color本机内存：$memperc%$alignr$mem/$memmax
+${membar 3,245}
+$color交换空间：$swapperc%$alignr$swap$swapmax
+${swapbar 3,245}
+系统分区：$alignr${fs_free /}/${fs_size /}
+${fs_bar 3,245 /}
+软件分区：$alignr${fs_free /home}/${fs_size /home}
+${fs_bar 3,245 /home}
+
+任务管理：$alignr$processes个进程  ($running_processes个活动)
+${hr 1}
+CPU最高：$alignr -PID-      CPU%
+${hr 1}${color red}
+${top name 1}$alignr${top pid 1}    ${top cpu 1}${color}
+${top name 2}$alignr${top pid 2}    ${top cpu 2}
+${top name 3}$alignr${top pid 3}    ${top cpu 3}
+${top name 4}$alignr${top pid 4}    ${top cpu 4}
+${top name 5}$alignr${top pid 5}    ${top cpu 5}${color}
+
+内存最高：$alignr -PID-      MEM%
+${hr 1}${color red}
+${top_mem name 1}$alignr${top_mem pid 1}    ${top_mem mem 1}${color}
+${top_mem name 2}$alignr${top_mem pid 2}    ${top_mem mem 2}
+${top_mem name 3}$alignr${top_mem pid 3}    ${top_mem mem 3}
+${top_mem name 4}$alignr${top_mem pid 4}    ${top_mem mem 4}
+
+读取硬盘：${alignr}$diskio_read
+${diskiograph_read /dev/sda 10,245 000000 ffffff}
+写入硬盘：${alignr}$diskio_write
+${diskiograph_write /dev/sda 10,245 000000 ffffff}
+上传数据：${upspeed eth0}KB ${alignr}累计：${totalup eth0}
+${upspeedgraph eth0 10,245 000000 ffffff}
+下载数据：${downspeed eth0}KB ${alignr}累计：${totaldown eth0}
+${downspeedgraph eth0 10,245 000000 ffffff}
