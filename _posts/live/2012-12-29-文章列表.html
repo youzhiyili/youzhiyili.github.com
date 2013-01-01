@@ -5,7 +5,7 @@ title: 文章列表
 <!列出最新文章>
 <div>
 	<fieldset>
-<font color=Yellow>文章列表</font></legend>
+<legend><font color=Yellow>文章列表</font></legend>
 		<ul class="posts">
 		 {% for post in site.posts %}
 		  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
