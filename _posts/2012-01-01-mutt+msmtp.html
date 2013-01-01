@@ -2,121 +2,11 @@
 layout: post
 title: ubuntu安装邮件管理mutt+msmtp
 ---
+<center>
 <hr><h3 style="color:SteelBlue">安装</h3>
 <textarea cols="30" rows="1">sudo apt-get install mutt msmtp</textarea>
+</center>
 
- 
-
-<h3 style="color:SteelBlue">网易配置</h3>
-~/.msmtprc
-<textarea cols="30" rows="1">
-tls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-logfile ~/.msmtp.log
-
-account default
-host smtp.163.com
-from 网易帐号@163.com
-
-auth plain
-user 网易帐号
-password 网易密码
-</textarea>
-
-~/.muttrc
-<textarea cols="30" rows="1">
-set sendmail="/usr/bin/msmtp"
-set use_from=yes
-set envelope_from=yes
-
-set from=网易帐号@163.com
-set realname=网易昵称
-
-set pop_user=网易帐号
-set pop_pass=网易密码
-set pop_host=pop.163.com
-</textarea>
- 
-
- 
-<h3 style="color:SteelBlue">多账户配置</h3>
-~/.msmtprc
-<textarea cols="30" rows="1">
-###通用配置###
-defaults
-tls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-logfile ~/.msmtp.log
-############
-
-###网易邮箱###
-account 网易
-host smtp.163.com
-from 网易帐号@163.com
-
-auth plain
-user 网易帐号
-password 网易密码
-############
-
-##网易邮箱2##
-account 网易2 : 网易
-host smtp.163.com
-from 网易帐号2@163.com
-
-auth plain
-user 网易帐号2
-password 网易2密码
-############
-
-###腾狗邮箱###
-account 腾狗
-host smtp.qq.com
-from 腾狗帐号@qq.com
-
-tls off
-
-auth login
-user 腾狗帐号
-password 腾狗密码
-############
-
-###默认邮箱###
-account default : 网易
-############
-</textarea>
-
-~/.muttrc
-<textarea cols="30" rows="1">
-###通用配置###
-set sendmail="/usr/bin/msmtp"
-set use_from=yes
-############
-
-###网易邮箱###
-macro generic "<esc>1" ":set from=网易帐号@163.com"
-set realname=网易昵称
-set pop_user=网易帐号
-set pop_pass=网易密码
-set pop_host=pop.163.com
-############
-
-##网易邮箱2##
-macro generic "<esc>2" ":set from=网易帐号2@163.com"
-set realname=网易2昵称
-set pop_user=网易帐号2
-set pop_pass=网易2密码
-set pop_host=pop.163.com
-############
-
-###腾狗邮箱###
-macro generic "<esc>3" ":set from=腾狗帐号@qq.com"
-set realname=腾狗昵称
-set pop_user=腾狗帐号
-set pop_pass=腾狗密码
-set pop_host=pop.qq.com
-############
-</textarea>
 
 <!-- ----------------------------------开始--------用表格分割屏幕 -->
 <table border="0" width="100%" cellpadding="10">
@@ -126,7 +16,7 @@ set pop_host=pop.qq.com
 <center>
 <h3 style="color:SteelBlue">网易配置</h3>
 ~/.msmtprc
-<textarea cols="30" rows="1">
+<textarea cols="30" rows="30">
 tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.msmtp.log
@@ -161,7 +51,7 @@ set pop_host=pop.163.com
 <center>
 <h3 style="color:SteelBlue">多账户配置</h3>
 ~/.msmtprc
-<textarea cols="30" rows="1">
+<textarea cols="30" rows="30">
 ###通用配置###
 defaults
 tls on
