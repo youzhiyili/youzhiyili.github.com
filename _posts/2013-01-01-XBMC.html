@@ -2,22 +2,30 @@
 layout: post
 title: XBMC
 ---
-介绍：
-XBMC 是一个优秀的自由和开源的（GPL）媒体中心软件。
-XBMC最初为Xbox而开发，现在可以运行在Linux、OSX、Windows系统
+<h3 style="color:SteelBlue">介绍</h3>
+	XBMC 是一个优秀的自由和开源的（GPL）媒体中心软件
 
-安装：<textarea cols="100" rows="1">sudo apt-get install xbmc</textarea>
+	XBMC最初为Xbox而开发，现在可以运行在Linux、OSX、Windows系统
 
-安装字体：<textarea cols="100" rows="1">sudo cp /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc /usr/share/xbmc/media/Fonts/arial.ttf</textarea>
+<h3 style="color:SteelBlue">安装</h3>
+	<textarea cols="100" rows="1">sudo apt-get install xbmc</textarea>
 
-选择字体：System===>appearance===>Skin===>Fon===>Arial based（重要!!!）
+<h3 style="color:SteelBlue">安装字体</h3>
+	<textarea cols="100" rows="1">sudo cp /usr/share/fonts/truetype/wqy/wqy-zenhei.ttc /usr/share/xbmc/media/Fonts/arial.ttf</textarea>
 
-界面语言：International===>Chinese (simple)===>Character Set===>Chinese Simplified
+<h3 style="color:SteelBlue">选择字体</h3>
+	System===>appearance===>Skin===>Fon===>Arial based（重要!!!）
 
-下载插件：<a href="http://code.google.com/p/xbmc-addons-chinese/downloads/list" target="_blank">http://code.google.com/p/xbmc-addons-chinese/downloads/list</a>
+<h3 style="color:SteelBlue">界面语言</h3>
+	International===>Chinese (simple)===>Character Set===>Chinese Simplified
 
-解压插件：~/.xbmc/addons/
+<h3 style="color:SteelBlue">下载插件</h3>
+	<a href="http://code.google.com/p/xbmc-addons-chinese/downloads/list" target="_blank">http://code.google.com/p/xbmc-addons-chinese/downloads/list</a>
 
-开机选项：<textarea cols="100" rows="1">sudo leafpad /etc/lightdm/lightdm.conf/
+<h3 style="color:SteelBlue">解压插件</h3>
+	~/.xbmc/addons/
+
+<h3 style="color:SteelBlue">开机选项</h3>
+	<textarea cols="100" rows="1">sudo leafpad /etc/lightdm/lightdm.conf/
 #改成这样：
 user-session=ubuntu----->user-session=ubuntu,xbmc</textarea>
