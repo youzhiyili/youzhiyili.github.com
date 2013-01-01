@@ -13,7 +13,7 @@ title: ubuntu安装邮件管理mutt+msmtp
 <center>
 <h3 style="color:SteelBlue">网易配置</h3>
 ~/.msmtprc
-<textarea cols="30" rows="20">
+<textarea cols="30" rows="10">
 tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.msmtp.log
@@ -28,7 +28,7 @@ password 网易密码
 </textarea>
 
 ~/.muttrc
-<textarea cols="30" rows="20">
+<textarea cols="30" rows="10">
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
 set envelope_from=yes
@@ -48,7 +48,7 @@ set pop_host=pop.163.com
 <center>
 <h3 style="color:SteelBlue">多账户配置</h3>
 ~/.msmtprc
-<textarea cols="30" rows="20">
+<textarea cols="30" rows="10">
 ###通用配置###
 defaults
 tls on
@@ -94,7 +94,7 @@ account default : 网易
 </textarea>
 
 ~/.muttrc
-<textarea cols="30" rows="20">
+<textarea cols="30" rows="10">
 ###通用配置###
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
