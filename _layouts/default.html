@@ -5,34 +5,18 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link href="/css/my.css" rel="stylesheet" type="text/css">
 
-<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){$("#jquery_jplayer_1").jPlayer({
-ready: function () {$(this).jPlayer("setMedia", {oga: "http://vorbis.sailormusic.net/sm/songbox/COCC-14459/08.ogg"}).jPlayer("play"); },
-swfPath: "/js",supplied: "mp3,m4a, oga"});});
+<p id='preview'>The player will show in this paragraph</p>
+<script type='text/javascript' src='swfobject.js'></script>
+<script type='text/javascript'>
+var s1 = new SWFObject('http://www.longtailvideo.com/files/player.swf','player','400','300','9');
+s1.addParam('allowfullscreen','true');
+s1.addParam('allowscriptaccess','always');
+s1.addParam('flashvars','file=http://www.longtailvideo.com/videos/8.flv');
+s1.addParam('repeat','always'); //不断重复整个播放列表
+s1.addParam('autostart','true'); //自动开始播放
+s1.write('preview');
 </script>
-
-<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
-        ready: function () {
-          $(this).jPlayer("setMedia", {
-            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv",
-            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-          }).jPlayer("play");
-        },
-        swfPath: "/js",
-        supplied: "m4v, ogv"
-      });
-    });
-  </script>
-
 
 	</head>
 
