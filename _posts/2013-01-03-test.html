@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html class="translated-ltr"><head><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="//i.jiathis.com/url/shares.php?url=http%3A%2F%2Fwww.itivy.com%2Fhtml%2Fjplayer%2Fvideo-playlist.html" charset="utf-8"></script>
-<meta charset="utf-8">
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<link href="/css/my.css" rel="stylesheet" type="text/css">
+		<title>test</title>
+		<center><h2 style="color:SteelBlue">{{ page.title }}</h2></center>
+	</head>
 
-<!-- Website Design By: www.happyworm.com -->
-<title>jPlayer带播放列表的视频播放器</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/js/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="/js/add-on/jquery.jplayer.inspector.js"></script>
+<script type="text/javascript" src="/js/extras/jquery.jplayer.playlist.combo.min.js"></script>
+<script type="text/javascript" src="/js/extras/jquery.jplayer.combo.min.js"></script>
+<script type="text/javascript" src="/js/extras/jquery-1.8.2-ajax-deprecated.min.js"></script>
+<script type="text/javascript" src="/js/popcorn/popcorn.jplayer.js"></script>
 
 
-<link href="skin/jplayer.pink.flag.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" async="" src="http://api.flattr.com/js/0.6/load.js?mode=auto"></script><script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="add-on/jquery.jplayer.inspector.js"></script>
+
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function(){
@@ -68,65 +76,13 @@ $(document).ready(function(){
 <div id="container">
 
 	
-	
-	<div id="content_main">
 
-		
-		<section>
+<div class="jp-playlist">
+<ul style="display: block; "><li class=""><div>
+<a href="javascript:;" class="jp-playlist-item-remove" style="display: none; ">
 
-		<div id="jp_container_1" class="jp-video jp-video-270p" style="margin:10px auto">
-			<div class="jp-type-playlist">
-				<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px; "><img id="jp_poster_0" style="width: 480px; height: 270px; display: none; " src="http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"><video id="jp_video_0" preload="metadata" style="width: 480px; height: 270px; " src="http://www.jplayer.org/video/webm/Incredibles_Teaser.webm"></video></div>
-				<div class="jp-gui" style="">
-					<div class="jp-video-play" style="display: none; ">
-						<a href="javascript:;" class="jp-video-play-icon" tabindex="1"><font><font>玩</font></font></a>
 
-					</div>
-					<div class="jp-interface">
-						<div class="jp-progress">
-							<div class="jp-seek-bar" style="width: 100%; ">
-								<div class="jp-play-bar" style="width: 0%; "></div>
-							</div>
-						</div>
-						<div class="jp-current-time"><font><font>00:00</font></font></div>
-						<div class="jp-duration"><font><font>01:37</font></font></div>
-
-						<div class="jp-title" style="display: none; ">
-							<ul>
-								<li><font><font>超人特攻队预告</font></font><span class="jp-artist"><font><font>皮克斯</font></font></span></li>
-							</ul>
-						</div>
-						<div class="jp-controls-holder">
-							<ul class="jp-controls">
-								<li><a href="javascript:;" class="jp-previous" tabindex="1"><font><font>前</font></font></a></li>
-
-								<li><a href="javascript:;" class="jp-play" tabindex="1" style="display: block; "><font><font>玩</font></font></a></li>
-								<li><a href="javascript:;" class="jp-pause" tabindex="1" style="display: none; "><font><font>暂停</font></font></a></li>
-								<li><a href="javascript:;" class="jp-next" tabindex="1"><font><font>下</font></font></a></li>
-								<li><a href="javascript:;" class="jp-stop" tabindex="1"><font><font>停止</font></font></a></li>
-								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="静音" style=""><font><font>静音</font></font></a></li>
-								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="取消静音" style="display: none; "><font><font>取消静音</font></font></a></li>
-
-								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="最大音量" style=""><font><font>最大音量</font></font></a></li>
-							</ul>
-							<div class="jp-volume-bar" style="">
-								<div class="jp-volume-bar-value" style="width: 80%; "></div>
-							</div>
-							<ul class="jp-toggles">
-								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="全屏幕" style=""><font><font>全屏幕</font></font></a></li>
-								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="恢复屏幕" style="display: none; "><font><font>恢复屏幕</font></font></a></li>
-
-								<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="洗" style=""><font><font>洗</font></font></a></li>
-								<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle关机" style="display: none; "><font><font>shuffle关机</font></font></a></li>
-								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="重复" style=""><font><font>重复</font></font></a></li>
-								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="重复播放功能" style="display: none; "><font><font>重复播放功能</font></font></a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-				<div class="jp-playlist">
-					<ul style="display: block; "><li class=""><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none; "><font><font>×</font></font></a><span class="jp-free-media"><font><font class="">（</font></font><a class="jp-playlist-item-free" href="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" tabindex="1"><font><font class="">M4V</font></font></a><font><font class=""> | </font></font><a class="jp-playlist-item-free" href="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" tabindex="1"><font><font class="">远洋船</font></font></a><font></font><a class="jp-playlist-item-free" href="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" tabindex="1"><font><font class="">webmv</font></font></a><font><font class="">）</font></font></span><a href="javascript:;" class="jp-playlist-item" tabindex="1"><font><font class="">大巴克兔子拖车</font></font><span class="jp-artist"><font><font class="">由Blender基金会</font></font></span></a></div></li><li class=""><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none; "><font><font>×</font></font></a><a href="javascript:;" class="jp-playlist-item" tabindex="1"><font><span class="jp-artist"><font class="">由皮克斯</font></span><font class="">海底总动员预告</font></font><span class="jp-artist"><font></font></span></a></div></li><li class="jp-playlist-current"><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none; "><font><font>×</font></font></a><a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="1"><font><font>超人特攻队预告</font></font><span class="jp-artist"><font><font>皮克斯</font></font></span></a></div></li></ul>
+</a><span class="jp-free-media"><font><font class="">（<a class="jp-playlist-item-free" href="http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" tabindex="1"><font><font class="">M4V</font></font></a><font><font class=""> | </font></font><a class="jp-playlist-item-free" href="http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv" tabindex="1"><font><font class="">远洋船</font></font></a><font></font><a class="jp-playlist-item-free" href="http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" tabindex="1"><font><font class="">webmv</font></font></a><font><font class="">）</font></font></span><a href="javascript:;" class="jp-playlist-item" tabindex="1"><font><font class="">大巴克兔子拖车</font></font><span class="jp-artist"><font><font class="">由Blender基金会</font></font></span></a></div></li><li class=""><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none; "><font><font>×</font></font></a><a href="javascript:;" class="jp-playlist-item" tabindex="1"><font><span class="jp-artist"><font class="">由皮克斯</font></span><font class="">海底总动员预告</font></font><span class="jp-artist"><font></font></span></a></div></li><li class="jp-playlist-current"><div><a href="javascript:;" class="jp-playlist-item-remove" style="display: none; "><font><font>×</font></font></a><a href="javascript:;" class="jp-playlist-item jp-playlist-current" tabindex="1"><font><font>超人特攻队预告</font></font><span class="jp-artist"><font><font>皮克斯</font></font></span></a></div></li></ul>
 				</div>
 				<div class="jp-no-solution" style="display: none; ">
 					<span><font><font>更新</font></font></span><font><font> 
