@@ -24,8 +24,18 @@ title:  Ubuntu常用命令
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
 </textarea>
 
-<b>备份整个系统</b>
+<b>单分区备份系统</b>
 <textarea cols="50" rows="2">sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</textarea>
+
+<b>还原到单分区U盘，假设sdb1</b>
+<textarea cols="50" rows="2">
+sudo mount /dev/sdb1 /mnt
+sudo tar -pzxvf sys.back.tgz -C /mnt
+sudo grub-install --root-directory=/mnt /dev/sdb
+sudo blkid========================>查看sdb1的UUID
+sudo nano /mnt/etc/fstab============>替换成sdb1的UUID
+sudo nano /mnt/boot/grub/grub.cfg=====>搜索"set=root"，替换成sdb1的UUID;搜索"set root="，改成'(hd0,1)'
+</textarea>
 
 <b>备份MBR</b>
 <textarea cols="50" rows="2">
