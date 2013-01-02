@@ -2,17 +2,13 @@
 <html>
 	<head>
 		<meta charset='utf-8' />
-		<link href="/css/background.css" rel="stylesheet" type="text/css">
+		<link href="/css/my.css" rel="stylesheet" type="text/css">
+		<title>TEST</title>
 		<center><h2 style="color:SteelBlue">{{ page.title }}</h2></center>
-	</head>
-	<body>
-
-
-
-<!--------jPlayer视屏播放器-------- head部分-----------初始化 -->
 <link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+
 $(document).ready(function(){
  
     new jPlayerPlaylist({
@@ -50,8 +46,8 @@ $(document).ready(function(){
     });
  
 });
-
-
+	</head>
+	<body>
 <!-------- jPlayer视屏播放器-------- body部分-----------接口样式 -->
 <center>
 <div id="jp_container_1" class="jp-video ">
@@ -103,6 +99,5 @@ $(document).ready(function(){
 </div>
 </center>
 
-		<br><center><a href="http://youzhiyili.github.com/">Linux学习笔记 @ youzhiyili</a></center>
 	</body>
 </html>
