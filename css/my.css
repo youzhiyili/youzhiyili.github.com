@@ -73,17 +73,6 @@ footer{
 	z-index: 100000;
 }
 
-footer h4{
-	font-size:15px;
-	font-weight:normal;
-	left:50%;
-	margin-left:-400px;
-	padding:22px 0;
-	position:absolute;
-	width:400px;
-	color:#eee;
-}
-
 footer a.tzine,a.tzine:visited{
 	background:url("../images/me.png") no-repeat right top;
 	border:none;
