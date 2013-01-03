@@ -45,7 +45,7 @@ header{
 	background:url('../img/header.png') repeat-x;
 	display: block;
 	height: 80px;/*设置高度，原始为220*/
-	padding: 5px;/*设置填充，原始为10*/
+	padding: 0px;/*设置填充，原始为10*/
 }
 
 h1{
