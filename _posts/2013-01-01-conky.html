@@ -157,3 +157,19 @@ ${upspeedgraph eth0 10,245 000000 ffffff}
 ${downspeedgraph eth0 10,245 000000 ffffff}
 </textarea>
 </center>
+
+<div style="background:url() no-repeat center center;width:200px;height:200px;border:dotted 1px blue;" id='pics'></div><br/>
+第<span id='pages'>1</span>张
+<input value='前一张' onclick='go(-1)' type='button'>
+<input value='后一张' onclick='go(1)' type='button'>
+<script type='text/javascript'>
+var cp=1;
+function go(pos){
+	if (cp+pos<1||cp+pos>27){
+		return;
+	}
+	cp+=pos;
+	document.all.pics.style.backgroundImage="url("+cp+".gif)";
+	document.all.pages.innerText=cp;
+}
+</script>
