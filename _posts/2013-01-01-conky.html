@@ -158,18 +158,306 @@ ${downspeedgraph eth0 10,245 000000 ffffff}
 </textarea>
 </center>
 
-<div style="background:url() no-repeat center center;width:200px;height:200px;border:dotted 1px blue;" id='pics'></div><br/>
-第<span id='pages'>1</span>张
-<input value='前一张' onclick='go(-1)' type='button'>
-<input value='后一张' onclick='go(1)' type='button'>
-<script type='text/javascript'>
-var cp=1;
-function go(pos){
-	if (cp+pos<1||cp+pos>27){
-		return;
-	}
-	cp+=pos;
-	document.all.pics.style.backgroundImage="url("+cp+".gif)";
-	document.all.pages.innerText=cp;
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<title>Mexican Riviera-Puerto Vallarta</title>
+<style type="text/css">
+ <!--
+ .pageText {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #333333}
+
+--> 
+</style>
+<script language="JavaScript">function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function KW_images_class(src,name,alt,links,target,border,width,height,align,sets) {
+  this.srn=src; this.name=name; this.alt=alt; this.links=links; this.target=target;
+  this.border=border; this.width=width;	this.height=height; this.align=align;
+  this.sets=sets;
+}
+
+function KW_pObj(sel) {
+  var validObj=new Array(),i,j,k,oneDay=60*60*24*1280, d=new Date(); for (i=0;i<KW_imagesObj.length;i++)
+  if (KW_imagesObj[i].sets.charAt(sel)!="0") {validObj[validObj.length]=i;k=KW_imagesObj[i].sets.charAt(sel);}
+  j=(k!=2)?parseInt(Math.random()*validObj.length):(parseInt(d.getTime()/oneDay))%validObj.length; 
+  j=(isNaN(j))?0:j;return validObj[j];
+}
+
+
+function KW_selSrc(obj) {
+    k = KW_imagesObj[obj];
+    if (k.links != "") {
+        document.write("<a href=\"" + k.links + "\" target=\"" + k.target + "\">");
+    }
+    str = "<images src=\"" + k.srn + "\"";
+    if (k.name != "") {
+        str += " name=\"" + k.name + "\"";
+    }
+    if (k.alt != "") {
+        str += " alt=\"" + k.alt + "\"";
+    }
+    if (k.border != "") {
+        str += " border=\"" + k.border + "\"";
+    }
+    if (k.width != "") {
+        str += " width=\"" + k.width + "\"";
+    }
+    if (k.height != "") {
+        str += " height=\"" + k.height + "\"";
+    }
+    if (k.align != "") {
+        str += " align=\"" + k.align + "\"";
+    }
+    str += ">";
+    document.write(str);
+    if (k.links != "") {
+        document.write("</a>");
+    }
 }
 </script>
+
+<style type="text/css">
+ <!--
+#kwphotomain {position:absolute; left:40px; top:20px; width:512px; height:384px; z-index:3; visibility: visible; }
+.KW_caption { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;position: absolute; left: 40px; top: 424px; width: 512px; z-index: 2; visibility: hidden; background-color:#FFCC33; layer-background-color:#FFCC33; border: 1px dotted #999}
+.KW_captionText { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000}
+#kwclickme {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; position: absolute;  z-index: 50;  visibility: visible;  top:20px;  left:40px;  height : auto;  width : auto;  background-color : #000;  layer-background-color : #000;   }
+#KWscrollCover {position:absolute; left:590px; top:20px; width:156px; height:384px; visibility:visible; z-index:900; background-color:#000; layer-background-color:#99CC33 }
+#KWscrollLayer {position:absolute; left:590px; top:20px; width:144px; height:384px; clip:rect(0px 144px 384px 0px); overflow:hidden; visibility:visible; z-index:800;}
+#KWscrollControl  {position:absolute; width:12px; height:382px; left:740px; top:22px; z-index:800;}
+#kwthumbnails {position:absolute; left:0px; top:0px; width:144px; height:px; z-index:1; visibility: visible; background-color:#99CC33; layer-background-color:#99CC33; }
+--> 
+</style>
+<script language="JavaScript">
+// inTensa Design Gallery 
+// by Paul Davis
+// http://www.kaosweaver.com/ 
+// Copyright 2002, all rights reserved 
+// 
+// KW_columns[1]
+// KW_dir[0]
+// KW_scroll[2]
+// KW_arrow1[uparrow.gif]
+// KW_arrow2[downarrow.gif]
+// KW_full[false]
+// KW_nrc[Right Click Disabled]
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_reloadPage(init) { 
+  if (init==true) with (navigator) {if 
+((appName=="Netscape")&&(parseInt(appVersion)==4)) { 
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; 
+onresize=MM_reloadPage; }} 
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) 
+location.reload(); 
+} 
+MM_reloadPage(true); 
+var obj,timer,stopObj,px;
+function initObjects() {// by Paul Davis - www.kaosweaver.com
+  var a=initObjects.arguments,i;obj=new Array();d=(document.all || document.getElementById);
+  px=(d)?"px":"";for(i=0;i<a.length;i++){obj[i]=(d)?MM_findObj(a[i]).style:MM_findObj(a[i]);
+	obj[i].hClip=(!d)?obj[i].clip.height:MM_findObj(a[i]).offsetHeight
+	obj[i].wClip=(!d)?obj[i].clip.width:MM_findObj(a[i]).offsetWidth	
+	obj[i].v=0;obj[i].h=0;
+  }
+}
+
+function moveObject(v,a,o){ // by Paul Davis - www.kaosweaver.com
+  if (v=='v' || v=='b') { 
+    obj[o].v=((obj[o].v-a)>0)?0:obj[o].v-a;
+	obj[o].v=(obj[o].v<-(obj[o].hClip-obj[0].hClip))?-(obj[o].hClip-obj[0].hClip):obj[o].v;
+    obj[o].top=obj[o].v+px; }
+  if (v=='h' || v=='b'){
+    obj[o].h=((obj[o].h-a)>0)?0:obj[o].h-a;
+	obj[o].h=(obj[o].h<-(obj[o].wClip-obj[0].wClip))?-(obj[o].wClip-obj[0].wClip):obj[o].h;
+    obj[o].left=obj[o].h+px; }
+  if (!stopObj) setTimeout("moveObject('"+v+"',"+a+","+o+")",30)
+}
+function hideIt2() {
+	lObj = (document.layers)?MM_findObj('KWscrollCover'):MM_findObj('KWscrollCover').style;
+	lObj.visibility='hidden'
+}
+var sAPS=0
+function KW_miniSwitch(photo,counter) {
+	MM_findObj('mainPhoto').src=photo;
+  sAPS=counter;
+}
+lOldObj=new Object();
+function KW_switchSection(sVal) {
+    var cap="kwcaption"+sVal;
+    lObj = (document.layers)?MM_findObj(cap):MM_findObj(cap).style;
+    lObj.visibility="visible";
+     if (lOldObj!=lObj) lOldObj.visibility = "hidden";
+    lOldObj = lObj;
+}
+// End of inTensa Design Gallery
+</script>
+</head>
+<body onLoad="KW_switchSection(1);initObjects('KWscrollLayer','kwthumbnails');hideIt2()" background="../images/wedding_romance_05_t.gif" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> 
+      <div align="center"> 
+      </div>
+    </td>
+  </tr>
+</table>
+<div id="Layer1" style="position:absolute; width:128px; height:20px; z-index:4; left: 615px; top: 415px" class="pageText">
+<font color=#FFCC33 size="2">Mexican Riviera-Puerto Vallarta</b></font> 
+<br>Back</p><br>
+</div>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="90%" id="AutoNumber1">
+    <tr>
+      <td width="100%">　</td>
+    </tr>
+  </table>
+  </center>
+</div>
+  
+</div>
+
+<div id="KWscrollCover"> 
+  <table width="156" height="384">
+    <tr> 
+      <td></td>
+    </tr>
+  </table>
+</div>
+<div id="KWscrollLayer"> 
+  <div id="kwthumbnails"> 
+    <table border="0" cellspacing="0" cellpadding="8" style="border-collapse: collapse" bordercolor="#111111">
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(1);" onmouseout="" href="javascript:KW_miniSwitch('images/14178141-2366-02000180-.jpg','0');">
+        <img src="images_s/14178141-eeb7-00800060-.jpg" name="KW_thumbnail0" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(2);" onmouseout="" href="javascript:KW_miniSwitch('images/14178143-1312-02000180-.jpg','2');">
+        <img src="images_s/14178143-c77e-00800060-.jpg" name="KW_thumbnail1" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(3);" onmouseout="" href="javascript:KW_miniSwitch('images/14178150-56c8-02000180-.jpg','4');">
+        <img src="images_s/14178150-fd6f-00800060-.jpg" name="KW_thumbnail2" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(4);" onmouseout="" href="javascript:KW_miniSwitch('images/14178156-9633-02000180-.jpg','6');">
+        <img src="images_s/14178156-3986-00800060-.jpg" name="KW_thumbnail3" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(5);" onmouseout="" href="javascript:KW_miniSwitch('images/14178162-a78b-02000180-.jpg','8');">
+        <img src="images_s/14178162-2887-00800060-.jpg" name="KW_thumbnail4" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+        <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(6);" onmouseout="" href="javascript:KW_miniSwitch('images/14178175-a8a2-02000180-.jpg','10');">
+        <img src="images_s/14178175-79c8-00800060-.jpg" name="KW_thumbnail5" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+         <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(7);" onmouseout="" href="javascript:KW_miniSwitch('images/14250010-29d2-02000180-.jpg','12');">
+        <img src="images_s/14250010-e842-00800060-.jpg" name="KW_thumbnail6" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+         <td><A onmouseover="" onfocus=this.blur(); onClick="KW_switchSection(8);" onmouseout="" href="javascript:KW_miniSwitch('images/14303570-db70-02000180-.jpg','14');">
+        <img src="images_s/14303570-9fb2-00800060-.jpg" name="KW_thumbnail7" border=0 alt="" title="" width="128" height="96"></a></td>
+      </tr>
+      <tr> 
+                <td height="8"></td>
+           
+    </table>
+  </div>
+</div>
+<div id="KWscrollControl"> 
+  <table width="12"  height="382" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td height="10%" valign="top"><a href="#"  onmouseover="stopObj=false;moveObject('v',-2,1)" onmouseout="stopObj=true" onclick="return false">
+      <img src="../uparrow.gif" width="12" height="12" border="0"></a></td>
+    </tr>
+    <tr> 
+      <td height="80%">　</td>
+    </tr>
+    <tr> 
+      <td height="10%" valign="bottom"><a href="#"  onmouseover="stopObj=false;moveObject('v',2,1)" onmouseout="stopObj=true" onclick="return false">
+      <img src="../downarrow.gif" width="12" height="12" border="0"></a></td>
+    </tr>
+  </table>
+</div>
+<div id="kwphotomain" style="width: 512; height: 384"> 
+  <img name="mainPhoto"  src='images/14178141-2366-02000180-.jpg' border="0" width="512" height="384" > 
+  </a> </div>
+<div id="kwcaption1" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">91slide</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption2" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">89slide Natural rock slide</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption3" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">105slide</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption4" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">104slide</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption5" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">74rocks Lots of picturesque rocks</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption6" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">75pool A more secluded pool</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption7" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText"><p align="center">83swing This guy dropped and did a great canopener</td>
+    </tr>
+  </table>
+</div>
+<div id="kwcaption8" class="KW_caption"> 
+  <table width="512" border="0" cellspacing="0" cellpadding="5" height="20">
+    <tr> 
+      <td valign="top" class="KW_captionText">
+      <p align="center">106slidetop Barb and others at the top of the slide</td>
+    </tr>
+  </table>
+
+<br>
+<br>
+<br>
+<br>
+</body>
+
+</html>
