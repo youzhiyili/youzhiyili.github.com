@@ -1,4 +1,7 @@
-/* 设置背景色渐变 */
+
+/*-------------------------
+	设置背景色渐变
+--------------------------*/
 html {
     color: #cad3d6;
     min-height: 100%;
@@ -8,7 +11,9 @@ html {
     margin: 0;
 }
 
-/* 设置横线属性 */
+/*-------------------------
+	设置横线属性
+--------------------------*/
 hr {
     border: none;
     border-top: 3px double #035;
@@ -16,12 +21,18 @@ hr {
     margin: 20px 0;
 }
 
-/* 设置超链接字体颜色，并取消下划线 */
+/*-------------------------
+设置超链接字体颜色，并取消下划线
+--------------------------*/
 a{ color:SteelBlue;text-decoration: none;}
-/* 当鼠标经过超链接字体时，显示下划线 */
+/*-------------------------
+当鼠标经过超链接字体时，显示下划线
+--------------------------*/
 a:hover{text-decoration:underline;}
 
-/* 设置jPlayer字体 */
+/*-------------------------
+	设置jPlayer字体
+--------------------------*/
 div.jp-audio,
 div.jp-video {
   /* Edit the font-size to counteract inherited font sizing.
@@ -30,14 +41,60 @@ div.jp-video {
   font-size:1.25em;
 }
 
-/* 设置一个块属性<div></div> */
+/*-------------------------
+	设置一个块属性<div></div>
+--------------------------*/
 #post-part {
     float: left;
     width: 55%;
 }
 
-/* 设置一个块属性<div></div> */
+/*-------------------------
+设置一个块属性<div></div>
+--------------------------*/
 #url-part {
     float: right;
     width: 33%;
+}
+
+/*----------------------------
+	页脚
+-----------------------------*/
+
+
+footer{
+	display:block;
+	background-color:#13181d;
+	position:fixed;
+	width:100%;
+	height:70px;
+	bottom:0;
+	left:0;
+	z-index: 100000;
+}
+
+footer h4{
+	font-size:20px;
+	font-weight:normal;
+	left:50%;
+	margin-left:-400px;
+	padding:22px 0;
+	position:absolute;
+	width:400px;
+	color:#eee;
+}
+
+footer a.tzine,a.tzine:visited{
+	background:url("../img/tzine.png") no-repeat right top;
+	border:none;
+	text-decoration:none;
+	color:#FCFCFC;
+	font-size:12px;
+	height:70px;
+	left:50%;
+	line-height:31px;
+	margin:23px 0 0 110px;
+	position:absolute;
+	top:0;
+	width:290px;
 }
