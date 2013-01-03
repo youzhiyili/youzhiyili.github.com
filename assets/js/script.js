@@ -29,7 +29,7 @@ $(document).ready(function(){
 	});
 
 	// Creating the "Everything" option in the menu:
-	createList('所有照片',items);
+	createList('全部照片',items);
 
 	// Looping though the arrays in itemsByTags:
 	$.each(itemsByTags,function(k,v){
