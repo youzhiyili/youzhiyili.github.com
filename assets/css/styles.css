@@ -138,11 +138,11 @@ h1{
 #container li{
 
 	float: left;
-	height: 96px;
+	height: 150px;
 	list-style: none outside none;
 	margin: 6px;
 	position: relative;
-	width: 125px;
+	width: 150px;
 	
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
