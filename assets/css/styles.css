@@ -15,14 +15,14 @@
 
 
 html{
-	background: url('/assets/img/bg_tile.jpg') #18222b;
+	background: url('../img/bg_tile.jpg') #18222b;
 }
 
 body{
 	color:#fcfcfc;
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
 	min-height: 930px;
-	background:url('/assets/img/bg_center.jpg') center 240px no-repeat;
+	background:url('../img/bg_center.jpg') center 240px no-repeat;
 }
 
 a, a:visited {
@@ -42,14 +42,14 @@ a:hover{
 
 
 header{
-	background:url('/assets/img/header.png') repeat-x;
+	background:url('../img/header.png') repeat-x;
 	display: block;
 	height: 220px;
 	padding: 10px;
 }
 
 h1{
-	background:url('/assets/img/logo.png') no-repeat center center;
+	background:url('../img/logo.png') no-repeat center center;
 	height: 80px;
 	margin: 75px auto;
 	overflow: hidden;
@@ -65,7 +65,7 @@ h1{
 
 
 #filter {
-	background: url("/assets/img/bar.png") repeat-x 0 -94px;
+	background: url("../img/bar.png") repeat-x 0 -94px;
 	display: block;
 	height: 39px;
 	margin: 55px auto;
@@ -79,7 +79,7 @@ h1{
 }
 
 #filter:before, #filter:after {
-	background: url("/assets/img/bar.png") no-repeat;
+	background: url("../img/bar.png") no-repeat;
 	height: 43px;
 	position: absolute;
 	top: 0;
@@ -115,7 +115,7 @@ h1{
 }
 
 #filter a.active{
-	background: url("/assets/img/bar.png") repeat-x 0 -138px;
+	background: url("../img/bar.png") repeat-x 0 -138px;
 	box-shadow:	1px 0 0 rgba(255, 255, 255, 0.2),
 				-1px 0 0 rgba(255, 255, 255, 0.2),
 				1px 0 1px rgba(0,0,0,0.2) inset,
@@ -186,7 +186,7 @@ footer h2{
 }
 
 footer a.tzine,a.tzine:visited{
-	background:url("/assets/img/tzine.png") no-repeat right top;
+	background:url("../img/tzine.png") no-repeat right top;
 	border:none;
 	text-decoration:none;
 	color:#FCFCFC;
