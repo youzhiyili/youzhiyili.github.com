@@ -21,7 +21,7 @@
 <ul id="stage" style="height: 432px; ">
 {% for i in assets/img/shots/*/*.jpg %}
 do
-    echo '<li><img src="/'$i'/'$i'" alt="照片"></li>'
+    echo '<li><img src="/*/'$i'" alt="照片"></li>'
 done
 {% endfor %}
 </ul>
