@@ -131,7 +131,7 @@ h1{
 #container{
 	display:block;
 	overflow:hidden;
-	width: 1230px;
+	width: 1280px;
 	margin:0 auto;
 }
 
@@ -142,7 +142,7 @@ h1{
 	list-style: none outside none;
 	margin: 6px;
 	position: relative;
-	width: 650px;
+	width: 640px;
 	
 	-moz-box-shadow: 0 0 5px #000;
 	-webkit-box-shadow: 0 0 5px #000;
