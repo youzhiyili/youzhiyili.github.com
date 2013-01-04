@@ -85,3 +85,18 @@ footer a.tzine,a.tzine:visited{
 	top:0;
 	width:290px;
 }
+
+a.tzine,a.tzine:visited{
+	background:url("../images/me.png") no-repeat right top;
+	border:none;
+	text-decoration:none;
+	color:#FCFCFC;
+	font-size:15px;
+	height:70px;
+	left:50%;
+	line-height:31px;
+	margin:23px 0 0 110px;
+	position:absolute;
+	top:0;
+	width:290px;
+}
