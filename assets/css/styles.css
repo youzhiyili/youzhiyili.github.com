@@ -70,7 +70,7 @@ h1{
 	height: 39px;
 	margin: 55px auto;
 	position: relative;
-	width: 600px;
+	width: 800px;
 	text-align:center;
 	
 	-moz-box-shadow:0 4px 4px #000;
@@ -83,7 +83,7 @@ h1{
 	height: 43px;
 	position: absolute;
 	top: 0;
-	width: 278px;
+	width: 78px;
 	content: '';
 	
 	-moz-box-shadow:0 2px 0 rgba(0,0,0,0.4);
