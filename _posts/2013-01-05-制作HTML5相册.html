@@ -1,0 +1,57 @@
+---
+layout: post
+title: 制作HTML5相册
+---
+下载源码
+http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/
+解压到网站根目录，结构如下：
+assets
+
+assets/css
+assets/css/styles.css
+
+assets/js
+assets/js/jquery.quicksand.js
+assets/js/script.js
+
+assets/img
+assets/img/shots/"一些示例图片"
+assets/img/"一些LOGO"
+
+创建页面
+<textarea cols="100" rows="60">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>我的相册</title>
+
+	<link rel="stylesheet" href="/assets/css/styles.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="/assets/js/jquery.quicksand.js"></script>
+	<script src="/assets/js/script.js"></script>
+
+	<!-- 为老IE启用HTML5标签>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    </head>
+
+    <body>
+        <header>
+            <h1>我的相册</h1>
+        </header>
+	<nav id="filter"></nav>
+	<section id="container">
+	    <ul id="stage" style="height: 432px; ">
+		<!--  把所有照片添加分类标签，在这里列出，最好是打乱顺序-->
+		<!--  比如以下4行-->
+		<li data-tags="旅游" ><img src="/assets/img/shots/1.jpg" alt="照片"></li>
+		<li data-tags="风景" ><img src="/assets/img/shots/3.jpg" alt="照片"></li>
+		<li data-tags="植物" ><img src="/assets/img/shots/3.jpg" alt="照片"></li>
+		<li data-tags="趣图" ><img src="/assets/img/shots/4.jpg" alt="照片"></li>
+	    </ul>
+	</section>
+    </body>
+</html>
+</textarea>
