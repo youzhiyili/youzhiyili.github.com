@@ -22,11 +22,13 @@
 <nav id="filter"></nav>
 <section id="container">
 <ul id="stage" style="height: 432px; ">
-{% for i in assets/img/shots/蒲/*.jpg %}
+<script type="text/javascript">
+for i in assets/img/shots/蒲/*.jpg
 do
     echo '<li data-tags="蒲" ><img src="/'$i'" alt="照片"></li>'
 done
-{% endfor %}
+endfor
+</script>
 </ul>
 </section>
 
