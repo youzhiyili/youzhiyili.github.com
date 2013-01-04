@@ -130,6 +130,7 @@ h1{
 
 #container{
 	display:block;
+	overflow:hidden;
 	width: 830px;
 	margin:0 auto;
 }
