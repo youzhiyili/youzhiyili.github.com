@@ -11,37 +11,6 @@
         <![endif]-->
     </head>
     <body>
- <script type="text/javascript" language="javascript">
-        var flag = false;
-        function DrawImage(ImgD) {            
-            var image = new Image();
-            image.src = ImgD.src;
-            if (image.width > 0 && image.height > 0) {
-                flag = true;
-                if (image.width / image.height >= 164 / 112) {
-                    if (image.width > 164) {
-                        ImgD.width = 164;
-                        ImgD.height = (image.height * 164) / image.width;
-                    } else {
-                        ImgD.width = image.width;
-                        ImgD.height = image.height;
-                    }
-                    ImgD.alt = image.width + "×" + image.height;
-                }
-                else {
-                    if (image.height > 35) {
-                        ImgD.height = 35;
-                        ImgD.width = (image.width * 35) / image.height;
-                    } else {
-                        ImgD.width = image.width;
-                        ImgD.height = image.height;
-                    }
-                    ImgD.alt = image.width + "×" + image.height;
-                }
-            }
-        }
-    </script>
-<input type="button" value="生成缩略图" onclick="DrawImage(this.nextSibling)" /><img src="img/0.jpg" border="0" width="164" height="112" >
         <header>
             <h1>我的相册</h1>
         </header>
