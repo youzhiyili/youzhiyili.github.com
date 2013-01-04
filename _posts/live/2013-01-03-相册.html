@@ -27,6 +27,9 @@ do
     echo '<li data-tags="蒲" ><img src="/'$i'" alt="照片"></li>'
 done
 {% endfor %}
+{% for i in /assets/img/shots/蒲/*.jpg %}
+    <li data-tags="蒲" ><img src="/'$i'" alt="照片"></li>
+{% endfor %}
 </ul>
 </section>
 
