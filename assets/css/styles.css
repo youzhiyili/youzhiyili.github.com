@@ -93,12 +93,12 @@ h1{
 
 #filter:before {
 	background-position: 0 -47px;
-	left: -178px;
+	left: -78px;
 }
 
 #filter:after {
 	background-position: 0 0;
-	right: -178px;
+	right: -278px;
 }
 
 #filter a{
