@@ -63,7 +63,7 @@ div.jp-video {
 -----------------------------*/
 
 
-#filter {
+#menu {
 	background: url("/assets/img/bar.png") repeat-x 0 -94px;
 	display: block;
 	height: 39px;
@@ -78,7 +78,7 @@ div.jp-video {
 }
 
 
-#filter a{
+#menu a{
 	color: #000000;
 	display: inline-block;
 	height: 39px;
@@ -87,11 +87,11 @@ div.jp-video {
 	text-shadow:1px 1px 1px #315218;
 }
 
-#filter a:hover{
+#menu a:hover{
 	text-decoration:none;
 }
 
-#filter a.active{
+#menu a.active{
 	background: url("/assets/img/bar.png") repeat-x 0 -138px;
 	box-shadow:	1px 0 0 rgba(255, 255, 255, 0.2),
 				-1px 0 0 rgba(255, 255, 255, 0.2),
