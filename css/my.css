@@ -52,7 +52,7 @@ div.jp-video {
 /*-------------------------
 设置一个块属性<div></div>
 --------------------------*/
-#url-part {
+#right {
     float: right;
     width: 40%;
 }
