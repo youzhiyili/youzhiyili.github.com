@@ -90,15 +90,7 @@ div.jp-video {
 	box-shadow:0 2px 0 rgba(0,0,0,0.4);
 }
 
-#filter:before {
-	background-position: 0 -47px;
-	left: -78px;
-}
 
-#filter:after {
-	background-position: 0 0;
-	right: -78px;
-}
 
 #filter a{
 	color: #000000;
