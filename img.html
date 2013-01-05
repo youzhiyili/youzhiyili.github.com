@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+<!--------指定定CSS文件-->
+<link href="/css/my.css" rel="stylesheet" type="text/css">
+
+<!--------Jplayer音乐播放器-------- head部分-->
+<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+
+<!--------Jplayer音乐播放器-------- 初始化播放器-->
+<script type="text/javascript">
+$(document).ready(function(){$("#jquery_jplayer_1").jPlayer({
+ready: function () {$(this).jPlayer("setMedia", {oga: "http://vorbis.sailormusic.net/sm/songbox/COCC-14459/08.ogg"}).jPlayer("play"); },
+swfPath: "/js",supplied: "mp3,m4a, oga"});});
+</script>
+
         <meta charset="utf-8" />
         <title>我的相册</title>
 
