@@ -64,7 +64,7 @@ div.jp-video {
 
 
 #filter {
-	background: url("../img/bar.png") repeat-x 0 -94px;
+	background: url("/assets/img/bar.png") repeat-x 0 -94px;
 	display: block;
 	height: 39px;
 	margin: 55px auto;
@@ -78,7 +78,7 @@ div.jp-video {
 }
 
 #filter:before, #filter:after {
-	background: url("../img/bar.png") no-repeat;
+	background: url("/assets/img/bar.png") no-repeat;
 	height: 43px;
 	position: absolute;
 	top: 0;
@@ -114,7 +114,7 @@ div.jp-video {
 }
 
 #filter a.active{
-	background: url("../img/bar.png") repeat-x 0 -138px;
+	background: url("/assets/img/bar.png") repeat-x 0 -138px;
 	box-shadow:	1px 0 0 rgba(255, 255, 255, 0.2),
 				-1px 0 0 rgba(255, 255, 255, 0.2),
 				1px 0 1px rgba(0,0,0,0.2) inset,
