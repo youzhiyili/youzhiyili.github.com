@@ -14,6 +14,13 @@ title:  Ubuntu常用命令
 <b>全部复制</b>
 <textarea cols="50" rows="2">cp -r * .[!.]*</textarea>
 </center>
+
+<b>批量改变图片为300x200</b>
+<textarea cols="50" rows="2">
+sudo apt-get install imagemagick
+for i in *.jpg; do convert -scale 300x200 $i $i; done
+</textarea>
+</center>
 </td>
 <!-- ------------------------------结束------第一列 -->
 <!-- ------------------------------开始------第二列 -->
