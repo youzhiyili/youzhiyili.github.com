@@ -99,6 +99,13 @@
 <li data-tags="蒲" ><img src="/assets/img/shots/蒲/20.jpg" alt="照片"></li>
 <li data-tags="蒲" ><img src="/assets/img/shots/蒲/21.jpg" alt="照片"></li>
 </ul>
+<ul class="hidden">
+{% for i in assets/img/shots/金/*.jpg %}
+do
+    echo '<li data-tags="金" ><img src="/'$i'" alt="照片"></li>'
+done
+{% endfor %}
+</ul>
 </section>
 <script>
 function rand(len){
