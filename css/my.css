@@ -59,14 +59,14 @@ div.jp-video {
 
 
 /*----------------------------
-	绿色栏(过滤器)
+	菜单栏
 -----------------------------*/
 
 
 #menu {
 	background: url("/assets/img/bar.png") repeat-x 0 -94px;
 	display: block;
-	height: 139px;
+	height: 39px;
 	margin: 55px auto;
 	position: relative;
 	width: 600px;
