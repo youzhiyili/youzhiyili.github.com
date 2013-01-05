@@ -35,14 +35,14 @@ function randlist(num){
     })
     return r
 }
-var tags = ['旅游','郑','汽车'];
+var tags = ['旅游','美食','汽车'];
 var len = 40; //单图片个数
 var tl = tags.length;
 var l = randlist(len);
 var li = '';
 for(var i=1; i<len-1; i++){
     var tag = tags[rand(tl)];
-    li += '<li data-tags="'+tag+'"><img src="/assets/img/shots/'+郑+'/'+l[i]+'.jpg" alt="Illustration"/></li>';
+    li += '<li data-tags="'+tag+'"><img src="/img/'+tag+'/'+l[i]+'.jpg" alt="Illustration"/></li>';
 }
 var s = document.getElementById('stage');
 s.innerHTML(li);
