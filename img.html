@@ -14,58 +14,31 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
     </head>
+
     <body>
         <header>
             <h1>我的相册</h1>
         </header>
+
 <nav id="filter"></nav>
 <section id="container">
 <ul id="stage" style="height: 432px; ">
 <li data-tags="旅游" ><img src="/img/旅游/1.jpg" alt="照片"></li>
-<li data-tags="旅游" ><img src="/img/旅游/2.jpg" alt="照片"></li>
+<li data-tags="汽车" ><img src="/img/汽车/2.jpg" alt="照片"></li>
 <li data-tags="旅游" ><img src="/img/旅游/3.jpg" alt="照片"></li>
 <li data-tags="美食" ><img src="/img/美食/1.jpg" alt="照片"></li>
 <li data-tags="美食" ><img src="/img/美食/2.jpg" alt="照片"></li>
 <li data-tags="美食" ><img src="/img/美食/3.jpg" alt="照片"></li>
+<li data-tags="旅游" ><img src="/img/旅游/2.jpg" alt="照片"></li>
 <li data-tags="汽车" ><img src="/img/汽车/1.jpg" alt="照片"></li>
-<li data-tags="汽车" ><img src="/img/汽车/2.jpg" alt="照片"></li>
 <li data-tags="汽车" ><img src="/img/汽车/3.jpg" alt="照片"></li>
 </ul>
 </section>
-
-<script type="text/javascript">
-function rand(len){
-    var num = Math.floor(Math.random()*len);
-    return num
-}
-function randlist(num){
-    var r = [];
-    for(var i=1; i<num; i++)
-        r[i] = i;
-    r = r.sort(function(){
-        return Math.random()>0.5?-1:1
-    })
-    return r
-}
-var tags = ['旅游','美食','汽车'];
-var len = 40; //单图片个数
-var tl = tags.length;
-var l = randlist(len);
-var li = '';
-for(var i=1; i<len-1; i++){
-    var tag = tags[rand(tl)];
-    li += '<li data-tags="'+tag+'"><img src="/img/'+tag+'/'+l[i]+'.jpg" alt="Illustration"/></li>';
-}
-var s = document.getElementById('stage');
-s.innerHTML(li);
-</script>
 
 <footer>
 <h2>感谢相册工具原作者：Martin Angelov</h2>
 <a class="tzine" href="http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/">请到这里下载源码&raquo;&raquo;</a>
 </footer>
-
-
 
     </body>
 </html>
