@@ -46,7 +46,7 @@ div.jp-video {
 --------------------------*/
 #post-part {
     float: left;
-    width: 55%;
+    width: 40%;
 }
 
 /*-------------------------
@@ -54,5 +54,5 @@ div.jp-video {
 --------------------------*/
 #url-part {
     float: right;
-    width: 33%;
+    width: 40%;
 }
