@@ -111,33 +111,7 @@ do
 done
 {% endfor %}
 </ul>
-</section>
-<script>
-function rand(len){
-    var num = Math.floor(Math.random()*len);
-    return num
-}
-function randlist(num){
-    var r = [];
-    for(var i=1; i<num; i++)
-        r[i] = i;
-    r = r.sort(function(){
-        return Math.random()>0.5?-1:1
-    })
-    return r
-}
-var tags = ['金','蒲','郑'];
-var len = 40; //单图片个数
-var tl = tags.length;
-var l = randlist(len);
-var li = '';
-for(var i=1; i<len-1; i++){
-    var tag = tags[rand(tl)];
-    li += '<li data-tags="'+tag+'"><img src="/assets/img/shots/'+tag+'/'+l[i]+'.jpg" alt="Illustration"></li>';
-}
-var s = document.getElementById('stage');
-s.innerHTML(li);
-</script>
+
 <footer>
 <h2>感谢相册工具原作者：Martin Angelov</h2>
 <a class="tzine" href="http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/">请到这里下载源码&raquo;&raquo;</a>
