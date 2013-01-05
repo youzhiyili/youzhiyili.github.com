@@ -2,6 +2,9 @@
 layout: default
 title: 文章列表
 ---
+<table border="0" width="100%" cellpadding="10">
+<tr>
+<td width="50%" valign="top">
 <!列出最新文章>
 <div>
  <fieldset>
@@ -13,4 +16,23 @@ title: 文章列表
   </ul>
  </fieldset>
 </div>
+</td>
+</tr>
 
+
+<tr>
+<td width="50%" valign="top">
+<!列出最新文章>
+<div>
+ <fieldset>
+ <legend><font color=Yellow>文章列表</font></legend>
+  <ul class="posts">
+   {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+   {% endfor %}
+  </ul>
+ </fieldset>
+</div>
+</td>
+</tr>
+</table>
