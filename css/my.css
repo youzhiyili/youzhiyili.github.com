@@ -77,20 +77,6 @@ div.jp-video {
 	box-shadow:0 4px 4px #000;
 }
 
-#filter:before, #filter:after {
-	background: url("/assets/img/bar.png") no-repeat;
-	height: 43px;
-	position: absolute;
-	top: 0;
-	width: 78px;
-	content: '';
-	
-	-moz-box-shadow:0 2px 0 rgba(0,0,0,0.4);
-	-webkit-box-shadow:0 2px 0 rgba(0,0,0,0.4);
-	box-shadow:0 2px 0 rgba(0,0,0,0.4);
-}
-
-
 
 #filter a{
 	color: #000000;
