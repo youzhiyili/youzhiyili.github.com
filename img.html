@@ -20,11 +20,6 @@
 <nav id="filter"></nav>
 <section id="container">
 <ul id="stage" style="height: 432px; ">
-<li data-tags="旅游" ><img src="/img/旅游/*.jpg" alt="照片"></li>
-<li data-tags="汽车" ><img src="/img/汽车/*.jpg" alt="照片"></li>
-<li data-tags="美食" ><img src="/img/美食/*.jpg" alt="照片"></li>
-</ul>
-</section>
 <script>
 function rand(len){
     var num = Math.floor(Math.random()*len);
@@ -51,6 +46,9 @@ for(var i=1; i<len-1; i++){
 var s = document.getElementById('stage');
 s.innerHTML(li);
 </script>
+</ul>
+</section>
+
 <footer>
 <h2>感谢相册工具原作者：Martin Angelov</h2>
 <a class="tzine" href="http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/">请到这里下载源码&raquo;&raquo;</a>
