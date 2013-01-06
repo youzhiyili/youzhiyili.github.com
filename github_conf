@@ -59,6 +59,20 @@ youzhiyili.github.com
 			 				└───>第n段内容
 
 ------------------------------------------
+安装Git
+sudo apt-get install git
+
+查看Git版本
+git --version
+
+设置Git
+git config --global user.name youzhiyili
+git config --global user.email youzhiyili@gmail.com
+
+设置密码缓存为1小时
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+------------------------------------------
 https://github.com注册，假设帐号是USERNAME，新建一个仓库名为USERNAME.github.com
 
 克隆标准的Jekyll模板到本地，并改自己的仓库名
