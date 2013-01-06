@@ -2,34 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>我的相册</title>
-
+        
+        <title>Making a Beautiful HTML5 Portfolio | Tutorialzine Demo</title>
+        
+        <!-- Our CSS stylesheet file -->
         <link rel="stylesheet" href="static/styles.css" />
-
-        <!-- 为老IE启用HTML5标签>
+        
         <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-
+    
     <body>
+
         <header>
-            <h1>我的相册</h1>
+            <h1>My Portfolio</h1>
         </header>
+        
+        <nav id="filter"></nav>
 
-<nav id="filter"></nav>
-<section id="container">
-<ul id="stage" style="height: 432px; ">
-</ul>
-
-<footer>
-<h2>感谢相册工具原作者：Martin Angelov</h2>
-<a class="tzine" href="http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/">请到这里下载源码&raquo;&raquo;</a>
-</footer>
+        <section id="container">
+        	<ul id="stage">
+            </ul>
+        </section>
+          
+        <footer>
+	        <h2>Making a Beautiful HTML5 Portfolio</h2>
+            <a class="tzine" href="http://tutorialzine.com/2011/06/beautiful-portfolio-html5-jquery/">Read &amp; Download on</a>
+        </footer>
         <script src="static/data.js"></script>
         <script src="static/jquery.min.js"></script>
         <script src="static/jquery.quicksand.js"></script>
         <script src="static/script.js"></script>
     </body>
 </html>
- 
