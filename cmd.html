@@ -33,6 +33,11 @@ for i in *.jpg; do convert -scale 300x200 $i $i; done
 tar cizvf deb.tgz /var/cache/apt/archives --exclude=/var/cache/apt/archives/partial/* --exclude=/var/cache/apt/archives/lock
 </textarea>
 
+<b>还原软件包</b>
+<textarea cols="50" rows="2">
+sudo apt-get update && sudo tar xzvf backup.tar.gz -C /
+</textarea>
+
 <b>单分区备份系统</b>
 <textarea cols="50" rows="2">sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /</textarea>
 
