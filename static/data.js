@@ -12,7 +12,7 @@ function randlist(num){
     return r
 }
 var tags = ['旅游','美食','汽车'];
-var len = 5; //单图片个数
+var len = 6; //单图片个数
 var tl = tags.length;
 var l = randlist(len);
 var li = '';
