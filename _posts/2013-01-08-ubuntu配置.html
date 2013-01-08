@@ -4,7 +4,9 @@ title: Ubuntu 12.04配置
 ---
 查看自启动程序
 locate autostart
-禁止以下程序自启动
+
+<hr><h3 style="color:SteelBlue">禁止以下程序自启动</h3>
+蓝牙、备份、微博、网络管理、虚拟键盘、屏幕阅读、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志
 <textarea cols="40" rows="10">
 sudo chmod -r /etc/xdg/autostart/{\
 bluetooth-applet.desktop,\
@@ -25,9 +27,11 @@ zeitgeist-datahub.desktop}
 最近使用的程序、已安装的程序、推荐安装的程序、推荐youtube视频、御用目录
 chmod 600 ~/.local/share/zeitgeist/activity.sqlite-shm
 
+<hr><h3 style="color:SteelBlue">禁止显示历史记录</h3>
 下载记录、文件使用记录、音乐播放记录，会写进这个文件
-chmod 400 -w ~/.local/share/zeitgeist/activity.sqlite-wal
+chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal
+chmod 000 ~/.local/share/zeitgeist/fts.index/*
 
-bluetoothd
-配置文件/etc/bluetooth/main.conf 
+
+<hr><h3 style="color:SteelBlue">禁用蓝牙、网络管理</h3>
 sudo chmod -x /usr/sbin/{bluetoothd,NetworkManager}
