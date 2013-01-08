@@ -26,7 +26,10 @@ zeitgeist-datahub.desktop}
 </textarea>
 
 <hr><h3 style="color:SteelBlue">禁止显示历史记录</h3>
-下载记录、文件使用记录、音乐播放记录，会写进这个文件
+不是删除，删了会自动重建
+
+禁止：下载记录、文件使用记录、音乐播放记录，activity.sqlite-wal
+fts.index/*  权限设置后仍然有部分文件权限会被自动更改
 <textarea cols="60" rows="3">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal
 chmod 000 ~/.local/share/zeitgeist/fts.index/*
