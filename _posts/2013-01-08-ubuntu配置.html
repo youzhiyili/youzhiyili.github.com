@@ -7,7 +7,7 @@ locate autostart
 
 <hr><h3 style="color:SteelBlue">禁止以下程序自启动</h3>
 蓝牙、备份、微博、网络管理、虚拟键盘、屏幕阅读、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志
-<textarea cols="40" rows="10">
+<textarea cols="50" rows="10">
 sudo chmod -r /etc/xdg/autostart/{\
 bluetooth-applet.desktop,\
 bluetooth-applet-unity.desktop,\
@@ -27,7 +27,7 @@ zeitgeist-datahub.desktop}
 
 <hr><h3 style="color:SteelBlue">禁止显示历史记录</h3>
 下载记录、文件使用记录、音乐播放记录，会写进这个文件
-<textarea cols="40" rows="3">
+<textarea cols="50" rows="3">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal
 chmod 000 ~/.local/share/zeitgeist/fts.index/*
 </textarea>
