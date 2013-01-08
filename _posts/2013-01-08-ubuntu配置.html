@@ -27,11 +27,13 @@ zeitgeist-datahub.desktop}
 
 禁止：下载记录、文件使用记录、音乐播放记录写入activity.sqlite-wal
 fts.index/*  权限设置后仍然有部分文件权限会被自动更改
-<textarea cols="60" rows="3">
+<textarea cols="60" rows="2">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal
 chmod 000 ~/.local/share/zeitgeist/fts.index/*
 </textarea>
 
 
 <hr><h3 style="color:SteelBlue">禁用蓝牙、网络管理</h3>
+<textarea cols="60" rows="1">
 sudo chmod -x /usr/sbin/{bluetoothd,NetworkManager}
+</textarea>
