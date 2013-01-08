@@ -2,9 +2,6 @@
 layout: post
 title: Ubuntu 12.04配置
 ---
-查看自启动程序
-locate autostart
-
 <hr><h3 style="color:SteelBlue">禁止以下程序自启动</h3>
 蓝牙、备份、微博、网络管理、虚拟键盘、屏幕阅读、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志
 <textarea cols="60" rows="10">
@@ -28,7 +25,7 @@ zeitgeist-datahub.desktop}
 <hr><h3 style="color:SteelBlue">禁止显示历史记录</h3>
 不是删除，删了会自动重建
 
-禁止：下载记录、文件使用记录、音乐播放记录，activity.sqlite-wal
+禁止：下载记录、文件使用记录、音乐播放记录写入activity.sqlite-wal
 fts.index/*  权限设置后仍然有部分文件权限会被自动更改
 <textarea cols="60" rows="3">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal
