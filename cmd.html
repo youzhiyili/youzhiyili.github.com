@@ -66,6 +66,16 @@ dd if=/backup/mbr.img of=/dev/sda bs=446 count=1
 dd if=/backup/mbr.img of=/dev/sda bs=1 count=64 skip=446 seek=446
 </textarea>
 
+<b>查看分区1</b>
+<textarea cols="50" rows="2">
+sudo fdisk -l
+</textarea>
+
+<b>查看分区2</b>
+<textarea cols="50" rows="2">
+sudo parted /dev/sda print
+</textarea>
+
 </center>
 </td>
 <!-- ------------------------------结束------第二列 -->
