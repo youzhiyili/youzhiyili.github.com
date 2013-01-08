@@ -1,0 +1,33 @@
+---
+layout: post
+title: Ubuntu 12.04配置
+---
+查看自启动程序
+locate autostart
+禁止以下程序自启动
+<textarea cols="40" rows="10">
+sudo chmod -r /etc/xdg/autostart/{\
+bluetooth-applet.desktop,\
+bluetooth-applet-unity.desktop,\
+deja-dup-monitor.desktop,\
+gwibber.desktop,\
+nm-applet.desktop,\
+onboard-autostart.desktop,\
+orca-autostart.desktop,\
+print-applet.desktop,\
+telepathy-indicator.desktop,\
+ubuntuone-launch.desktop,\
+update-notifier.desktop,\
+user-dirs-update-gtk.desktop,\
+vino-server.desktop,\
+zeitgeist-datahub.desktop}
+</textarea>
+最近使用的程序、已安装的程序、推荐安装的程序、推荐youtube视频、御用目录
+chmod 600 ~/.local/share/zeitgeist/activity.sqlite-shm
+
+下载记录、文件使用记录、音乐播放记录，会写进这个文件
+chmod 400 -w ~/.local/share/zeitgeist/activity.sqlite-wal
+
+bluetoothd
+配置文件/etc/bluetooth/main.conf 
+sudo chmod -x /usr/sbin/{bluetoothd,NetworkManager}
