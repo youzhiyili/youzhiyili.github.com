@@ -22,6 +22,12 @@ title:  Ubuntu常用命令
 sudo apt-get install imagemagick
 for i in *.jpg; do convert -scale 300x200 $i $i; done
 </textarea>
+
+<b>查看网卡地址、速度</b>
+<textarea cols="50" rows="2">
+cat /sys/class/net/eth0/{address,speed}
+</textarea>
+
 </center>
 </td>
 <!-- ------------------------------结束------第一列 -->
@@ -74,11 +80,6 @@ sudo fdisk -l
 <b>查看分区2</b>
 <textarea cols="50" rows="2">
 sudo parted /dev/sda print
-</textarea>
-
-<b>查看网卡地址、速度</b>
-<textarea cols="50" rows="2">
-cat /sys/class/net/eth0/{address,speed}
 </textarea>
 
 </center>
