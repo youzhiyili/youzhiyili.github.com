@@ -76,6 +76,11 @@ sudo fdisk -l
 sudo parted /dev/sda print
 </textarea>
 
+<b>查看网卡地址、速度</b>
+<textarea cols="50" rows="2">
+cat /sys/class/net/eth0/{address,speed}
+</textarea>
+
 </center>
 </td>
 <!-- ------------------------------结束------第二列 -->
