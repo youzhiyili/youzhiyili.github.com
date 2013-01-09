@@ -28,6 +28,11 @@ for i in *.jpg; do convert -scale 300x200 $i $i; done
 cat /sys/class/net/eth0/{address,speed}
 </textarea>
 
+<b>查看显卡</b>
+<textarea cols="50" rows="2">
+lspci |grep -i 'VGA'
+</textarea>
+
 </center>
 </td>
 <!-- ------------------------------结束------第一列 -->
