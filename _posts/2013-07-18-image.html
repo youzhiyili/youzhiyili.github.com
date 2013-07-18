@@ -1,113 +1,27 @@
 ﻿
-<html lang=en-x-mtfrom-zh><head><script>(function(){(function(){function d(a){this.t={};this.tick=function(a,c,b){b=void 0!=b?b:(new Date).getTime();this.t[a]=[b,c]};this.tick("start",null,a)}var a=new d;window.jstiming={Timer:d,load:a};if(window.performance&&window.performance.timing){var a=window.performance.timing,c=window.jstiming.load,b=a.navigationStart,a=a.responseStart;0<b&&a>=b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",a),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=http://www.w3.org/1999/xhtml lang=en-x-mtfrom-zh><head><script>(function(){(function(){function d(a){this.t={};this.tick=function(a,c,b){b=void 0!=b?b:(new Date).getTime();this.t[a]=[b,c]};this.tick("start",null,a)}var a=new d;window.jstiming={Timer:d,load:a};if(window.performance&&window.performance.timing){var a=window.performance.timing,c=window.jstiming.load,b=a.navigationStart,a=a.responseStart;0<b&&a>=b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",a),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),
 c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(e){}})();})()
-</script><script src="http://translate.googleusercontent.com/translate/releases/twsfe_w_20130715_RC00/r/js/translate_c.js"></script><script>_intlStrings._originalText = "Original Chinese text:";_intlStrings._interfaceDirection="ltr";_intlStrings._interfaceAlign="left";_intlStrings._langpair="zh-CN|en";_intlStrings._feedbackUrl="http://translate.google.com/translate_suggestion";_intlStrings._currentBy="Current translation on %1$s by %2$s";_intlStrings._unknown="unknown";_intlStrings._suggestTranslation="Contribute a better translation"  ;_intlStrings._submit="Contribute";_intlStrings._suggestThanks="Thank you for contributing your translation suggestion to Google Translate.";_intlStrings._reverse=false;</script><style type="text/css">.google-src-text {display: none !important} .google-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.google-src-active-text a {font-size:12px!important}.google-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.google-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.google-src-active-text a:active {color:red!important;text-decoration:underline!important}</style><meta http-equiv="X-Translated-By" content="Google"><link href=http://www.aspxcs.net/demo/d20111018/ hreflang=zh-CN rel="alternate machine-translated-from"><base href=http://www.aspxcs.net/demo/d20111018/ /><meta http-equiv=Content-type content="text/html; charset=UTF-8;charset=utf-8"><title> canvas </title><!--[if IE]><script type="text/javascript" src="canvas_files/excanvas.js"></script><![endif]--><style type=text/css media=screen>
-		body 	{ font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; }
-		canvas 	{ background-color: transparent; border: 1px solid gray; top: 0; left: 0; position: absolute;}
-		canvas.resize-ne { cursor: ne-resize; }
-		canvas.resize-se { cursor: se-resize; }
-		canvas.resize-sw { cursor: sw-resize; }
-		canvas.resize-nw { cursor: nw-resize; }
-		canvas.move { cursor: move; }
-		canvas.default { cursor: default; }
-		img 	{ display: block; visibility: hidden; position: absolute; top: -1000; left: -1000; }
-		input 	{ margin-left: 20px; }
-		fieldset { width: 280px; float: left; }
-		.fieldset { width: 200px; float: left; }
-		#ft 	{ background-color: #eee; height: 70px; width: 99%; border-top: 1px solid #ccc; padding: 5px; position: absolute; top: 0; left: 0; }
-		#ft span { width: 100%; }
-	</style><script src=canvas_files/utilitie.js type=text/javascript charset=utf-8></script><script src=canvas_files/canvasEl.js type=text/javascript charset=utf-8></script><script src=canvas_files/canvasIm.js type=text/javascript charset=utf-8></script><script type=text/javascript charset=utf-8>
-		var CanvasDemo = function() {
-			var YD = YAHOO.util.Dom;
-			var YE = YAHOO.util.Event;
-			var canvas1;
-			var img = [];
-			return {
-				init: function() {
-					canvas1 = new Canvas.Element();
-					canvas1.init('canvid1',  { width: YD.getViewportWidth() - 5, height: YD.getViewportHeight() - 5 });			
-					img[img.length] = new Canvas.Img('img1', {});
-					img[img.length] = new Canvas.Img('img2', {});
-					img[img.length] = new Canvas.Img('img3', {});
-					img[img.length] = new Canvas.Img('bg', {});
-					img[img.length] = new Canvas.Img('img4', {});
-					img[img.length] = new Canvas.Img('img4', {});
-				
-					
-					
-					
-					
-					
-					// @param array of images ToDo: individual images
-					
-					canvas1.addImage(img[0]);
-					canvas1.addImage(img[1]);
-					canvas1.addImage(img[2]);
-					canvas1.setCanvasBackground(img[3]);
-					canvas1.addImage(img[4]);
-					
-				
-					
-					
-					
-					
-					this.initEvents();
-				},
-				initEvents: function() {
-					YE.on('togglebg','click', this.toggleBg, this, true);
-					YE.on('showcorners','click', this.showCorners, this, true);
-					YE.on('togglenone','click', this.toggleNone, this, true);
-					YE.on('toggleborders','click', this.toggleBorders, this, true);
-					YE.on('togglepolaroid','click', this.togglePolaroid, this, true);
-					YE.on('pngbutton','click', function() { this.convertTo('png') }, this, true);
-					YE.on('jpegbutton','click', function() { this.convertTo('jpeg') }, this, true);
-				},
-				switchBg: function() {
-					canvas1.fillBackground = (canvas1.fillBackground) ? false : true;							
-					canvas1.renderAll();
-				},
-				
-				//! insert these functions to the library. No access to _aImages should be done from here
-				showCorners: function() {
-					this.cornersvisible = (this.cornersvisible) ? false : true;
-					for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-						canvas1._aImages[i].setCornersVisibility(this.cornersvisible);
-					}
-					canvas1.renderAll();
-				},
-				toggleNone: function() {
-					for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-						canvas1._aImages[i].setBorderVisibility(false);
-					}
-					canvas1.renderAll();
-				},
-				toggleBorders: function() {
-					for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-						canvas1._aImages[i].setBorderVisibility(true);
-					}
-					canvas1.renderAll();
-				},
-				togglePolaroid: function() {
-					for (var i = 0, l = canvas1._aImages.length; i < l; i += 1) {
-						canvas1._aImages[i].setPolaroidVisibility(true);
-					}
-					canvas1.renderAll();
-				},
-				convertTo: function(format) {
-					var imgData = canvas1.canvasTo(format);
-					window.open(imgData, "_blank");
-				},
-				whatever: function(e, o) {
-					// console.log(e);
-					// console.log(o);
-				}
-			}
-		}();
-		
-		
-		
-		
-		YAHOO.util.Event.on(window, 'load', CanvasDemo.init, CanvasDemo, true);
-	</script></head><body id=canvasdemo onLoad=""><iframe src="http://translate.google.com/translate_un?depth=1&hl=en&prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&rurl=translate.google.com&sl=zh-CN&u=http://www.aspxcs.net/demo/d20111018/&lang=zh-CN&usg=ALkJrhi9xAg2mvCTUeAUTcA5oAnqHT3Zfw" width=0 height=0 frameborder=0 style="width:0px;height:0px;border:0px;display:none;"></iframe><canvas id=canvid1></canvas><img id=img4 src=canvas_files/4.jpg /><img id=img1 src=canvas_files/7.jpg /><img id=img2 src=canvas_files/8.jpg /><img id=img3 src=canvas_files/9.jpg /><img id=img4 src=canvas_files/5.jpg /><img id=bg src=canvas_files/bg.jpg /><div id=ft> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left">More script and css style : <a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/&amp;usg=ALkJrhjBOc82dPU5K6EgTuWIfHhqKZVjyg title="HTML DRIVE - Free DHMTL Scripts, Jquery plugins, Javascript, CSS, CSS3, Html5 Library">www.aspxcs.net</a></span> More script and CSS Style: <a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/&amp;usg=ALkJrhjBOc82dPU5K6EgTuWIfHhqKZVjyg title="HTML DRIVE - Free DHMTL Scripts, Jquery plugins, Javascript, CSS, CSS3, Html5 Library">www.aspxcs.net</a></span> <br><div class=fieldset><input type=button id=jpegbutton value="Export to JPEG" /><input type=button id=pngbutton value="Export to PNG (heavy)" /></div><fieldset><legend> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left">Photo</span> Photo</span> </legend> <span><input type=radio name=some_name value="" id=togglenone /></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><span>None</span></span> <span>None</span></span> <span><input type=radio name=some_name value="" id=toggleborders /></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><span>Border</span></span> <span>Border</span></span> <span><input type=radio name=some_name value="" id=togglepolaroid /></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><span>Polaroid</span></span> <span>Polaroid</span></span> </fieldset> <span><input type=checkbox name=some_name value="" id=showcorners /></span> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><span>Show corners</span></span> <span>Show corners</span></span> </div><br></body>
-
-<script>_addload(function(){_setupIW();_csi('zh-CN','en','http://www.aspxcs.net/demo/d20111018/');});</script></html>
+</script><script src="http://translate.googleusercontent.com/translate/releases/twsfe_w_20130715_RC00/r/js/translate_c.js"></script><script>_intlStrings._originalText = "Original Chinese text:";_intlStrings._interfaceDirection="ltr";_intlStrings._interfaceAlign="left";_intlStrings._langpair="zh-CN|en";_intlStrings._feedbackUrl="http://translate.google.com/translate_suggestion";_intlStrings._currentBy="Current translation on %1$s by %2$s";_intlStrings._unknown="unknown";_intlStrings._suggestTranslation="Contribute a better translation"  ;_intlStrings._submit="Contribute";_intlStrings._suggestThanks="Thank you for contributing your translation suggestion to Google Translate.";_intlStrings._reverse=false;</script><style type="text/css">.google-src-text {display: none !important} .google-src-active-text {display: block!important;color:black!important; font-size:12px!important;font-family:arial,sans-serif!important}.google-src-active-text a {font-size:12px!important}.google-src-active-text a:link {color:#00c!important;text-decoration:underline!important}.google-src-active-text a:visited {color:purple!important;text-decoration:underline!important}.google-src-active-text a:active {color:red!important;text-decoration:underline!important}</style><meta http-equiv="X-Translated-By" content="Google"><link href=http://www.aspxcs.net/index.php?m=content&c=index&a=down_file&id=328 hreflang=zh-CN rel="alternate machine-translated-from"><base href=http://www.aspxcs.net/index.php?m=content&amp;c=index&amp;a=down_file&amp;id=328 /><meta http-equiv=Content-Type content="text/html; charset=UTF-8" /><title> Demo for Animated Bubble Buttons CSS3 </title><link rel="shortcut icon" type=image/x-icon href=/images/favicon.ico /><link href=http://www.aspxcs.net/statics/css/web/demo.css rel=stylesheet type=text/css /><script type=text/javascript src=http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js></script><script type=text/javascript>
+            $(function(){
+                var body_height = $(document).height();
+                var topbar_height = $("#demo_topbar").outerHeight();
+                $("#demo_iframe").attr("height",(body_height-topbar_height)+"px");
+            });
+        </script></head><body><iframe src="http://translate.google.com/translate_un?depth=1&hl=en&prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&rurl=translate.google.com&sl=zh-CN&u=http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Ddown_file%26id%3D328&lang=zh-CN&usg=ALkJrhjj9j_Afu85WFs2iP3skKYFWC0MjA" width=0 height=0 frameborder=0 style="width:0px;height:0px;border:0px;display:none;"></iframe><div id=demo_topbar><div id=demo_gohome> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Dshow%26catid%3D11%26id%3D328&amp;usg=ALkJrhhrfEzJzZIsX1YKuyK2ncqs-RElEA>返回</a></span> <a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Dshow%26catid%3D11%26id%3D328&amp;usg=ALkJrhhrfEzJzZIsX1YKuyK2ncqs-RElEA>Return</a></span> </div><div id=title_bar> <span class="notranslate" onmouseover="_tipon(this)" onmouseout="_tipoff()"><span class="google-src-text" style="direction: ltr; text-align: left"><a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Dshow%26catid%3D11%26id%3D328&amp;usg=ALkJrhhrfEzJzZIsX1YKuyK2ncqs-RElEA>酷酷的HTML5相册效果</a></span> <a href=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Dshow%26catid%3D11%26id%3D328&amp;usg=ALkJrhhrfEzJzZIsX1YKuyK2ncqs-RElEA>Cool effect HTML5 albums</a></span> </div><div style=""><script type=text/javascript><!--
+google_ad_client = "ca-pub-7563510220087670";
+/* 演示状况 */
+google_ad_slot = "8138197372";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script><script type=text/javascript src=http://pagead2.googlesyndication.com/pagead/show_ads.js>
+</script></div></div><iframe id=demo_iframe frameborder=0 onload="" scrolling=auto name="" class="" src=http://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;prev=/search%3Fq%3DHTML5%25E7%259B%25B8%25E5%2586%258C%26newwindow%3D1%26biw%3D1152%26bih%3D619&amp;rurl=translate.google.com&amp;sl=zh-CN&amp;u=http://www.aspxcs.net/demo/d20111018/&amp;usg=ALkJrhir8a-sVCJMRgzVxYXhLnip5iX-yQ width=100%></iframe><div style="width:728px; heigth:90px; margin-left: auto; margin-right: auto; text-align: center;"><script type=text/javascript><!--
+google_ad_client = "ca-pub-7563510220087670";
+/* 演示底部 */
+google_ad_slot = "4002856238";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script><script type=text/javascript src=http://pagead2.googlesyndication.com/pagead/show_ads.js>
+</script></div><script src=http://s13.cnzz.com/stat.php?id=1140967&web_id=1140967&show=pic language=JavaScript></script></body>
+<script>_addload(function(){_setupIW();_csi('zh-CN','en','http://www.aspxcs.net/index.php%3Fm%3Dcontent%26c%3Dindex%26a%3Ddown_file%26id%3D328');});</script></html>
