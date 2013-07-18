@@ -1,4 +1,4 @@
-youzhiyili.github.com
+﻿youzhiyili.github.com
 		│
             	├─  _config.yml 配置───>baseurl:	 /
                 │
@@ -230,7 +230,14 @@ bin
     url = git@gitcafe.com:dragon/test.git
 这样，使用git push all即可一键Push到多个远程仓库中。
 
-
+=========================================================
+windows 用法：
+1 下载Git.exe http://git-scm.com/download
+2 运行Git Bash
+3 初始化 git init
+4 克隆 git clone https://github.com/youzhiyili/youzhiyili.github.com.git
+ssh-keygen -C 'email' -t rsa
+ssh -T git@github.com
 
 
 
