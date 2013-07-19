@@ -232,16 +232,19 @@ bin
 
 =========================================================
 windows 用法：
-1 下载Git.exe http://git-scm.com/download
-2 运行Git Bash
-3 初始化 git init
-4 克隆 git clone https://github.com/youzhiyili/youzhiyili.github.com.git
-ssh-keygen -C youzhiyili@gmail.com -t rsa
-ssh -T git@github.com
-git config --global user.email youzhiyili@gmail.com
-git config --global user.name youzhiyili
 
-上传(./push.sh)
-git add . && git commit -m "first post" && git push origin master
+1 下载		Git.exe http://git-scm.com/download
+
+2 运行		Git Bash
+
+3 初始化	git init
+
+4 克隆		git clone https://github.com/youzhiyili/youzhiyili.github.com.git
+
+5 SSH		ssh-keygen -C youzhiyili@gmail.com -t rsa && ssh -T git@github.com
+
+6 配置		git config --global user.email youzhiyili@gmail.com && git config --global user.name youzhiyili
+
+7 上传		git add . && git commit -m "first post" && git push origin master
 
 
