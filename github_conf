@@ -236,8 +236,12 @@ windows 用法：
 2 运行Git Bash
 3 初始化 git init
 4 克隆 git clone https://github.com/youzhiyili/youzhiyili.github.com.git
-ssh-keygen -C 'email' -t rsa
+ssh-keygen -C youzhiyili@gmail.com -t rsa
 ssh -T git@github.com
+git config --global user.email youzhiyili@gmail.com
+git config --global user.name youzhiyili
 
+上传(./push.sh)
+git add . && git commit -m "first post" && git push origin master
 
 
