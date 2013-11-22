@@ -2,7 +2,15 @@
 layout: post
 title: 配置Git
 ---
-<hr><h3>SSH密钥</h3>
+<hr><h3>安装Git</h3>
+<textarea cols="80" rows="1">sudo apt-get install git</textarea>
+
+<hr><h3>设置Git</h3>
+<textarea cols="80" rows="1">git config --global user.name youzhiyili && git config --global user.email youzhiyili@gmail.com</textarea>
+
+<hr><h3>设置密码缓存为1小时</h3>
+<textarea cols="80" rows="1">git config --global credential.helper cache && git config --global credential.helper 'cache --timeout=3600'</textarea>
+
 <hr><h3>SSH密钥</h3>
 <a href="https://help.github.com/articles/generating-ssh-keys">帮助文档</a>
 
@@ -20,6 +28,16 @@ Account Settings-->SSH Keys-->Add SSH key-->"Ctrl+V"粘贴密钥到Key-->Add key
 
 测试密钥
 <textarea cols="80" rows="1">ssh -T git@github.com</textarea>
+
+<hr><h3>克隆</h3>
+<textarea cols="80" rows="1">git clone git@github.com:youzhiyili/youzhiyili.github.com && cd youzhiyili.github.com</textarea>
+
+<hr><h3>上传</h3>
+<textarea cols="80" rows="4">git add .
+git commit -m "first post"
+git push origin master
+Username for 'https://github.com':
+Password for 'https://youzhiyili@github.com':</textarea>
 
 
 
