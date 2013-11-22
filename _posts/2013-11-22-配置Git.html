@@ -6,19 +6,19 @@ title: 配置Git
 <a href="https://help.github.com/articles/generating-ssh-keys">帮助文档</a>
 
 检查SSH密钥
-<textarea cols="80" rows="3">cd ~/.ssh && ls</textarea>
+<textarea cols="80" rows="1">cd ~/.ssh && ls</textarea>
 
 生成新的SSH密钥
-<textarea cols="60" rows="6">ssh-keygen -t rsa -C youzhiyili@gmail.com && ssh-add id_rsa</textarea>
+<textarea cols="80" rows="1">ssh-keygen -t rsa -C youzhiyili@gmail.com && ssh-add id_rsa</textarea>
 
 复制密钥到剪切板
-<textarea cols="60" rows="6">sudo apt-get install xclip && xclip -sel clip < ~/.ssh/id_rsa.pub</textarea>
+<textarea cols="80" rows="1">sudo apt-get install xclip && xclip -sel clip < ~/.ssh/id_rsa.pub</textarea>
 
 登录Github网页，添加密钥
 Account Settings-->SSH Keys-->Add SSH key-->"Ctrl+V"粘贴密钥到Key-->Add key-->确认，输入Github密码
 
 测试密钥
-<textarea cols="60" rows="6">ssh -T git@github.com</textarea>
+<textarea cols="80" rows="1">ssh -T git@github.com</textarea>
 
 
 
