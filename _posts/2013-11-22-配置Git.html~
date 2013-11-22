@@ -1,0 +1,11 @@
+---
+layout: post
+title: 制作HTML5相册
+---
+<hr><h3>SSH密钥</h3>
+<a href="https://help.github.com/articles/generating-ssh-keys">https://help.github.com/articles/generating-ssh-keys</a>
+<textarea cols="60" rows="6">cd ~/.ssh && ls</textarea>
+<textarea cols="60" rows="6">ssh-keygen -t rsa -C youzhiyili@gmail.com && ssh-add id_rsa</textarea>
+讲密钥复制到剪切板
+<textarea cols="60" rows="6">sudo apt-get install xclip && xclip -sel clip < ~/.ssh/id_rsa.pub</textarea>
+
