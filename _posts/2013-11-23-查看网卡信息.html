@@ -9,7 +9,8 @@ title: Ubuntu查看网卡信息
 <textarea cols="40" rows="1">iwconfig</textarea>
 
 <hr><h3>查看网卡型号</h3>
-<textarea cols="40" rows="1">lspci | grep -i net</textarea>
+<textarea cols="40" rows="2">lspci | grep -i net
+lspci -nn | grep 0280</textarea>
 
 <hr><h3>查看USB网卡型号</h3>
 <textarea cols="40" rows="1">lsusb</textarea>
