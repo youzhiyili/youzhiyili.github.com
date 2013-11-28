@@ -1,0 +1,41 @@
+---
+layout: post
+title: ubuntu_goagent
+---
+ubuntu上传appid
+
+下载Google App Engine SDK for Python
+https://developers.google.com/appengine/downloads?hl=zh-CN&csw=1
+解压重命名为goa
+
+下载goagent
+https://code.google.com/p/goagent/
+解压重命名为goagent
+
+填入appid
+cd到goa
+gedit goagent/local/proxy.ini
+appid = appid_1|appid_2|appid_3|......|appid_10
+
+
+上传到服务端
+cd到goa
+上传appid_1
+gedit goagent/server/python/app.yaml
+application: appid_1
+python appcfg.py update goagent/server/python/
+
+上传appid_2
+gedit goagent/server/python/app.yaml
+application: appid_2
+python appcfg.py update goagent/server/python/
+
+上传appid_N
+gedit goagent/server/python/app.yaml
+application: appid_N
+python appcfg.py update goagent/server/python/
+
+运行客户端
+python local/proxy.py
+
+
