@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu安装Chrome
 ---
-<hr><h3 style="color:SteelBlue">一、设置全局代理</h3>
+<hr><h3 style="color:SteelBlue">一、全局代理翻墙</h3>
 运行Goagent
 系统 > 网络 > 代理 > 手动 > 127.0.0.1 8087 > 应用到整个系统
 <hr><h3 style="color:SteelBlue">二、添加PPA</h3>
