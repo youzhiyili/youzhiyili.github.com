@@ -1,0 +1,33 @@
+---
+layout: post
+title: Ubuntu安装Chrome
+---
+<hr><h3 style="color:SteelBlue">设置全局代理</h3>
+<hr><h3 style="color:SteelBlue">一、添加PPA</h3>
+
+从Google Linux Repository（http://www.google.com/linuxrepositories/）下载安装Key，或把下面的代码复制进终端，回车，需要管理员密码
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+Key安装好后，在终端输入：
+
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+<hr><h3 style="color:SteelBlue">二、更新</h3>
+
+在终端输入：
+sudo apt-get update
+
+<hr><h3 style="color:SteelBlue">三、安装</h3>
+
+安装稳定版Chrome，在终端输入：sudo apt-get install google-chrome-stable
+安装Beta版Chrome，在终端输入：sudo apt-get install google-chrome-beta
+安装不稳定版Chrome，在终端输入：sudo apt-get install google-chrome-unstable
+
+<hr><h3 style="color:SteelBlue">四、证书</h3>
+设置 > 高级选项 > 管理证书
+在 授权中心 导入 GoAgent/local 目录下的 CA.crt 证书
+（注意不要导入到 服务器 ，否则不起作用）
+在 授权中心 找到 GoAgent CA 并点击 修改…
+修改信任设置为全部选中
+重启浏览器
