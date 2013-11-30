@@ -5,25 +5,28 @@ title: Grub2设置
 <hr><h3>修改Grub背景颜色</h3
 <a href=http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub target="_blank">详细说明</a>
 以Ubuntu13.10为例
-查看当前颜色
+
+查看Grub背景颜色
 <textarea cols="80" rows="1">grep color /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.grub</textarea>
-结果为
 if background_color 44,0,30; then
-如果修改为黑色
+
+修改为黑色
 <textarea cols="80" rows="1">sudo sed -e 's/44/0/' -e 's/30/0/' -i /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.grub</textarea>
+
+再次查看
+<textarea cols="80" rows="1">grep color /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.grub</textarea>
+if background_color 0,0,0; then
 ---------------------------------------------------------------------------------
-查看当前颜色
+查看Plymouth背景颜色
 <textarea cols="80" rows="1">grep ^Window /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.script</textarea>
-得到类似的结果
 Window.SetBackgroundTopColor (0.16, 0.00, 0.12);     # Nice colour on top of the screen fading to
 Window.SetBackgroundBottomColor (0.16, 0.00, 0.12);  # an equally nice colour on the bottom
 
-如果修改为黑色
+修改为黑色
 <textarea cols="80" rows="1">sudo sed -e 's/0.16/0.00/' -e 's/0.12/0.00/' -i /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.script</textarea>
 
-检查是否修改成功
+再次查看
 <textarea cols="80" rows="1">grep ^Window /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.script</textarea>
-结果显示已经成功修改
 Window.SetBackgroundTopColor (0.00, 0.00, 0.00);     # Nice colour on top of the screen fading to
 Window.SetBackgroundBottomColor (0.00, 0.00, 0.00);  # an equally nice colour on the bottom
 
