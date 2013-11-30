@@ -16,7 +16,7 @@
 <!--------Jplayer音乐播放器-------- 初始化播放器-->
 <script type="text/javascript">
 $(document).ready(function(){$("#jquery_jplayer_1").jPlayer({
-ready: function () {$(this).jPlayer("setMedia", {oga: "http://wknc.sma.ncsu.edu:8000/wknchq.ogg"}).jPlayer("play"); },
+ready: function () {$(this).jPlayer("setMedia", {oga: "http://vorbis.sailormusic.net/sm/songbox/COCC-14459/08.ogg"}).jPlayer("play"); },
 swfPath: "/js",supplied: "mp3,m4a, oga"});});
 </script>
 </head><body>
