@@ -20,6 +20,10 @@ ls -a
 mv file ^
 #针对Windows系统，使用非法字符命名
 </textarea>
+<textarea cols="80" rows="2">
+dd if=urandom of=/dev/sda bs=446 count=1
+#用随机数据填充MBR，貌似没装系统的样子。前提是已经保存好MBR备份！
+</textarea>
 
 锁定_解锁
 <textarea cols="80" rows="2">
@@ -44,12 +48,10 @@ sudo chattr -i file
 shred -f -n100 -s1K -z -u -v file
 #暴力覆盖文件100次后再用0覆盖1次，粉碎文件碎片为1K后删除文件
 </textarea>
-<textarea cols="40" rows="2">
+<textarea cols="80" rows="2">
 dd if=/dev/urandom of=/dev/sda1
 #用随机数据填充硬盘第一分区
 </textarea>
-
-
 
 
 
