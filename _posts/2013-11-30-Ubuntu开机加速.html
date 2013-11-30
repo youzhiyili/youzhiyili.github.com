@@ -67,4 +67,12 @@ chmod 000 ~/.local/share/zeitgeist/fts.index/*
 sudo chmod -x /etc/cron.weekly/apt-xapian-index
 </textarea>
 
- 
+<p style="font-weight:bold;">把/tmp挂载到内存<p>
+<textarea cols="80" rows="1">
+sudo sed '$a\none  /tmp  tmpfs  size=512M  0 0' -i /etc/fstab
+</textarea>
+
+<p style="font-weight:bold;">把/var/log挂载到内存<p>
+<textarea cols="80" rows="1">
+sudo sed '$a\none  /var/log  tmpfs  size=256M  0 0' -i /etc/fstab
+</textarea>
