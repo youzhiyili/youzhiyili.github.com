@@ -6,31 +6,31 @@ title: 数据管理
 
 <hr><h3>文件</h3>
 备份_还原
-<textarea cols="40" rows="1">
+<textarea cols="40" rows="2">
 cp file file~
 mv file~ file
 </textarea>
 
 隐藏_显示
-<textarea cols="40" rows="1">
+<textarea cols="40" rows="2">
 mv file .file
 ls -a
 </textarea>
 
 锁定_解锁
-<textarea cols="40" rows="1">
+<textarea cols="40" rows="2">
 chmod 000 file
 chmod 777 file
 </textarea>
 
 加密_解密
-<textarea cols="40" rows="1">
+<textarea cols="40" rows="2">
 gpg -c file
 gpg file.gpg
 </textarea>
 
-禁止_解禁
-<textarea cols="40" rows="1">
+禁删_解禁
+<textarea cols="40" rows="2">
 sudo chattr +i file
 sudo chattr -i file
 
