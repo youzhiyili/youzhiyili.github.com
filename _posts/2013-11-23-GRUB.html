@@ -5,3 +5,6 @@ title: 修改Grub背景
 <h3 style="color:SteelBlue"><a href=http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub target="_blank">修改Grub背景颜色</a></h3>
 <hr><h3 style="color:SteelBlue">修改Grub背景图片</h3>
 把图片扔到/boot/grub/,然后更新GRUB： <textarea cols="20" rows="1">sudo updade-grub</textarea>
+<hr><h3 style="color:SteelBlue">修改Grub等待时间</h3>
+<textarea cols="20" rows="1">sudo gedit /boot/grub/grub.cfg</textarea>
+找到set timeout=10，默认为10秒，如果想修改为3秒 set timeout=3
