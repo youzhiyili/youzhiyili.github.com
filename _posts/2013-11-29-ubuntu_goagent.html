@@ -2,40 +2,34 @@
 layout: post
 title: ubuntu_goagent
 ---
-ubuntu上传appid
+<hr><h3>准备工具</h3>
+<a href="https://developers.google.com/appengine/downloads?hl=zh-CN&csw=1" target="_blank">下载Google App Engine SDK for Python</a>,解压重命名为goa
+<a href="https://code.google.com/p/goagent/" target="_blank">下载goagent</a>,解压到goa重命名为goagent
 
-下载Google App Engine SDK for Python
-https://developers.google.com/appengine/downloads?hl=zh-CN&csw=1
-解压重命名为goa
-
-下载goagent
-https://code.google.com/p/goagent/
-解压重命名为goagent
-
-填入appid
+<hr><h3>配置本地</h3>
 cd到goa
-gedit goagent/local/proxy.ini
+<textarea cols="40" rows="1">gedit goagent/local/proxy.ini</textarea>
 appid = appid_1|appid_2|appid_3|......|appid_10
 
 
-上传到服务端
+<hr><h3>上传服务器</h3>
 cd到goa
 上传appid_1
-gedit goagent/server/python/app.yaml
+<textarea cols="40" rows="1">gedit goagent/server/python/app.yaml</textarea>
 application: appid_1
 python appcfg.py update goagent/server/python/
 
 上传appid_2
-gedit goagent/server/python/app.yaml
+<textarea cols="40" rows="1">gedit goagent/server/python/app.yaml</textarea>
 application: appid_2
 python appcfg.py update goagent/server/python/
 
 上传appid_N
-gedit goagent/server/python/app.yaml
+<textarea cols="40" rows="1">gedit goagent/server/python/app.yaml</textarea>
 application: appid_N
 python appcfg.py update goagent/server/python/
 
-运行客户端
-sudo python local/proxy.py
+<hr><h3>运行Goagent</h3>
+<textarea cols="40" rows="1">sudo python local/proxy.py</textarea>
 
 
