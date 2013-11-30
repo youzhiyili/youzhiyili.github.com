@@ -14,7 +14,7 @@ p{padding:0px; margin:0px;display: inline;}
 if background_color <p style="color:red">44,0,30</p>; then
 
 修改为黑色
-<textarea cols="80" rows="1">sudo sed -e 's/44/0/' -e 's/30/0/' -i /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.grub</textarea>
+<textarea cols="80" rows="1">sudo sed -e 's/44/0/' -e 's/30/0/' -i /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.grub && sudo update-grub</textarea>
 
 ---------------------------------------------------------------------------------
 <p style="font-weight:bold;">查看Plymouth背景颜色</p>
