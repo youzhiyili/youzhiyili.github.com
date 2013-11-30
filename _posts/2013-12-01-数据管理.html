@@ -33,5 +33,11 @@ gpg file.gpg
 <textarea cols="40" rows="2">
 sudo chattr +i file
 sudo chattr -i file
+</textarea>
 
+销毁文件
+<textarea cols="40" rows="2">
+shred -f -n100 -s1K -z -u -v file
+#暴力覆盖文件100次后再用0覆盖1次，粉碎文件碎片为1K后删除文件
+</textarea>
 
