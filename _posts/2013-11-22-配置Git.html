@@ -3,44 +3,44 @@ layout: post
 title: 配置Git
 ---
 <hr><h3>安装Git</h3>
-<textarea cols="120" rows="1">sudo apt-get install git</textarea>
+<textarea cols="110" rows="1">sudo apt-get install git</textarea>
 
 <hr><h3>设置Git</h3>
-<textarea cols="120" rows="1">git config --global user.name youzhiyili && git config --global user.email youzhiyili@gmail.com</textarea>
+<textarea cols="110" rows="1">git config --global user.name youzhiyili && git config --global user.email youzhiyili@gmail.com</textarea>
 
 <hr><h3>设置密码缓存为1小时</h3>
-<textarea cols="120" rows="1">git config --global credential.helper cache && git config --global credential.helper 'cache --timeout=3600'</textarea>
+<textarea cols="110" rows="1">git config --global credential.helper cache && git config --global credential.helper 'cache --timeout=3600'</textarea>
 
 <hr><h3>SSH密钥</h3>
 <a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">帮助文档</a>
 
 检查SSH密钥
-<textarea cols="120" rows="1">cd ~/.ssh && ls</textarea>
+<textarea cols="110" rows="1">cd ~/.ssh && ls</textarea>
 
 生成新的SSH密钥
-<textarea cols="120" rows="1">ssh-keygen -t rsa -C youzhiyili@gmail.com && ssh-add id_rsa</textarea>
+<textarea cols="110" rows="1">ssh-keygen -t rsa -C youzhiyili@gmail.com && ssh-add id_rsa</textarea>
 
 复制密钥到剪切板
-<textarea cols="120" rows="1">sudo apt-get install xclip && xclip -sel clip < ~/.ssh/id_rsa.pub</textarea>
+<textarea cols="110" rows="1">sudo apt-get install xclip && xclip -sel clip < ~/.ssh/id_rsa.pub</textarea>
 
 <a href="https://github.com/settings/profile" target="_blank">登录Github网页，添加密钥</a>	
 <p style="font-weight:bold;">Account Settings-->SSH Keys-->Add SSH key-->"Ctrl+V"粘贴密钥到Key-->Add key-->确认，输入Github密码<p style="font-weight:bold;">
 
 测试密钥
-<textarea cols="120" rows="1">ssh -T git@github.com</textarea>
+<textarea cols="110" rows="1">ssh -T git@github.com</textarea>
 
 <hr><h3>克隆</h3>
-<textarea cols="120" rows="1">git clone git@github.com:youzhiyili/youzhiyili.github.com && cd youzhiyili.github.com</textarea>
+<textarea cols="110" rows="1">git clone git@github.com:youzhiyili/youzhiyili.github.com && cd youzhiyili.github.com</textarea>
 
 <hr><h3>上传</h3>
-<textarea cols="120" rows="4">git add .
+<textarea cols="110" rows="4">git add .
 git commit -m "first post"
 git push origin master
 Username for 'https://github.com':
 Password for 'https://youzhiyili@github.com':</textarea>
 
 <hr><h3>检查设置</h3>
-<textarea cols="120" rows="1">git config --list</textarea>
+<textarea cols="110" rows="1">git config --list</textarea>
 
 <hr><h3>初次使用</h3>
 
