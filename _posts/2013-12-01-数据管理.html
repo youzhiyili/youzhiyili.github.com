@@ -1,0 +1,28 @@
+---
+layout: post
+title: 数据管理
+---
+<a href="https://docs.google.com/presentation/d/1auRcqOy8U3KWJTRwKQ8qYQT0cLz-csq5_6P97Klgz5E/edit?usp=sharing" target="_blank">linux权限管理</a>  <a href="https://docs.google.com/presentation/d/1Leu8Rco6snBQVYrnYcozJkO_yQHYkHfUeVKtnGIaqtc/edit?usp=sharing" target="_blank">linux磁盘管理</a>  <a href="https://docs.google.com/presentation/d/13nwPYM_IGCaRPU7754bCBoRn2308ypBF6HzbihkGx3I/edit?usp=sharing" target="_blank">linux数据管理</a>
+
+<hr><h3>文件</h3>
+备份_还原
+cp file file~
+mv file~ file
+
+隐藏_显示
+mv file .file
+ls -a
+
+锁定_解锁
+chmod 000 file
+chmod 777 file
+
+加密_解密
+gpg -c file
+gpg file.gpg
+
+禁止_解禁
+sudo chattr +i file
+sudo chattr -i file
+
+
