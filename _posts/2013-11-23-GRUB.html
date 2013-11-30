@@ -41,12 +41,15 @@ Window.SetBackgroundBottomColor <p style="color:red">(0.00, 0.00, 0.00)</p>;  # 
 <hr><h3>修改Grub等待时间</h3>
 查看当前状态
 <textarea cols="80" rows="1">grep GRUB_TIMEOUT /etc/default/grub</textarea>
-找到GRUB_TIMEOUT=10，默认为10秒，如果想修改为3秒 GRUB_TIMEOUT=3
+GRUB_TIMEOUT=10
+
+默认为10秒，如果想修改为3秒 GRUB_TIMEOUT=3
 <textarea cols="80" rows="1">sudo sed -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/' -i /etc/default/grub && sudo update-grub</textarea>
 
 <hr><h3>修改Grub启动顺序</h3>
 查看当前状态
 <textarea cols="80" rows="1">grep GRUB_DEFAULT /etc/default/grub</textarea>
+GRUB_DEFAULT=0
+
 启动顺序从0开始数，XP一般为4，如果想开机直接进入XP
-找到GRUB_DEFAULT=0，修改为GRUB_DEFAULT=4
 <textarea cols="80" rows="1">sudo sed -e 's/GRUB_DEFAULT=0/GRUB_DEFAULT=4/' -i /etc/default/grub && sudo update-grub</textarea>
