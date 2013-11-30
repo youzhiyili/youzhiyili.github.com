@@ -2,17 +2,18 @@
 layout: post
 title: Grub2设置
 ---
-<hr><h3><a href=http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub target="_blank">修改Grub背景颜色</a></h3>
+<hr><h3>修改Grub背景颜色</h3
+<a href=http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub target="_blank">具体方法</a>>
 
 <hr><h3>修改Grub背景图片</h3>
 把图片扔到/boot/grub/,然后更新GRUB
-<textarea cols="40" rows="1">sudo updade-grub</textarea>
+<textarea cols="80" rows="1">sudo updade-grub</textarea>
 
 <hr><h3>修改Grub等待时间</h3>
-<textarea cols="40" rows="1">sudo gedit /etc/default/grub && sudo update-grub</textarea>
+<textarea cols="80" rows="1">sudo gedit /etc/default/grub && sudo update-grub</textarea>
 找到GRUB_TIMEOUT=10，默认为10秒，如果想修改为3秒 GRUB_TIMEOUT=3
 
 <hr><h3>修改Grub启动顺序</h3>
-<textarea cols="40" rows="1">sudo gedit /etc/default/grub && sudo update-grub</textarea>
+<textarea cols="80" rows="1">sudo gedit /etc/default/grub && sudo update-grub</textarea>
 启动顺序从0开始数，XP一般为4，如果想开机直接进入XP
 找到GRUB_DEFAULT=0，修改为GRUB_DEFAULT=4
