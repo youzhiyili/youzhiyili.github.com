@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Ubuntu开机加速
+title: 开机加速
 ---
-<hr><h3><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=77&t=398589" target="_blank">Ubuntu_12.04_拨号上网</a></h3>
-<p style="font-weight:bold;">禁止以下程序自启动<p>
-蓝牙、备份、微博、网络管理、虚拟键盘、屏幕阅读、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志
+<hr><h2><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=77&t=398589" target="_blank">Ubuntu_12.04_拨号上网</a></h2>
+<h3>禁止以下程序自启动</h3>
+<p style="font-weight:bold;">蓝牙、备份、微博、网络管理、虚拟键盘、屏幕阅读、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志<p>
 <textarea cols="80" rows="15">
 sudo chmod -r /etc/xdg/autostart/{\
 bluetooth-applet.desktop,\
@@ -23,24 +23,24 @@ vino-server.desktop,\
 zeitgeist-datahub.desktop}
 </textarea>
 
-<p style="font-weight:bold;">禁止显示历史记录<p>
+<h3>禁止显示历史记录</h3>
 <textarea cols="80" rows="2">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal\
 chmod 000 ~/.local/share/zeitgeist/fts.index/*
 </textarea>
 
-<p style="font-weight:bold;">禁用蓝牙、网络管理<p>
+<h3>禁用蓝牙、网络管理</h3>
 <textarea cols="80" rows="1">
 sudo chmod -x /usr/sbin/{bluetoothd,NetworkManager}
 </textarea>
 
-<p style="font-weight:bold;">禁止Xapian搜索维护软件包索引<p>
+<h3>禁止Xapian搜索维护软件包索引</h3>
 <textarea cols="80" rows="1">
 sudo chmod -x /etc/cron.weekly/apt-xapian-index
 </textarea>
 
-<hr><h3>Ubuntu_13.10_拨号上网_无线路由器</a></h3>
-<p style="font-weight:bold;">禁止以下程序自启动<p>
+<hr><h2>Ubuntu_13.10_拨号上网_无线路由器</a></h2>
+<h3>禁止以下程序自启动<p>
 蓝牙、备份、网络管理、打印、消息菜单、ubuntuone、通知更新、gtk目录更新、VNC服务器、事件日志
 <textarea cols="80" rows="10">
 sudo chmod -r /etc/xdg/autostart/{\
@@ -56,23 +56,23 @@ vino-server.desktop,\
 zeitgeist-datahub.desktop}
 </textarea>
 
-<p style="font-weight:bold;">禁止显示历史记录<p>
+<h3>禁止显示历史记录</h3>
 <textarea cols="80" rows="2">
 chmod 400 ~/.local/share/zeitgeist/activity.sqlite-wal\
 chmod 000 ~/.local/share/zeitgeist/fts.index/*
 </textarea>
 
-<p style="font-weight:bold;">禁止Xapian搜索维护软件包索引<p>
+<h3>禁止Xapian搜索维护软件包索引</h3>
 <textarea cols="80" rows="1">
 sudo chmod -x /etc/cron.weekly/apt-xapian-index
 </textarea>
 
-<p style="font-weight:bold;">把/tmp挂载到内存<p>
+<h3>把/tmp挂载到内存</h3>
 <textarea cols="80" rows="1">
 sudo sed '$a\none  /tmp  tmpfs  size=512M  0 0' -i /etc/fstab
 </textarea>
 
-<p style="font-weight:bold;">把/var/log挂载到内存<p>
+<h3>把/var/log挂载到内存</h3>
 <textarea cols="80" rows="1">
 sudo sed '$a\none  /var/log  tmpfs  size=256M  0 0' -i /etc/fstab
 </textarea>
