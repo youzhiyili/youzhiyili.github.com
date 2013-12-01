@@ -33,9 +33,11 @@ gzip参数：
 默认使用的是-6压缩级别。
 
 <hr><h2>使用tar打包__单分区备份系统</h2>
+<h3>备份</h3>
 <textarea cols="90" rows="2">
 sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /
 </textarea>
+<h3>还原</h3>
 <textarea cols="90" rows="1">
 sudo tar -pzxvf sys.back.tgz -C /
 </textarea>
