@@ -1,0 +1,59 @@
+---
+layout: post
+title: Windows系统
+---
+<hr><h2>清空Windows密码</h2>
+<h3>从Ubuntu找回</h3>
+<textarea cols="80" rows="2">
+sudo apt-get install chntpw && mkdir chntpw && sudo mount /dev/sda1 chntpw && cd chntpw/WINDOWS/system32/config/ && sudo chntpw SAM
+</textarea>
+选1,清空密码
+- - - - User Edit Menu:
+ 1 - Clear (blank) user password
+ 2 - Edit (set new) user password (careful with this on XP or Vista)
+ 3 - Promote user (make user an administrator)
+(4 - Unlock and enable user account) [seems unlocked already]
+ q - Quit editing user, back to user select
+
+<hr><h2>从ubuntu还原XP备份</h2>
+<h3>状态</h3>
+C盘（/dev/sda1）D盘（/dev/sda5）,备份文件upanok.GHO在D盘
+
+<h3>工具</h3>
+下载到D盘<a href="http://www.icpug.org.uk/national/linnwin/step1-9x.htm" target="_blank">grub.exe menu.lst</a> <a href="http://myfeng.cn/news_display.asp?keyno=99" target="_blank">GhostAll.img</a>
+
+<h3>编辑menu.lst</h3>
+default 0
+timeout 10
+
+title GhostAll
+find --set-root /GhostAll.img
+map --mem /GhostAll.img (fd0)
+map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+boot
+
+<h3>编辑/etc/grub.d/40_custom 添加以下内容</h3>
+menuentry "Grub for Dos" {
+search --set -f /grub.exe
+linux /grub.exe
+}
+
+<h3>更新GRUB</h3>
+<textarea cols="40" rows="1">sudo update-grub</textarea>
+
+<h3>把sda1分区类型改为ntfs</h3>
+
+<h3>备份分区表</h3>
+<textarea cols="40" rows="1">sudo sfdisk -d /dev/sda > sda_table</textarea>
+如果分区表出问题就还原sudo sfdisk /dev/sda < sda_table
+将sda_table内容保存在网上，最好将sudo fdisk -lu 内容也贴上
+
+<h3>重启后运行ghost</h3>
+
+<h3>后续</h3>
+还原XP成功后，删除D盘GhostAll.img、grub.exe、menu.lst
+复原/etc/grub.d/40_custom
+
+
