@@ -5,19 +5,26 @@ title: 备份系统
 <hr><h2>使用dd克隆__这种方法比较适合本机同一块硬盘，或其他相同配置的主机和同样大小的硬盘</h2>
 <h3>假设已经在U盘安装有Linux系统</h3>
 从U盘启动，查看块数量 (-u，让start和end中数字的单位是512字节，也就是一个sector扇区的大小)
+<textarea cols="100" rows="1">
 sudo fdisk -u -l /dev/sda
-
+</textarea>
 克隆整块硬盘为img映像
+<textarea cols="100" rows="1">
 dd bs=512 count=[fdisk命令中最大的end数+1] if=/dev/sda of=/ghost.img
-
+</textarea>
 还原系统，从U盘启动
+<textarea cols="100" rows="1">
 dd if=/ghost.img of=/dev/sda
+</textarea>
 -----------------------------------------------------------------------
 dd可以通过管道用GZIP压缩
+<textarea cols="100" rows="1">
 sudo dd bs=512 count=[fdisk命令中最大的end数+1] if=/dev/sda | gzip -6 > /ghost.img.gz
+</textarea>
 还原方法，从U盘启动
+<textarea cols="100" rows="1">
 sudo gzip -dc /ghost.img.gz.gz | dd of=/dev/sda
-
+</textarea>
 gzip参数：
 -c 表示输出到stdout
 -d 表示解压缩
