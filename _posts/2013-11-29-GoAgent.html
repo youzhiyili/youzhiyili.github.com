@@ -8,16 +8,15 @@ title: 翻墙
 
 <hr><h3>配置本地</h3>
 cd到goa
-<textarea cols="40" rows="1">gedit goagent/local/proxy.ini</textarea>
+<textarea cols="40" rows="1">sed 's/appid = goagent/appid = youzhiyili|xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi/' -i goagent/local/proxy.ini</textarea>
 appid = appid_1|appid_2|appid_3|......|appid_10
 
 
 <hr><h3>上传服务器</h3>
 cd到goa
 上传appid_1
-<textarea cols="40" rows="1">gedit goagent/server/python/app.yaml</textarea>
-application: appid_1
-python appcfg.py update goagent/server/python/
+<textarea cols="40" rows="1">sed '1d' -i goagent/server/python/app.yaml && sed '1 i\application: 应用名称' -i goagent/server/python/app.yaml && python appcfg.py update goagent/server/python/</textarea>
+
 
 上传appid_2
 <textarea cols="40" rows="1">gedit goagent/server/python/app.yaml</textarea>
