@@ -29,7 +29,7 @@ title: Linux学习笔记
   var month = current.getMonth();
   var date = current.getDate();
   var day = current.getDay();
-  var datestr = year + '年' + (month + 1) + '月' + date + '日  星期' + weekDays[day];
+  var datestr = year + '-' + (month + 1) + '-' + date + '  星期' + weekDays[day];
   var dateobj = document.getElementById("currentDate");
   dateobj.innerHTML = datestr;
   var hours,minutes,seconds,timestr;
