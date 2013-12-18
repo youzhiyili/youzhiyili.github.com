@@ -40,7 +40,7 @@ title: Linux学习笔记
     hours = current.getHours();
     minutes = current.getMinutes();
     seconds = current.getSeconds();
-    timestr = hours + ':' + minutes + ':' + seconds;
+    timestr = hours + ':' + minutes + ':' + seconds + '    东' + tz + '区';
     timeobj.innerHTML = timestr;
   }
   flushtime();
