@@ -3,6 +3,10 @@ layout: post
 title: Google_Hosts
 ---
 <hr><h2>2013年最新的Google，Google+，facebook，youtube Hosts文件</h2>
+
+192.157.242.155 forum.ubuntu.org.cn
+103.245.222.133 youzhiyili.github.io
+
 203.208.46.200 chatenabled.mail.google.com
 203.208.46.200 static.googleusercontent.com
 203.208.46.200 0.docs.google.com
