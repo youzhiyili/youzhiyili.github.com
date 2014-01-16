@@ -18,10 +18,11 @@ title: 翻墙
 <h2>解压zip</h2>
 <textarea cols="120" rows="2">unzip goagent.zip && mv goagent-* goagent && cd goagent/server</textarea>
 
-<h2>上传server-->youzhiyili</h2>
+<h2>上传第一个appid</h2>
 <textarea cols="120" rows="2">python uploader.zip</textarea>
 
-<h2>上传server-->xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi</h2>
+<h2>上传剩下的appid</h2>
+<textarea cols="120" rows="2">python uploader.zip</textarea>
 
 <h2>配置local</h2>
 <textarea cols="120" rows="2">cd .. && cd .. && sed 's/appid = goagent/appid = youzhiyili|xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi/' -i goagent/local/proxy.ini</textarea>
