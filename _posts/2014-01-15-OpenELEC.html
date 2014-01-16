@@ -5,9 +5,28 @@ title: OpenELEC_智能电视
 简介：OpenELEC是一个专为XBMC定制的Linux发行版,XBMC是一个家庭影院软件。
 特点：系统极度精简，完全安装只需 80-125MB。所以硬件要求低，启动速度快。
 官网：http://openelec.tv/
-下载：http://openelec.tv/get-openelec/download -->选Generic Builds
-准备：两个U盘
 
+<hr><h2>安装OpenELEC</h2>
+方法：两个U盘，USB_1用来制作安装盘，将Openelec安装到USB_2
+下载：http://openelec.tv/get-openelec/download -->选Generic Builds
+解压：假设下载得到OpenELEC-Intel.i386-2.0.0.tar.bz2 
+tar xvf OpenELEC-Intel.i386-2.0.0.tar.bz2 && cd OpenELEC-Intel.i386-2.0.0
+准备：插入USB_1，用fdisk命令查看USB_1是第几块硬盘，假设为/dev/sdb
+sudo fdisk -l
+制作：运行安装命令，制作Openelec安装盘
+./create_installstick /dev/sdb
+安装：插入USB_2，重启，BIOS调整为USB_1启动，安装OpenELEC到USB_2
+
+<hr><h2>中文设置</h2>
+BIOS调整为USB_2启动，进入OpenELEC，界面与XBMC基本一样
+字体：
+语言：
+插件：
+
+<hr><h2>网络设置</h2>
+
+<hr><h2>遥控器</h2>
+XBMC Remote https://code.google.com/p/android-xbmcremote/
 
 一.准备工作
    1.准备两个U盘或SD卡，一个作为安装盘，一个作为以后要用的系统启动盘。
