@@ -7,24 +7,24 @@ title: 翻墙
 <a href="https://code.google.com/p/goagent/" target="_blank">下载goagent</a>,解压到goa重命名为goagent
 
 <h2>安装依赖</h2>
-sudo apt-get install python-dev python-greenlet python-gevent python-vte python-openssl python-crypto python-appindicator
+<textarea cols="120" rows="2">sudo apt-get install python-dev python-greenlet python-gevent python-vte python-openssl python-crypto python-appindicator</textarea>
 
 <h2>安装gevent</h2>
-sudo apt-get install python-dev python-pip && sudo pip install gevent --upgrade
+<textarea cols="120" rows="2">sudo apt-get install python-dev python-pip && sudo pip install gevent --upgrade</textarea>
 
 <h2>下载goagent</h2>
-<textarea cols="40" rows="1">wget -c --no-check-certificate -O goagent.zip https://nodeload.github.com/goagent/goagent/legacy.zip/3.0</textarea>
+<textarea cols="120" rows="2">wget -c --no-check-certificate -O goagent.zip https://nodeload.github.com/goagent/goagent/legacy.zip/3.0</textarea>
 
 <h2>解压zip</h2>
-<textarea cols="40" rows="1">unzip goagent.zip && mv goagent-* goagent && cd goagent/server</textarea>
+<textarea cols="120" rows="2">unzip goagent.zip && mv goagent-* goagent && cd goagent/server</textarea>
 
 <h2>上传server-->youzhiyili</h2>
-<textarea cols="40" rows="1">python uploader.zip</textarea>
+<textarea cols="120" rows="2">python uploader.zip</textarea>
 
 <h2>上传server-->xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi</h2>
 
 <h2>配置local</h2>
-<textarea cols="40" rows="1">cd .. && cd .. && sed 's/appid = goagent/appid = youzhiyili|xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi/' -i goagent/local/proxy.ini</textarea>
+<textarea cols="120" rows="2">cd .. && cd .. && sed 's/appid = goagent/appid = youzhiyili|xiaozhiyili|shizeweizhi|shaozetaozhi|ritajiama|rinijiama|mogaoyizhang|daogaoyichi/' -i goagent/local/proxy.ini</textarea>
 
-<h2>运行goagent</h2>
-<textarea cols="40" rows="1">python proxy.py</textarea>
+<h2>用脚本运行goagent</h2>
+<textarea cols="120" rows="2">cd && echo -ne '#!/bin/bash\npython ~/goagent/local/proxy.py' >fanqiang && chmod +x fanqiang && ./fanqiang</textarea>
