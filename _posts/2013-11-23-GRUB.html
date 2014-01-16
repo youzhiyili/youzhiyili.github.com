@@ -44,3 +44,6 @@ Window.SetBackgroundBottomColor <p style="color:red">(0.16, 0.00, 0.12)</p>;  # 
 
 启动顺序从0开始数，XP一般为4，如果想开机直接进入XP
 <textarea cols="80" rows="1">sudo sed -e 's/GRUB_DEFAULT=0/GRUB_DEFAULT=4/' -i /etc/default/grub && sudo update-grub</textarea>
+
+Ubuntu中文论坛前辈daf3707，直接这样改
+<textarea cols="80" rows="1">sudo mv /etc/grub.d/30_os-prober /etc/grub.d/09_os-prober && sudo update-grub</textarea>
