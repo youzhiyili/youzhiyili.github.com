@@ -1,0 +1,16 @@
+---
+layout: post
+title: Java
+---
+<a href="http://www.startos.com/ubuntu/tips/2012032333392.html" target="_blank">参考1</a>&nbsp&nbsp&nbsp&nbsp<a href="http://jingyan.baidu.com/article/7f766daf5e20944101e1d02b.html" target="_blank">参考2</a>
+<a href="http://www.flyordie.com/games/sites/chrome/8ball.html" target="_blank">玩台球</a>需要安装oracle-java
+<h2>删除OpenJDK</h2>
+<textarea cols="80" rows="1">sudo apt-get purge openjdk*</textarea>
+<h2>添加PPA</h2>
+<textarea cols="80" rows="1">sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update</textarea>
+<h2>安装</h2>
+<textarea cols="80" rows="1">sudo apt-get install oracle-java7-set-default</textarea>
+<hr><h3>相关命令</h3>
+dpkg -l | grep jdk
+apt-cache search java7
+apt-cache search oracle-java
