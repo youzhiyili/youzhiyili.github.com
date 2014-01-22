@@ -30,7 +30,7 @@ International===>Chinese (simple)===>Character Set===>Chinese Simplified
 #改成这样：user-session=ubuntu----->user-session=ubuntu,xbmc</textarea>
 
 <hr><h3 style="color:SteelBlue">使用代理</h3>
-<textarea cols="100" rows="3">xbmc http_proxy=http://127.0.0.1:8087</textarea>
+<textarea cols="100" rows="3">echo -ne '#!/bin/bash\nxbmc http_proxy=http://127.0.0.1:8087' >xbmc_proxy && chmod +x xbmc_proxy</textarea>
 
 <hr><h3 style="color:SteelBlue">屏幕抓图</h3>
 <img src="/images/xbmc.jpg" alt="XBMC抓图">
