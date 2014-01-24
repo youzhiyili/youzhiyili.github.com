@@ -3,8 +3,8 @@ layout: post
 title: 格式转换
 ---
 
-查看文件编码
-ffmpeg -i b.flv 
+<h2>查看文件编码-----------黄色部分显示音频和视频编码</h2>
+<textarea cols="40" rows="1">ffmpeg -i b.flv </textarea>
 ffmpeg version 0.8.9-6:0.8.9-0ubuntu0.13.10.1, Copyright (c) 2000-2013 the Libav developers
   built on Nov  9 2013 19:15:22 with gcc 4.8.1
 *** THIS PROGRAM IS DEPRECATED ***
@@ -18,7 +18,7 @@ Input #0, flv, from 'b.flv':
     hasAudio        : true
     hasMetadata     : true
   Duration: 00:02:52.66, start: 0.000000, bitrate: N/A
-    Stream #0.0: <font color=Yellow>Video: h264 (High)</font>, yuv420p, 448x336 [PAR 1:1 DAR 4:3], 15 tbr, 1k tbn, 30 tbc
-    Stream #0.1: <font color=Yellow>Audio: aac</font>, 44100 Hz, stereo, s16
+    Stream #0.0: <b><font color=Yellow>Video: h264 (High)</font></b>, yuv420p, 448x336 [PAR 1:1 DAR 4:3], 15 tbr, 1k tbn, 30 tbc
+    Stream #0.1: <b><font color=Yellow>Audio: aac</font></b>, 44100 Hz, stereo, s16
 At least one output file must be specified
 
