@@ -1,60 +1,67 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset='utf-8' />
-		<link href="/css/my.css" rel="stylesheet" type="text/css">
-		<title>jPlayer测试</title>
-		<center><h2 style="color:SteelBlue">{{ page.title }}</h2></center>
-	</head>
-	<body>
-<!-------- jPlayer视屏播放器-------- head部分-----------初始化 -->
-<link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="/js/add-on/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="/js/add-on/jquery.jplayer.inspector.js"></script>
+<head>
+<meta charset=utf-8 />
 
+<!-- Website Design By: www.happyworm.com -->
+<title>jPlayer带播放列表的视频播放器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
+<!--[if lt IE 9]>
+  <script src="ie/ie9html5.js"></script>
+<![endif]-->
+
+<!--[if IE 6]>
+<link href="ie/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<link href="skin/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="add-on/jquery.jplayer.inspector.js"></script>
 <script type="text/javascript">
+//<![CDATA[
 $(document).ready(function(){
- 
-    new jPlayerPlaylist({
-        jPlayer: "#jquery_jplayer_1",
-        cssSelectorAncestor: "#jp_container_1"
-    }, [
-        {
-            title:"Big Buck Bunny Trailer",
-            artist:"Blender Foundation",
-            free:true,
-            m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
-            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
-            webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
-            poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-        },
-        {
-            title:"Finding Nemo Teaser",
-            artist:"Pixar",
-            m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
-            ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
-            webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
-            poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
-        },
-        {
-            title:"Incredibles Teaser",
-            artist:"Pixar",
-            m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
-            ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
-            webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
-            poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
-        }
-    ], {
-        swfPath: "../js",
-        supplied: "webmv, ogv, m4v"
-    });
- 
-});
-</script>
 
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{
+			title:"Big Buck Bunny Trailer",
+			artist:"Blender Foundation",
+			free:true,
+			m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+			poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+		},
+		{
+			title:"Finding Nemo Teaser",
+			artist:"Pixar",
+			m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
+			poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+		},
+		{
+			title:"Incredibles Teaser",
+			artist:"Pixar",
+			m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+			ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+			webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+			poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+		}
+	], {
+		swfPath: "../js",
+		supplied: "webmv, ogv, m4v"
+	});
+
+});
+//]]>
+</script>
 <script type="text/javascript">
 (function() {
 	var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
@@ -64,63 +71,146 @@ $(document).ready(function(){
 	t.parentNode.insertBefore(s, t);
 })();
 </script>
+</head>
+<body class="demo" onload="prettyPrint();">
+<div id="container">
 
-<!-------- jPlayer视屏播放器-------- body部分-----------接口样式 -->
-<center>
-<div id="jp_container_1" class="jp-video ">
-<div class="jp-type-single">
-<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-<div class="jp-gui">
-<div class="jp-video-play"><a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a></div>
-<div class="jp-interface">
-<div class="jp-progress">
-<div class="jp-seek-bar">
-<div class="jp-play-bar"></div>
-</div>
-</div>
-<div class="jp-current-time"></div>
-<div class="jp-duration"></div>
-<div class="jp-controls-holder">
+	
+	
+	<div id="content_main">
 
-<ul class="jp-controls">
-<li><a href="#" id="jplayer_play" class="jp-play" tabindex="1">播放</a></li>
-<li><a href="#" id="jplayer_pause" class="jp-pause" tabindex="1">暂停</a></li>
-<li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="1">停止p</a></li>
-<li><a href="#" id="jplayer_volume_min" class="jp-volume-min" tabindex="1">最小音量</a></li>
-<li><a href="#" id="jplayer_volume_max" class="jp-volume-max" tabindex="1">最大音量</a></li>
-<li><a href="#" id="jplayer_previous" class="jp-previous" tabindex="1">前一个</a></li>
-<li><a href="#" id="jplayer_next" class="jp-next" tabindex="1">后一个</a></li>
-</ul>
+		
+		<section>
 
-<div class="jp-volume-bar">
-<div class="jp-volume-bar-value"></div>
-</div>
-<ul class="jp-toggles">
-<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="全屏">全屏</a></li>
-<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="窗口">窗口</a></li>
-<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="重复播放">重复播放</a></li>
-<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="取消重复">取消重复</a></li>
-</ul>
-</div>
+		<div id="jp_container_1" class="jp-video jp-video-270p" style="margin:10px auto">
+			<div class="jp-type-playlist">
+				<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+				<div class="jp-gui">
+					<div class="jp-video-play">
+						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
 
-<div class="jp-title"><ul><li>标题</li></ul></div>
+					</div>
+					<div class="jp-interface">
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
 
-			<div id="jplayer_playlist" class="jp-playlist">
-				<ul>
-					<!-- The function displayPlayList() uses this unordered list -->
-					<li></li>
-				</ul>
+						<div class="jp-title">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="jp-controls-holder">
+							<ul class="jp-controls">
+								<li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+
+								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+								<li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+
+								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+							</ul>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+							</div>
+							<ul class="jp-toggles">
+								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+
+								<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+								<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="jp-playlist">
+					<ul>
+						<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+						<li></li>
+					</ul>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
 			</div>
-</div>
+		</div>
+
+		</section>
+	</div>
+	
 </div>
 
-<div class="jp-no-solution">
-<span>Update Required</span>
-无法播放！建议升级浏览器，或者升级该死的<a href="http://get.adobe.com/flashplayer/" target="_blank">Flash插件</a>.
-</div>
+<div style="width:640px;margin:20px auto 20px auto; padding:20px 0 0 320px;overflow:hidden">
+<!-- JiaThis Button BEGIN -->
+<div id="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
 
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
 </div>
-</center>
-	</body>
+<div style="font-size:18px;text-align:center;padding:0 0 20px 0">
+<a href="video.html">视频播放器</a><br />
+<a href="audio.html">音频播放器</a><br />
+<a href="circle.html">富有个性的环形音频播放器</a><br />
+<a href="video-playlist.html">带有播放列表的视频播放器</a><br />
+<a href="http://www.itivy.com/html5/archive/2012/1/8/html5-jplayer.html" target="_blank"><<返回文章《一款非常强悍的HTML5视频和音频播放器jPlayer》</a>
+</div>
+<!-- JiaThis Button END -->
+<div id="adsense" style="width:730px;margin:10px auto">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-0107013120141921";
+/* demo页面横幅广告 */
+google_ad_slot = "4192399144";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div style="display: none">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/4473358.js"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fadd0db9dee36c7a9b64141788e26de72' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21395429-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+    </div>
+</body>
+
+
 </html>
+
