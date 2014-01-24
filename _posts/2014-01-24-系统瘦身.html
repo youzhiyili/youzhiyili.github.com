@@ -1,0 +1,78 @@
+---
+layout: post
+title: 系统瘦身
+---
+<h2>Ubuntu桌面有个文件夹“示例”，里面的视频没什么用，删掉</h2>
+<textarea cols="40" rows="1">
+sudo rm -rf /usr/share/example-content
+</textarea>
+
+<h2>Ubuntu“帮助”文档，基本不看，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge yelp -y
+</textarea>
+
+<h2>Ubuntu One其实挺好的，可惜天朝的网速太慢，忍痛删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge ubuntuone* -y
+</textarea>
+
+<h2>Ubuntu那个“错误问题报告”总是弹出来，烦死了，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge apport* -y
+</textarea>
+
+<h2>Ubuntu有个功能“系统测试”，无聊，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge checkbox-qt -y
+</textarea>
+
+<h2>“管理服务”就是通过Landscape，远程通过浏览器管理Ubuntu系统集群，很好很强大。普通家用...删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge landscape-client-ui-install -y
+</textarea>
+
+<h2>家里没有扫描仪，所以用不上“扫描易”，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge simple-scan -y
+</textarea>
+
+<h2>家里没有蓝牙适配器，所以用不上“蓝牙”，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge bluez -y
+</textarea>
+
+<h2>Ubuntu有很贴心的系统备份功能，可是影响运行速度与网速。删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge deja-dup -y
+</textarea>
+
+<h2>Ubuntu为盲人提供“屏幕阅读”功能，一般人用不上，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge gnome-orca -y
+</textarea>
+
+<h2>Ubuntu提供的“虚拟键盘”越来越漂亮，就是用不上，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge onboard -y
+</textarea>
+
+<h2>从不用Ubuntu自带的视频播放器，删掉</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge totem* -y
+</textarea>
+
+<h2>习惯用Chrome，所以删掉Firefox</h2>
+<textarea cols="40" rows="1">
+sudo apt-get -y purge firefox firefox-locale-en firefox-locale-zh-hans
+</textarea>
+
+<h2>不玩游戏，所以删掉“对对碰”</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge gnome-mahjongg -y
+</textarea>
+
+<h2>删掉“纸牌游戏”</h2>
+<textarea cols="40" rows="1">
+sudo apt-get purge aisleriot -y
+</textarea>
