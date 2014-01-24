@@ -52,6 +52,16 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+(function() {
+	var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+	t.parentNode.insertBefore(s, t);
+})();
+</script>
+
 <!-------- jPlayer视屏播放器-------- body部分-----------接口样式 -->
 <center>
 <div id="jp_container_1" class="jp-video ">
@@ -109,3 +119,5 @@ $(document).ready(function(){
 </div>
 </div>
 </center>
+	</body>
+</html>
