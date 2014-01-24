@@ -12,19 +12,45 @@
 <link type="text/css" href="/skin/jplayer.blue.monday.css" rel="stylesheet" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-
+<script type="text/javascript" src="/js/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="/js/add-on/jquery.jplayer.inspector.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-$("#jquery_jplayer_1").jPlayer({
-ready: function () {
-$(this).jPlayer("setMedia", {
-ogv: "http://youzhiyili.github.com/16032013149.ogv",
-poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-}).jPlayer("play");
-},
-swfPath: "/js",
-supplied: "ogv,m4v"
-});
+ 
+    new jPlayerPlaylist({
+        jPlayer: "#jquery_jplayer_1",
+        cssSelectorAncestor: "#jp_container_1"
+    }, [
+        {
+            title:"Big Buck Bunny Trailer",
+            artist:"Blender Foundation",
+            free:true,
+            m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v",
+            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer.ogv",
+            webmv: "http://www.jplayer.org/video/webm/Big_Buck_Bunny_Trailer.webm",
+            poster:"http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        },
+        {
+            title:"Finding Nemo Teaser",
+            artist:"Pixar",
+            m4v: "http://www.jplayer.org/video/m4v/Finding_Nemo_Teaser.m4v",
+            ogv: "http://www.jplayer.org/video/ogv/Finding_Nemo_Teaser.ogv",
+            webmv: "http://www.jplayer.org/video/webm/Finding_Nemo_Teaser.webm",
+            poster: "http://www.jplayer.org/video/poster/Finding_Nemo_Teaser_640x352.png"
+        },
+        {
+            title:"Incredibles Teaser",
+            artist:"Pixar",
+            m4v: "http://www.jplayer.org/video/m4v/Incredibles_Teaser.m4v",
+            ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv",
+            webmv: "http://www.jplayer.org/video/webm/Incredibles_Teaser.webm",
+            poster: "http://www.jplayer.org/video/poster/Incredibles_Teaser_640x272.png"
+        }
+    ], {
+        swfPath: "../js",
+        supplied: "webmv, ogv, m4v"
+    });
+ 
 });
 </script>
 
@@ -48,7 +74,7 @@ supplied: "ogv,m4v"
 <ul class="jp-controls">
 <li><a href="#" id="jplayer_play" class="jp-play" tabindex="1">播放</a></li>
 <li><a href="#" id="jplayer_pause" class="jp-pause" tabindex="1">暂停</a></li>
-<li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="1">停止p</a></li>
+<li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="1">停止</a></li>
 <li><a href="#" id="jplayer_volume_min" class="jp-volume-min" tabindex="1">最小音量</a></li>
 <li><a href="#" id="jplayer_volume_max" class="jp-volume-max" tabindex="1">最大音量</a></li>
 <li><a href="#" id="jplayer_previous" class="jp-previous" tabindex="1">前一个</a></li>
