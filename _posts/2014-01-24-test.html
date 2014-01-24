@@ -13,29 +13,19 @@
 
 
 <script type="text/javascript">
-$(document).ready(function(){
- new jPlayerPlaylist({
-  jPlayer: "#jquery_jplayer_1",
-  cssSelectorAncestor: "#jp_container_1"
-     }, [
-  {
-   title:"My Video 1", artist:"me", free:true, //free:true会在列表中此条视频名称右边出现格式选择
-   ogv: "http://youzhiyili.github.com/a.ogv", poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-  },
-  {
-   title:"My Video 2", artist:"me",
-   ogv: "http://www.jplayer.org/video/ogv/Incredibles_Teaser.ogv", poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-  },  {
-   title:"My Video 3", artist:"me",
-   ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv", poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-  }
-     ], {
-  swfPath: "jPlayer",
-  supplied: "ogv, m4v",
-  size: {width: "640px", height: "360px"},
-  smoothPlayBar: true
- });
+myPlaylist.add({
+  title:"Tempered Song",
+  标题：“炼成之歌”，
+  artist:"Miaow",
+  艺术家：“咪”，
+  mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+  MP3：“http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3”，
+  oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+  奥加：“http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg”，
+  poster: "http://www.jplayer.org/audio/poster/Miaow_640x360.png"
+  海报：“http://www.jplayer.org/audio/poster/Miaow_640x360.png”
 });
+}）;
 </script>
 
 
