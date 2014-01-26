@@ -12,8 +12,7 @@ title:  Ubuntu常用命令
 <textarea cols="50" rows="2">sudo ntpdate-debian && sudo hwclock -w && date && sudo hwclock</textarea>
 
 <b>安装压缩软件</b>
-<textarea cols="50" rows="2">sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller 
-</textarea>
+<textarea cols="50" rows="2">sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller </textarea>
 
 <b>上传GOA</b>
 <textarea cols="50" rows="2">python google_appengine/appcfg.py update goagent/server/python/</textarea>
@@ -26,8 +25,9 @@ title:  Ubuntu常用命令
 
 <b>批量裁剪图片为300x200</b>
 <textarea cols="50" rows="2">
-sudo apt-get install imagemagick
-for i in *.jpg; do convert -scale 300x200 $i $i; done
+sudo apt-get install imagemagick && for i in *.jpg; do convert -scale 300x200 $i $i; done
+或者
+find -iname "*.jpg" -exec convert -resize 300x200 {} {}.jpg \;
 </textarea>
 
 <b>查看网卡地址、速度</b>
