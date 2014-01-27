@@ -2,6 +2,24 @@
 layout: post
 title: Windows系统
 ---
+<hr><h2>重建MBR</h2>
+方法一：下载DOS，在DOS下输入命令 fdisk /mbr 
+
+方法二：
+
+1 下载MbrFix	http://www.sysint.no/products/Download/tabid/536/language/nb-NO/Default.aspx
+
+2 解压MbrFix	最好在C盘建个文件夹
+
+3 运行MbrFix	运行command，进入MbrFix文件夹，输入这个命令 MbrFix /drive 0 fixmbr /yes  或 MbrFix /drive 0 fixmbr 
+
+
+方法三：Windows的安装盘，进入恢复控制台，输入命令fixmbr
+
+说明：
+1	0表示xp系统在第一块硬盘,MbrFix /drive 1 fixmbr /yes就是第二块硬盘....
+
+2 MBR（Master Boot Record）
 <hr><h2>清空Windows密码</h2>
 <h3>从Ubuntu找回</h3>
 <textarea cols="80" rows="2">
