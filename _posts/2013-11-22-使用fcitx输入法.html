@@ -12,3 +12,14 @@ rm -rf ~/.config/ibus</textarea>
 <textarea cols="80" rows="3">sudo add-apt-repository ppa:fcitx-team/nightly
 sudo apt-get update
 sudo apt-get install fcitx-sogoupinyin</textarea>
+
+<hr>
+<h2>Ubuntu_14.04</h2>
+<h3>卸载IBUS</h3> 
+<textarea cols="80" rows="2">killall ibus-daemon 
+sudo apt-get purge ibus ibus-gtk ibus-gtk3 ibus-pinyin* ibus-sunpinyin ibus-table python-ibus 
+rm -rf ~/.config/ibus</textarea> 
+<h3>安装搜狗拼音</h3> 
+<textarea cols="80" rows="3">sudo add-apt-repository ppa:fcitx-team/wget -c http://ubuntu-ppa.archlinuxcn.org/fcitx-team/nightly/ubuntu/pool/main/f/fcitx-sogoupinyin-release/fcitx-sogoupinyin_0.0.1-2_i386.deb
+sudo dpkg -i fcitx-sogoupinyin_0.0.1-2_i386.deb
+sudo apt-get -f install</textarea>
