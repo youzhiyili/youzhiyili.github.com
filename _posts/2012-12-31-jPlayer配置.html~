@@ -18,7 +18,7 @@ $(document).ready(function(){
 $("#jquery_jplayer_1").jPlayer({
 ready: function () {
 $(this).jPlayer("setMedia", {
-mp4:"http://ubuntuone.com/6PyS6YBd23SR8lbebZg3KV",
+mp4:"http://youzhiyili.github.com/media/video/20130907_164916.mp4",
 poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
 }).jPlayer("play");
 },
