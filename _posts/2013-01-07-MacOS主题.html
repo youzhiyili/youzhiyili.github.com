@@ -19,3 +19,31 @@ title: MacOS主题
 
 <h2>命令安装----UBUNTU-13.10</h2>
 <textarea cols="80" rows="3">sudo add-apt-repository ppa:noobslab/themes && sudo apt-get update && sudo apt-get install mac-icons-v2-noobslab mac-ithemes-v2-noobslab && sudo apt-get install gnome-tweak-tool && gnome-tweak-tool</textarea>
+
+<h2>手动安装----UBUNTU-14.04</h2>
+MacOS主题太臃肿,而且替换ubuntu原有的各种LOGO
+明明很熟悉的程序换LOGO后用起来不方便,失去了UBUNTU本身的味道
+
+其实我喜欢MacOS主题,仅仅是那灰白色的标题栏和她边上的3个彩色按钮
+既然这样，干脆只要我喜欢的部分。既保持UBUNTU本味，又有Mac提鲜
+
+
+<h3>先将Radiance主题图标替换为MAC图标，并备份这两个目录到Ubuntu One</h3>
+/usr/share/themes/Radiance/metacity-1
+/usr/share/themes/Radiance/unity
+<textarea cols="80" rows="4">cd ~/文档 && sudo tar -Ppzcvf mac_theme.tgz /usr/share/themes/Radiance --exclude=/usr/share/themes/Radiance/gtk-2.0/ --exclude=/usr/share/themes/Radiance/gtk-3.0/ --exclude=/usr/share/themes/Radiance/index.theme </textarea>
+
+<h3>重装系统后只需要还原这两个目录就可以了</h3>
+<textarea cols="80" rows="1">
+sudo wget -c http://ubuntuone.com/3Go5LxySm1DQ4K1rnNcIZe -O mac_theme.tgz && sudo tar -pzxvf mac_theme.tgz -C / && sudo rm mac_theme.tgz
+</textarea>
+
+<h3>然后用Ubuntu-Tweak选择Radiance主题,注销再登陆就可以了</h3>
+<textarea cols="80" rows="4">
+sudo apt-get install ubuntu-tweak && ubuntu-tweak  && logout
+#图标主题选	ubuntu-mono-light
+#GTK主题选	Radiance
+#窗口主题选	Radiance
+</textarea>
+
+
