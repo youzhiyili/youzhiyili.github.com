@@ -6,12 +6,12 @@ html {
     color: #cad3d6;
     min-height: 100%;
     background: -webkit-gradient(linear , 0 100, 0 98%, from(#222222), to(#444444) );
-    background-color: #123;
+    background-color: #222222;
     padding: 0;
     margin: 0;
 }
 /*-------------------------
-	html {
+html {
     color: #cad3d6;
     min-height: 100%;
     background: -webkit-gradient(linear , 0 100, 0 98%, from(#163346), to(#000309) );
