@@ -25,7 +25,7 @@ html {
 --------------------------*/
 hr {
     border: none;
-    border-top: 3px double #FFFFFF;
+    border-top: 3px solid #cccccc;
     width: 100%;
     margin: 20px 0;
 }
