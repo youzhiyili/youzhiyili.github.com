@@ -3,7 +3,7 @@ layout: post
 title: 备份系统
 ---
 <hr><h2>使用dd克隆__这种方法比较适合本机同一块硬盘，或其他相同配置的主机和同样大小的硬盘</h2>
-<h3>假设已经在U盘安装有Linux系统</h3>
+<h3 style="color:SteelBlue">假设已经在U盘安装有Linux系统</h3>
 从U盘启动，查看块数量 (-u，让start和end中数字的单位是512字节，也就是一个sector扇区的大小)
 <textarea cols="90" rows="1">
 sudo fdisk -u -l /dev/sda
@@ -33,11 +33,11 @@ gzip参数：
 默认使用的是-6压缩级别。
 
 <hr><h2>使用tar打包__单分区备份系统</h2>
-<h3>备份</h3>
+<h3 style="color:SteelBlue">备份</h3>
 <textarea cols="90" rows="2">
 sudo tar -Ppzcvf sys.back.tgz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/media/* --exclude=/mnt/* --exclude=/lost+found --exclude=/sys.back.tgz /
 </textarea>
-<h3>还原</h3>
+<h3 style="color:SteelBlue">还原</h3>
 <textarea cols="90" rows="1">
 sudo tar -pzxvf sys.back.tgz -C /
 </textarea>

@@ -2,7 +2,7 @@
 layout: post
 title: 硬盘管理
 ---
-<hr><h3>确定最佳的block size大小 </h3>
+<hr><h3 style="color:SteelBlue">确定最佳的block size大小 </h3>
 <textarea cols="80" rows="2">
 sudo dd if=/dev/zero bs=512 count=500000 of=/root/1Gb.file &&\
 sudo dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file &&\
@@ -11,7 +11,7 @@ sudo dd if=/dev/zero bs=4096 count=250000 of=/root/1Gb.file &&
 sudo dd if=/dev/zero bs=8192 count=125000 of=/root/1Gb.file
 </textarea>
 
-<hr><h3>修复硬盘 </h3>
+<hr><h3 style="color:SteelBlue">修复硬盘 </h3>
 <textarea cols="80" rows="2">
 sudo dd if=/dev/sda of=/dev/sda
 </textarea>

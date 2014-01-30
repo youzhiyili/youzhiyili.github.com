@@ -5,7 +5,7 @@ title: Grub2设置
 <style>
 p{padding:0px; margin:0px;display: inline;}
 </style>
-<hr><h3>修改Grub背景颜色</h3>----><p style="font-weight:bold;"><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub" target="_blank">详细说明</a><p style="font-weight:bold;">
+<hr><h3 style="color:SteelBlue">修改Grub背景颜色</h3>----><p style="font-weight:bold;"><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=139&t=385062&hilit=+grub" target="_blank">详细说明</a><p style="font-weight:bold;">
 
 <p style="font-weight:bold;">以Ubuntu13.10为例</p>
 ---------------------------------------------------------------------------------
@@ -25,11 +25,11 @@ Window.SetBackgroundBottomColor <p style="color:red">(0.16, 0.00, 0.12)</p>;  # 
 修改为黑色
 <textarea cols="80" rows="1">sudo sed -e 's/0.16/0.00/' -e 's/0.12/0.00/' -i /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.script</textarea>
 
-<hr><h3>修改Grub背景图片</h3>
+<hr><h3 style="color:SteelBlue">修改Grub背景图片</h3>
 把图片扔到/boot/grub/,然后更新GRUB
 <textarea cols="80" rows="1">sudo updade-grub</textarea>
 
-<hr><h3>修改Grub等待时间</h3>
+<hr><h3 style="color:SteelBlue">修改Grub等待时间</h3>
 查看Grub等待时间
 <textarea cols="80" rows="1">grep GRUB_TIMEOUT /etc/default/grub</textarea>
 <p style="color:red">GRUB_TIMEOUT=10</p>
@@ -37,7 +37,7 @@ Window.SetBackgroundBottomColor <p style="color:red">(0.16, 0.00, 0.12)</p>;  # 
 默认为10秒，如果想修改为3秒 GRUB_TIMEOUT=3
 <textarea cols="80" rows="1">sudo sed -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=3/' -i /etc/default/grub && sudo update-grub</textarea>
 
-<hr><h3>修改Grub启动顺序</h3>
+<hr><h3 style="color:SteelBlue">修改Grub启动顺序</h3>
 查看Grub启动顺序
 <textarea cols="80" rows="1">grep GRUB_DEFAULT /etc/default/grub</textarea>
 <p style="color:red">GRUB_DEFAULT=0</p>

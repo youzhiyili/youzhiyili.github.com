@@ -4,13 +4,13 @@ title: 数据管理
 ---
 <a href="https://docs.google.com/presentation/d/1auRcqOy8U3KWJTRwKQ8qYQT0cLz-csq5_6P97Klgz5E/edit?usp=sharing" target="_blank">linux权限管理</a>  <a href="https://docs.google.com/presentation/d/1Leu8Rco6snBQVYrnYcozJkO_yQHYkHfUeVKtnGIaqtc/edit?usp=sharing" target="_blank">linux磁盘管理</a>  <a href="https://docs.google.com/presentation/d/13nwPYM_IGCaRPU7754bCBoRn2308ypBF6HzbihkGx3I/edit?usp=sharing" target="_blank">linux数据管理</a>
 
-<hr><h3>备份_还原</h3>
+<hr><h3 style="color:SteelBlue">备份_还原</h3>
 <textarea cols="80" rows="2">
 cp file file~
 mv file~ file
 </textarea>
 
-<hr><h3>隐藏_显示</h3>
+<hr><h3 style="color:SteelBlue">隐藏_显示</h3>
 <textarea cols="80" rows="2">
 mv file .file
 ls -a
@@ -24,25 +24,25 @@ dd if=urandom of=/dev/sda bs=446 count=1
 #用随机数据填充MBR，隐藏系统。前提是已经保存好MBR备份！
 </textarea>
 
-<hr><h3>锁定_解锁</h3>
+<hr><h3 style="color:SteelBlue">锁定_解锁</h3>
 <textarea cols="80" rows="2">
 chmod 000 file
 chmod 777 file
 </textarea>
 
-<hr><h3>加密_解密</h3>
+<hr><h3 style="color:SteelBlue">加密_解密</h3>
 <textarea cols="80" rows="2">
 gpg -c file
 gpg file.gpg
 </textarea>
 
-<hr><h3>禁删_解禁</h3>
+<hr><h3 style="color:SteelBlue">禁删_解禁</h3>
 <textarea cols="80" rows="2">
 sudo chattr +i file
 sudo chattr -i file
 </textarea>
 
-<hr><h3>销毁</h3>
+<hr><h3 style="color:SteelBlue">销毁</h3>
 <textarea cols="80" rows="2">
 shred -f -n100 -s1K -z -u -v file
 #暴力覆盖文件100次后再用0覆盖1次，粉碎文件碎片为1K后删除文件
