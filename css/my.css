@@ -107,3 +107,12 @@ div.jp-video {
 				1px 0 1px rgba(0,0,0,0.2) inset,
 				-1px 0 1px rgba(0,0,0,0.2) inset;
 }
+
+
+/*----------------------------
+	去除li列表前面的点
+-----------------------------*/
+ul li
+{
+list-style-type:none;
+}
