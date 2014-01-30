@@ -116,3 +116,14 @@ ul li
 {
 list-style-type:none;
 }
+
+/*----------------------------
+	定义标题样式
+-----------------------------*/
+h1 {
+font-family: Arial, sans-serif;
+font-size: 24px;
+color: #369;
+padding-bottom: 4px;
+border-bottom: 1px solid #999;
+}
