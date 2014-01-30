@@ -2,26 +2,26 @@
 layout: post
 title: Chrome
 ---
-<hr><h3 style="color:SteelBlue">一、全局代理穿越</h3>
+<hr><h3>一、全局代理穿越</h3>
 运行Goagent
 系统 > 网络 > 代理 > 手动 > 127.0.0.1 8087 > 应用到整个系统
-<hr><h3 style="color:SteelBlue">二、添加PPA</h3>
+<hr><h3>二、添加PPA</h3>
 下载安装Key
 <textarea cols="80" rows="2">wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -</textarea>
 
 添加PPA源
 <textarea cols="80" rows="2">sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'</textarea>
 
-<hr><h3 style="color:SteelBlue">三、更新</h3>
+<hr><h3>三、更新</h3>
 <textarea cols="80" rows="1">sudo apt-get update</textarea>
 
-<hr><h3 style="color:SteelBlue">四、安装</h3>
+<hr><h3>四、安装</h3>
 
 <textarea cols="80" rows="1">sudo apt-get install google-chrome-stable #稳定版</textarea>
 <textarea cols="80" rows="1">sudo apt-get install google-chrome-beta #Beta版</textarea>
 <textarea cols="80" rows="1">sudo apt-get install google-chrome-unstable #不稳定版</textarea>
 
-<hr><h3 style="color:SteelBlue">五、证书</h3>
+<hr><h3>五、证书</h3>
 设置 > 高级选项 > 管理证书
 在 授权中心 导入 GoAgent/local 目录下的 CA.crt 证书
 （注意不要导入到 服务器 ，否则不起作用）

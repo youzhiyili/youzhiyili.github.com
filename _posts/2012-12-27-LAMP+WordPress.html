@@ -2,7 +2,7 @@
 layout: post
 title: LAMP+WordPress，用自己的电脑搭个小网站
 ---
-<hr><h3 style="color:SteelBlue">LAMP</h3>
+<hr><h3>LAMP</h3>
 	sudo apt-get install apache2 #服务器
 
 	sudo apt-get install php5 libapache2-mod-php5 #超文本
@@ -11,7 +11,7 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 	sudo apt-get install phpmyadmin #图形管理数据库
 
-<hr><h3 style="color:SteelBlue">Apache #服务器</h3>
+<hr><h3>Apache #服务器</h3>
 	安装 sudo apt-get install apache2
 
 	测试 http://localhost/ 出现"It works!" 安装成功
@@ -30,7 +30,7 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 	配置端口 /etc/apache2/ports.conf
 
-<hr><h3 style="color:SteelBlue">PHP #超文本预处理器</h3>
+<hr><h3>PHP #超文本预处理器</h3>
 	原名 Personal Home Page 个人主页
 
 	现名 Hypertext Preprocessor 超文本预处理器
@@ -45,7 +45,7 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 	删除 sudo rm /var/www/test.php
 
-<hr><h3 style="color:SteelBlue">Mysql #数据库管理系统</h3>
+<hr><h3>Mysql #数据库管理系统</h3>
 	安装 sudo apt-get install mysql-server <font color=Red>#安装过程设置 root 密码(如 1234)</font>
 
 	重启 sudo /etc/init.d/mysql restart
@@ -54,14 +54,14 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 	修改 sudo gedit /etc/mysql/my.cnf,将其中的 “bind-address = 127.0.0.1”注释掉
 
-<hr><h3 style="color:SteelBlue">phpmyadmin #图形化操作 Mysql</h3>
+<hr><h3>phpmyadmin #图形化操作 Mysql</h3>
 	安装 sudo apt-get install phpmyadmin
 
 	安装过程选 apache2,确定,<font color=Red>输入</font> Mysql <font color=Red>数据库密码、连接密码(如 1234)</font>
 
 	新建数据库 应用程序>编程>phpMyAdmin>数据库>新建数据库>起个名(如 Blog)>创建
 
-<hr><h3 style="color:SteelBlue">LAMP+WordPress</h3>
+<hr><h3>LAMP+WordPress</h3>
 	WordPress 是一种使用 PHP 语言和 MySQL 数据库开发的免费的 Blog 引擎
 
 	用户可以在支持 PHP 和 MySQL 数据库的服务器上建立自己的 Blog
@@ -96,7 +96,7 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 		权限 sudo chmod -R 777 /var/www/wordpress
 
-<hr><h3 style="color:SteelBlue">上传 2M 限制</h3>
+<hr><h3>上传 2M 限制</h3>
 	1 sudo gedit /etc/php5/apache2/php.ini
 		搜索 upload_max_filesize = 2M 替换为 upload_max_filesize = 100M
 		搜索 post_max_size = 8M 替换为 post_max_size = 100M
@@ -106,14 +106,14 @@ title: LAMP+WordPress，用自己的电脑搭个小网站
 
 	3 sudo service apache2 restart
 
-<hr><h3 style="color:SteelBlue">伪静态默认未开启</h3>
+<hr><h3>伪静态默认未开启</h3>
 	1 加载rewrite模块
 		sudo ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 
 	2 修改AllowOverride属性 None改为All
 		sudo vim /etc/apache2/sites-enabled/000-default
 
-<hr><h3 style="color:SteelBlue">动态域名解析</h3>
+<hr><h3>动态域名解析</h3>
 	网站 http://www.3322.org 跳转到 http://www.pubyun.com/
 
 	申请 如:用户名 ubuntu
