@@ -2,6 +2,7 @@
 <html><head>
  <meta charset='utf-8' />
  <meta name="viewport" content="width=device-width">
+<link type="text/css" rel="stylesheet" href="/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
  <link href="/css/my.css" rel="stylesheet" type="text/css">
  <center><h2>{{ page.title }}</h2></center>
 </head>
@@ -15,6 +16,73 @@
 <img src="/images/close_focused_normal.png" alt="[IMG]"> <a href="apache_pb2_ani.gif">第4个链接</a>      21-Nov-2004 22:35  2.1K  
 <img src="/images/close_focused_normal.png" alt="[TXT]"> <a href="http://youzhiyili.github.com/">主页</a>           21-Nov-2004 22:35  1.6K
 <hr></pre>
+
+<textarea name="code" class="js" rows="15" cols="100">
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>DejaVu Serif</string>
+      <string>Bitstream Vera Serif</string>
+      <string>HYSong</string>
+      <string>AR PL UMing CN</string>
+      <string>AR PL UMing HK</string>
+      <string>AR PL ShanHeiSun Uni</string>
+      <string>AR PL New Sung</string>
+      <string>WenQuanYi Bitmap Song</string>
+      <string>AR PL UKai CN</string>
+      <string>AR PL ZenKai Uni</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>sans-serif</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>DejaVu Sans</string>
+      <string>Bitstream Vera Sans</string>
+      <string>WenQuanYi Micro Hei</string>
+      <string>WenQuanYi Zen Hei</string>
+      <string>Droid Sans Fallback</string>
+      <string>HYSong</string>
+      <string>AR PL UMing CN</string>
+      <string>AR PL UMing HK</string>
+      <string>AR PL ShanHeiSun Uni</string>
+      <string>AR PL New Sung</string>
+      <string>AR PL UKai CN</string>
+      <string>AR PL ZenKai Uni</string>
+    </edit>
+  </match>
+  <match target="pattern">
+    <test qual="any" name="family">
+      <string>monospace</string>
+    </test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>DejaVu Sans Mono</string>
+      <string>Bitstream Vera Sans Mono</string>
+      <string>WenQuanYi Micro Hei Mono</string>
+      <string>WenQuanYi Zen Hei Mono</string>
+      <string>Droid Sans Fallback</string>
+      <string>HYSong</string>
+      <string>AR PL UMing CN</string>
+      <string>AR PL UMing HK</string>
+      <string>AR PL ShanHeiSun Uni</string>
+      <string>AR PL New Sung</string>
+      <string>AR PL UKai CN</string>
+      <string>AR PL ZenKai Uni</string>
+    </edit>
+  </match>
+
+</fontconfig>
+</textarea>
+
 </body>
 </html>
+
+
 
