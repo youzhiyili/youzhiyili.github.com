@@ -114,7 +114,13 @@ list-style-type:none;
 h1 {
 font-family: Arial, sans-serif;
 font-size: 24px;
-color: #369;
+color: #FFFFFF;
+}
+
+h2 {
+font-family: Arial, sans-serif;
+font-size: 22px;
+color: #FFFFFF;
 }
 
 h3 {
