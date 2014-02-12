@@ -9,31 +9,126 @@
 		<title>测试音频</title>
 	</head>
 	<body>
-	<pre>
-<h1>蒙古歌曲</h1><hr>
-<b>Angir eej</b>		<audio controls="controls"> <source src="http://ubuntuone.com/5myoQH7lLQsDlkf2XfVPbY" type="audio/ogg" /><source src="http://ubuntuone.com/2riOprMIYe9xqGUPqv1ZYN" type="audio/mp3" /></audio>
+<div id="myAudio" style="margin:0 auto;">
+  <audio>
+    <source title="王若琳 - Wild World.mp3" src="http://music.huoxing.com/upload/20121215/1355575227640_8200.mp3" />
+    <source title="韦礼安 - 还是会.mp3" src="http://stream18.qqmusic.qq.com/31005070.mp3" />
+    <source title="王若琳 - Lost in paradise.mp3" src="http://stream12.qqmusic.qq.com/30416842.mp3" />
+  </audio>
+  <div class="music_info clearfix">
+    <div class="cd_holder"><span class="stick"></span><div class="cd"></div></div>
+    <div class="meta_data">
+      <span class="title"></span>
+      <div class="rating">
+        <div class="starbar">
+          <ul class="current-rating" data-score="85">
+            <li class="star5"></li>
+            <li class="star4"></li>
+            <li class="star3"></li>
+            <li class="star2"></li>
+            <li class="star1"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="volume_control">
+        <a class="decrease">a</a>
+        <span class="base_bar">
+          <span class="progress_bar"></span>
+          <a class="slider"></a>
+        </span>
+        <a class="increase">b</a>
+      </div>
+    </div>
+  </div>
+  <ul class="music_list"></ul>
+  <div class="controls">
+    <div class="play_controls">
+      <a class="btn_previous">e</a>
+      <a class="btn_play">c</a>
+      <a class="btn_next">d</a>
+    </div>
+    <div class="time_line">
+      <span class="passed_time">0:00</span>
+      <span class="base_bar">
+        <span class="progress_bar"></span>
+      </span>
+      <span class="total_time">0:00</span>
+    </div>
+  </div>
+</div>
 
+var myAudio = $("#myAudio audio")[0];
+var $sourceList = $("#myAudio source");
+var currentSrcIndex = 0;
+var currentSr = "";
 
-<b>Eejiin Chanasan Tsai</b>	<audio controls="controls"> <source src="http://ubuntuone.com/5oUX7dpkYo3j5K94pstBIr" type="audio/ogg" /><source src="http://ubuntuone.com/6eNDsvJyJI5PiBEfRhUgyY" type="audio/mp3" /></audio>
+$(".btn_play").click(function(){
+	if (myAudio.paused) {
+		myAudio.play();
+	} else {
+		myAudio.pause();
+	}
+});
+$(".btn_next").click(function(){
+	++currentSrcIndex > $sourceList.length - 1 && (currentSrcIndex = 0);
+	currentSrc = $("#myAudio source").eq(currentSrcIndex).prop("src");
+	myAudio.src = currentSrc;
+	myAudio.play();
+});
+$(".btn_previous").click(function(){
+	--currentSrcIndex < 0 && (currentSrcIndex = 0);
+	currentSrc = $("#myAudio source").eq(currentSrcIndex).prop("src");
+	myAudio.src = currentSrc;
+	myAudio.play();
+});
 
+$(".volume_control .decrease").click(function() {
+	var volume = myAudio.volume - 0.1;
+	volume < 0 && (volume = 0);
+	myAudio.changeVolumeTo(volume);
+});
+$(".volume_control .increase").click(function() {
+	var volume = myAudio.volume + 0.1;
+	volume > 1 && (volume = 1);
+	myAudio.changeVolumeTo(volume);
+});
 
-<b>tumen ulzii setert tal</b>	<audio controls="controls"> <source src="http://ubuntuone.com/3hNBpLEMtdNzEJne5fRBPQ" type="audio/ogg" /><source src="http://ubuntuone.com/1B0xh6fAL7uUfRoE4YL6B0" type="audio/mp3" /></audio>
+$(".volume_control .base_bar").mousedown(function(ev){
+	var posX = ev.clientX;
+	var targetLeft = $(this).offset().left;
+	var volume = (posX - targetLeft)/100;
+	volume > 1 && (volume = 1);
+	volume < 0 && (volume = 0);
+	myAudio.changeVolumeTo(volume);
+});
+$(".volume_control .slider").mousedown(starDrag = function(ev) {
+	ev.preventDefault();
+	var origLeft = $(this).position().left;      /*滑块初始位置*/
+	var origX = ev.clientX; /*鼠标初始位置*/
+	var target = this;
+	var progress_bar = $(".volume_control .progress_bar")[0];
+	$(document).mousemove(doDrag = function(ev){
+		ev.preventDefault();
+		var moveX = ev.clientX - origX;        /*计算鼠标移动的距离*/
+		var curLeft = origLeft + moveX; /*用鼠标移动的距离表示滑块的移动距离*/
+		(curLeft < -7) && (curLeft = -7);
+		(curLeft > 93) && (curLeft = 93);
+		target.style.left = curLeft + "px";
+		progress_bar.style.width = curLeft + 7 + "%";
+		myAudio.changeVolumeTo((curLeft + 7)/100);
+	});
+	$(document).mouseup(stopDrag = function(){
+		$(document).unbind("mousemove",doDrag);
+		$(document).unbind("mouseup",stopDrag);
+	});
+});
 
-
-<b>弘吉剌姑娘</b>		<audio controls="controls"> <source src="http://ubuntuone.com/0XoSgkuF8XjX1L2tzh28Cm" type="audio/ogg" /><source src="http://ubuntuone.com/3h1dFZ601iR8qXGQIxlt3i" type="audio/mp3" /></audio>
-
-
-<b>心之寻</b>			<audio controls="controls"> <source src="http://ubuntuone.com/4FVnxg75SndjpU9judVBXj" type="audio/ogg" /><source src="http://ubuntuone.com/1a3GBH7Tp4JkkcwMuBijHN" type="audio/mp3" /></audio>
-
-
-<b>成吉思汗</b>			<audio controls="controls"> <source src="http://ubuntuone.com/0eZCIF6JQt3LUxZqkEQANo" type="audio/ogg" /><source src="http://ubuntuone.com/21k0k7C9eS4cu2XbAUefYG" type="audio/mp3" /></audio>
-
-
-<b>故乡</b>			<audio controls="controls"> <source src="http://ubuntuone.com/54AWOUobftaeK64bAqvi6v" type="audio/ogg" /><source src="http://ubuntuone.com/17sOS7HCLvCFrB4DrFlqDW" type="audio/mp3" /></audio>
-
-
-<b>梦中的额吉</b>		<audio controls="controls"> <source src="http://ubuntuone.com/2LVwHmrEJ5ZBJ80f8Fb6Bq" type="audio/ogg" /><source src="http://ubuntuone.com/4JO2Axwvd8M2Jh5SfrIb3Z" type="audio/mp3" /></audio>
-	<hr></pre>
+$(".time_line .base_bar").mousedown(function(ev){
+	var posX = ev.clientX;
+	var targetLeft = $(this).offset().left;
+	var percentage = (posX - targetLeft)/140 * 100;
+	myAudio.currentTime = myAudio.duration * percentage / 100;
+});
 <br /><center><a href="http://youzhiyili.github.com/"><img src="/images/me.png"></a></center>
 	</body>
 </html>
