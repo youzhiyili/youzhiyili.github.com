@@ -3,7 +3,7 @@ layout: post
 title: 硬盘管理
 ---
 <hr><br><h3>确定最佳的block size大小 </h3>
-<textarea cols="80" rows="2">
+<textarea cols="80" rows=5">
 sudo dd if=/dev/zero bs=512 count=500000 of=/root/1Gb.file &&\
 sudo dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file &&\
 sudo dd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.file &&\
