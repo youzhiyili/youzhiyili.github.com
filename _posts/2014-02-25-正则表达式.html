@@ -1,0 +1,16 @@
+---
+layout: post
+title: 正则表达式
+---
+<hr><br>
+<h3>批量修改字符串</h3>
+
+例：把每行第一个出现的abc替换为123
+<textarea cols="80" rows="1">sed 's/abc/123/' -i</textarea>
+
+例：把所有abc替换为123
+<textarea cols="80" rows="1">sed 's/abc/123/g' -i</textarea>
+
+例：把当前目录下所有文档里的abc替换为123
+<textarea cols="80" rows="1">sed 's/abc/123/g' -i `grep abc -rl ./`</textarea>
+
