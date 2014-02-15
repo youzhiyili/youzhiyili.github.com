@@ -14,11 +14,18 @@ title: 正则表达式
 把当前目录下所有文档里的abc替换为123
 <textarea cols="80" rows="1">sed 's/abc/123/g' `grep abc -rl ./`</textarea>
 
-<h3>处理空行/空格</h3>
+<h3>处理整行</h3>
 
 删除空行
 <textarea cols="80" rows="1">sed /^$/d</textarea>
 
+在末行后插入一行(abc abc   abc)
+<textarea cols="80" rows="1">sed '$a\abc abc   abc'</textarea>
+
+删除前5行、第7行、最后一行
+<textarea cols="80" rows="1">sed -e '1,5d' -e '7d' -e '$d'</textarea>
+
+<h3>处理空格</h3>
 删除字段间多余空格(只保留一个空格)
 <textarea cols="80" rows="1">sed 's/[ ][ ]*/ /g'</textarea>
 
