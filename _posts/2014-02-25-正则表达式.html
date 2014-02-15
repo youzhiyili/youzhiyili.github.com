@@ -6,20 +6,23 @@ title: 正则表达式
 <h3>批量修改字符串</h3>
 
 把每行第一个出现的abc替换为123
-<textarea cols="80" rows="1">sed -i s/abc/123/'</textarea>
+<textarea cols="80" rows="1">sed 's/abc/123/'</textarea>
 
 把所有abc替换为123
-<textarea cols="80" rows="1">sed -i 's/abc/123/g'</textarea>
+<textarea cols="80" rows="1">sed 's/abc/123/g'</textarea>
 
 把当前目录下所有文档里的abc替换为123
-<textarea cols="80" rows="1">sed -i 's/abc/123/g' `grep abc -rl ./`</textarea>
+<textarea cols="80" rows="1">sed 's/abc/123/g' `grep abc -rl ./`</textarea>
 
 <h3>处理空行/空格</h3>
 
 删除空行
-<textarea cols="80" rows="1">sed -i /^$/d</textarea>
+<textarea cols="80" rows="1">sed /^$/d</textarea>
 
-删除字符串间多余空格(只保留一个空格)
-<textarea cols="80" rows="1">sed -i 's/[ ][ ]*/ /g'</textarea>
+删除字段间多余空格(只保留一个空格)
+<textarea cols="80" rows="1">sed 's/[ ][ ]*/ /g'</textarea>
+
+删除字段间多余空格,配合cut命令显示某个域
+<textarea cols="80" rows="1">sed 's/[ ][ ]*/ /g' | cut -d " " -f 1-2,5</textarea>
 
 
