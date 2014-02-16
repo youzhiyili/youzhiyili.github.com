@@ -69,10 +69,11 @@ sudo chmod -x /etc/cron.weekly/apt-xapian-index
 
 <h3>把/tmp挂载到内存</h3>
 <textarea cols="80" rows="1">
-sudo sed '$a\none  /tmp  tmpfs  size=512M  0 0' -i /etc/fstab
+sudo sed '$a\tmpfs	/tmp		tmpfs	size=512M	0	0' -i /etc/fstab
 </textarea>
-
+临时挂载	sudo mount -t tmpfs -o size=512M tmpfs /tmp
+卸载		sudo umount tmpfs /tmp -t tmpfs
 <h3>把/var/log挂载到内存</h3>
 <textarea cols="80" rows="1">
-sudo sed '$a\none  /var/log  tmpfs  size=256M  0 0' -i /etc/fstab
+sudo sed '$a\tmpfs	/var/log	tmpfs	size=256M	0	0' -i /etc/fstab
 </textarea>
