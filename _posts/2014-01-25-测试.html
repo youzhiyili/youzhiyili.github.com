@@ -1,134 +1,95 @@
 <!DOCTYPE html>
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 <html>
-	<head>
-		<meta charset='utf-8' />
-		<link href="/css/my.css" rel="stylesheet" type="text/css">
-		<title>测试音频</title>
-	</head>
-	<body>
-<div id="myAudio" style="margin:0 auto;">
-  <audio>
-    <source title="王若琳 - Wild World.mp3" src="http://music.huoxing.com/upload/20121215/1355575227640_8200.mp3" />
-    <source title="韦礼安 - 还是会.mp3" src="http://stream18.qqmusic.qq.com/31005070.mp3" />
-    <source title="王若琳 - Lost in paradise.mp3" src="http://stream12.qqmusic.qq.com/30416842.mp3" />
-  </audio>
-  <div class="music_info clearfix">
-    <div class="cd_holder"><span class="stick"></span><div class="cd"></div></div>
-    <div class="meta_data">
-      <span class="title"></span>
-      <div class="rating">
-        <div class="starbar">
-          <ul class="current-rating" data-score="85">
-            <li class="star5"></li>
-            <li class="star4"></li>
-            <li class="star3"></li>
-            <li class="star2"></li>
-            <li class="star1"></li>
-          </ul>
-        </div>
-      </div>
-      <div class="volume_control">
-        <a class="decrease">a</a>
-        <span class="base_bar">
-          <span class="progress_bar"></span>
-          <a class="slider"></a>
-        </span>
-        <a class="increase">b</a>
-      </div>
-    </div>
-  </div>
-  <ul class="music_list"></ul>
-  <div class="controls">
-    <div class="play_controls">
-      <a class="btn_previous">e</a>
-      <a class="btn_play">c</a>
-      <a class="btn_next">d</a>
-    </div>
-    <div class="time_line">
-      <span class="passed_time">0:00</span>
-      <span class="base_bar">
-        <span class="progress_bar"></span>
-      </span>
-      <span class="total_time">0:00</span>
-    </div>
-  </div>
-</div>
+ <head>
+	<!–[if lt IE 7]>
+	<script src=”http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js” type=”text/javascript”></script>
+	<![endif]–>
+	<!–[if lt IE 8]>
+	<script src=”http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE8.js” type=”text/javascript”></script>
+	<![endif]–>
+	<!–[if lt IE 9]>
+	<script src=”http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js”></script>
+	<![endif]–>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width">
+	<link href="/css/my.css" rel="stylesheet" type="text/css">
+ 	<center><h2>bash脚本</h2></center>
+ </head>
+ <body>
+	<hr>
+	<details>
+	<summary><b>bash脚本</b></summary>
+	 <pre>
+	<b>隐藏显示终端光标</b>
 
-var myAudio = $("#myAudio audio")[0];
-var $sourceList = $("#myAudio source");
-var currentSrcIndex = 0;
-var currentSr = "";
+一、使用shell 的 echo 命令实现。
+    echo -ne <ctrl+v><ESC>[?25l&<60;&<60;&<60; 隐藏光标
+    echo -ne <ctrl+v><ESC>[?25h&<60; 显示光标
+    l,h为字母， <ctrl+v>是按下ctrl键不放，然后按下V, <ESC>就是按一下键盘上的ESC键
+    在终端回显的情况如下：
+    echo -ne&<60; ^[[?25l
+    echo -ne&<60; ^[[?25h
+    其中^[是用<ctrl+v><ESC>得到的，直接输入^[无效
+    超级终端里的光标经常意外消失，这是个好办法让它恢复。
+    更简单一点的方法
+    echo -e "\033[?25l"  隐藏光标
+    echo -e "\033[?25h" 显示光标
+    其实\033（八进制，相当于10进制的27）就是<ctrl+v><ESC>所输入字符的值。
+    echo -ne "\33[32m" 可以将字符的显示颜色改为绿色
+    echo -ne "\33[3;1H" 可以将光标移到第3行第1列处
+    具体的摘抄一些如下：
+    \33[0m 关闭所有属性
+    \33[1m 设置高亮度
+    \33[4m 下划线
+    \33[5m 闪烁
+    \33[7m 反显
+    \33[8m 消隐
+    \33[30m -- \33[37m 设置前景色
+    \33[40m -- \33[47m 设置背景色
+    \33[nA 光标上移n行
+    \33[nB 光标下移n行
+    \33[nC 光标右移n行
+    \33[nD 光标左移n行
+    \33[y;xH设置光标位置
+    \33[2J 清屏
+    \33[K 清除从光标到行尾的内容
+    \33[s 保存光标位置
+    \33[u 恢复光标位置
+    \33[?25l 隐藏光标
+    \33[?25h 显示光标
+    字背景颜色范围：40----49
+    40:黑
+    41:深红
+    42:绿
+    43:黄色
+    44:蓝色
+    45:紫色
+    46:深绿
+    47:白色
+    字颜色：30-----------39
+    30:黑
+    31:红
+    32:绿
+    33:黄
+    34:蓝色
+    35:紫色
+    36:深绿
+    37:白色
+    不要忘了-e   和"",否则是起不了作用的。
+二、使用linux c的printf函数实现
+    printf（"\033[?25h"）； //显示光标
+    printf（"\033[?25l"）； //隐藏光标
+	 </pre>
+	</details>
 
-$(".btn_play").click(function(){
-	if (myAudio.paused) {
-		myAudio.play();
-	} else {
-		myAudio.pause();
-	}
-});
-$(".btn_next").click(function(){
-	++currentSrcIndex > $sourceList.length - 1 && (currentSrcIndex = 0);
-	currentSrc = $("#myAudio source").eq(currentSrcIndex).prop("src");
-	myAudio.src = currentSrc;
-	myAudio.play();
-});
-$(".btn_previous").click(function(){
-	--currentSrcIndex < 0 && (currentSrcIndex = 0);
-	currentSrc = $("#myAudio source").eq(currentSrcIndex).prop("src");
-	myAudio.src = currentSrc;
-	myAudio.play();
-});
+	<details>
+	<summary><b>国外经典</b></summary>
+	</details>
 
-$(".volume_control .decrease").click(function() {
-	var volume = myAudio.volume - 0.1;
-	volume < 0 && (volume = 0);
-	myAudio.changeVolumeTo(volume);
-});
-$(".volume_control .increase").click(function() {
-	var volume = myAudio.volume + 0.1;
-	volume > 1 && (volume = 1);
-	myAudio.changeVolumeTo(volume);
-});
+	<details>
+	<summary><b>中文好歌</b></summary>
+	</details>
 
-$(".volume_control .base_bar").mousedown(function(ev){
-	var posX = ev.clientX;
-	var targetLeft = $(this).offset().left;
-	var volume = (posX - targetLeft)/100;
-	volume > 1 && (volume = 1);
-	volume < 0 && (volume = 0);
-	myAudio.changeVolumeTo(volume);
-});
-$(".volume_control .slider").mousedown(starDrag = function(ev) {
-	ev.preventDefault();
-	var origLeft = $(this).position().left;      /*滑块初始位置*/
-	var origX = ev.clientX; /*鼠标初始位置*/
-	var target = this;
-	var progress_bar = $(".volume_control .progress_bar")[0];
-	$(document).mousemove(doDrag = function(ev){
-		ev.preventDefault();
-		var moveX = ev.clientX - origX;        /*计算鼠标移动的距离*/
-		var curLeft = origLeft + moveX; /*用鼠标移动的距离表示滑块的移动距离*/
-		(curLeft < -7) && (curLeft = -7);
-		(curLeft > 93) && (curLeft = 93);
-		target.style.left = curLeft + "px";
-		progress_bar.style.width = curLeft + 7 + "%";
-		myAudio.changeVolumeTo((curLeft + 7)/100);
-	});
-	$(document).mouseup(stopDrag = function(){
-		$(document).unbind("mousemove",doDrag);
-		$(document).unbind("mouseup",stopDrag);
-	});
-});
-
-$(".time_line .base_bar").mousedown(function(ev){
-	var posX = ev.clientX;
-	var targetLeft = $(this).offset().left;
-	var percentage = (posX - targetLeft)/140 * 100;
-	myAudio.currentTime = myAudio.duration * percentage / 100;
-});
-<br /><center><a href="http://youzhiyili.github.com/"><img src="/images/me.png"></a></center>
-	</body>
+	<hr><br /><center><a href="http://youzhiyili.github.com/"><img src="/images/me.png"></a></center>
+ </body>
 </html>
