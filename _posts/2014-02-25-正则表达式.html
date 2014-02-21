@@ -22,6 +22,9 @@ title: 正则表达式
 在末行后插入一行(abc abc   abc)
 <textarea cols="80" rows="1">sed '$a\abc abc   abc'</textarea>
 
+在首行前插入空行(abc abc   abc)
+<textarea cols="80" rows="1">sed '1i\\'</textarea>
+
 删除前5行、第7行、最后一行
 <textarea cols="80" rows="1">sed -e '1,5d' -e '7d' -e '$d'</textarea>
 
