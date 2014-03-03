@@ -45,6 +45,16 @@ lspci | grep  -e Audio -e VGA
 free -m |grep "Mem" | awk '{print $2}'
 </textarea>
 
+<b>md5sum递归生成整个目录的MD5</b>
+<textarea cols="50" rows="2">
+find ./ -type f -print0 | xargs -0 md5sum > ./my.md5
+</textarea>
+
+<b>检查MD5</b>
+<textarea cols="50" rows="2">
+md5sum -c my.md5
+</textarea>
+
 </center>
 </td>
 <!-- ------------------------------结束------第一列 -->
