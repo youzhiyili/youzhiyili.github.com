@@ -14,8 +14,13 @@ title:  Ubuntu常用命令
 <b>安装压缩软件</b>
 <textarea cols="50" rows="2">sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller </textarea>
 
+
+
 <b>上传GOA</b>
 <textarea cols="50" rows="2">python google_appengine/appcfg.py update goagent/server/python/</textarea>
+
+<b>创建带日期的文件</b>
+<textarea cols="50" rows="2">getdate(){ date=`date | cut -b 1-4,9,10,15,16`; echo $date | sed 's/\(^.\{4\}\)\{0,1\}\(..\)/\1_\2/g' >tmp ; tmpdate=`<tmp` ; touch $tmpdate.test ; } ; getdate</textarea>
 
 <b>全部复制</b>
 <textarea cols="50" rows="2">cp -r * .[!.]*</textarea>
