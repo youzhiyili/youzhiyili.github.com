@@ -20,7 +20,7 @@ title:  Ubuntu常用命令
 <textarea cols="50" rows="2">python google_appengine/appcfg.py update goagent/server/python/</textarea>
 
 <b>创建带日期的文件</b>
-<textarea cols="50" rows="2">getdate(){ date=`date | cut -b 1-4,9,10,15,16`; echo $date | sed 's/\(^.\{4\}\)\{0,1\}\(..\)/\1_\2/g' >tmp ; tmpdate=`<tmp` ; touch $tmpdate.test ; } ; getdate</textarea>
+<textarea cols="50" rows="2">touch_date_file(){ DATE=`date | cut -b 1-4,9,10,15,16`; echo $DATE | sed 's/\(^.\{4\}\)\{0,1\}\(..\)/\1_\2/g' >tmp ; TMPDATE=`<tmp` ; rm tmp ; touch $TMPDATE.test ; } ; touch_date_file</textarea>
 
 <b>全部复制</b>
 <textarea cols="50" rows="2">cp -r * .[!.]*</textarea>
