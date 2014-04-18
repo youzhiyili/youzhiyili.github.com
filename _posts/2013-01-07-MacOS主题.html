@@ -32,11 +32,11 @@ MacOS主题太臃肿,而且替换ubuntu原有的各种LOGO
 <h3>先将Radiance主题图标替换为MAC图标，并备份这两个目录到Ubuntu One</h3>
 /usr/share/themes/Radiance/metacity-1
 /usr/share/themes/Radiance/unity
-<textarea cols="80" rows="4">cd ~/文档 && sudo tar -Ppzcvf mac_theme.tgz /usr/share/themes/Radiance --exclude=/usr/share/themes/Radiance/gtk-2.0/ --exclude=/usr/share/themes/Radiance/gtk-3.0/ --exclude=/usr/share/themes/Radiance/index.theme </textarea>
+<textarea cols="80" rows="4">cd ~/文档 && sudo tar -Ppzcvf mac_theme.tgz /usr/share/themes/Radiance --exclude=/usr/share/themes/Radiance/gtk-2.0 --exclude=/usr/share/themes/Radiance/gtk-3.0 --exclude=/usr/share/themes/Radiance/index.theme </textarea>
 
 <h3>重装系统后只需要还原这两个目录就可以了</h3>
 <textarea cols="80" rows="2">
-sudo wget -c http://ubuntuone.com/3Go5LxySm1DQ4K1rnNcIZe -O mac_theme.tgz && sudo tar -pzxvf mac_theme.tgz -C / && sudo rm mac_theme.tgz
+sudo wget -c "https://dl.dropboxusercontent.com/s/t6jhjuj9ar0an3u/mac_theme.tgz?dl=1&token_hash=AAEimxuLUqU4W4hWXOQhi-OcOvYvpa0eRvvNVaXcycH1tg" -O mac_theme.tgz && sudo tar -pzxvf mac_theme.tgz -C / && sudo rm mac_theme.tgz
 </textarea>
 
 <h3>然后用Ubuntu-Tweak选择Radiance主题,注销再登陆就可以了</h3>
