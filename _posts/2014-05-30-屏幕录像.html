@@ -5,6 +5,18 @@ title: 屏幕录像
 <details>
 	 <summary><b>byzanz</b></summary>
 	 <pre>
-	Byzanz 简单小巧，容易使用，既能录制 Gif 动画，又可录制 Ogv 视频
+	Byzanz	
+		功能：可以录制gif动画,也能录制这些视频格式：flv,ogg, ogv,webm
+		安装：sudo apt-get install byzanz
+		组件：byzanz-record，byzanz-playback
+
+		示例：byzanz-record --delay=3 -d 20 a.gif
+		解释：延迟3秒，录制20秒，全屏录制，写入文件a.gif
+
+		示例：byzanz-record -d 5 -x 100 -y 80 -w 100 -h 20 a.flv
+		解释：录制5秒，录制区域(宽100，高20)，左上角原点的坐标为(横100，纵80)，写入文件a.flv
+
+		示例：byzanz-record -c -d 20 a.gif
+		解释：连光标和鼠标一起录制30秒，全屏录制，写入文件a.gif
 	 </pre>
 	</details>
