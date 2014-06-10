@@ -3,23 +3,10 @@ layout: post
 title: 编译内核
 ---
 <hr><br>
-<h3>下载内核</h3>
-<textarea cols="100" rows="3">
-最新版本内核：下载、解压、解包、进入目录
-wget -c `curl -s https://www.kernel.org/|grep -A 1 latest_link|grep -v latest_link|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]</textarea>
 
-<h3>清除痕迹</h3>
-make clean      删除大多数的编译生成文件， 但是会保留内核的配置文件.config， 还有足够的编译支持来建立扩展模块
-make mrproper   删除所有的编译生成文件， 还有内核配置文件， 再加上各种备份文件
-make distclean  mrproper删除的文件， 加上编辑备份文件和一些补丁文件。
 
-执行make mrproper， 会先执行make clean
-执行makedistclean之前，会先执行make mrproper
+=================================== 精 简 内 核 ===================================
 
-刚下载的内核很干净，无须清除
-已编译过的内核，其实也没必要清除，可以大大节省本次编译时间
-
-<h3>精简内核</h3>
 wget -c `curl -s https://www.kernel.org/\
 	|grep -A 1 latest_link|grep -v latest_link\
 	|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -\
@@ -39,3 +26,42 @@ modules_install                         # 安装模块
 make install                            # 安装内核
 
 sudo grub-update                        # 更新GRUB
+
+==================================================================================
+
+
+
+=================================== 清 除 痕 迹 ===================================
+
+make clean      删除大多数的编译生成文件， 但是会保留内核的配置文件.config， 还有足够的编译支持来建立扩展模块
+make mrproper   删除所有的编译生成文件， 还有内核配置文件， 再加上各种备份文件
+make distclean  mrproper删除的文件， 加上编辑备份文件和一些补丁文件。
+
+执行make mrproper， 会先执行make clean
+执行makedistclean之前，会先执行make mrproper
+
+刚下载的内核很干净，无须清除
+已编译过的内核，其实也没必要清除，可以大大节省本次编译时间
+
+==================================================================================
+
+
+
+=================================== UBUNTU 编 译 ==================================
+
+# 内核：下载、解压、解包、进入目录
+wget -c `curl -s https://www.kernel.org/|grep -A 1 latest_link|grep -v latest_link|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
+
+# 准备编译
+sudo apt-get install libncurses5-dev kernel-package && sudo make-kpkg clean && cp /boot/config-`uname -r` ./.config
+
+# 编译
+# 例：-j4 双核CPU
+# 例：--append-to-version=dell888
+sudo make-kpkg --initrd kernel_headers kernel_image -j[0-9] --append-to-version=[a-z][0-9]
+
+# 安装
+# 例：--append-to-version=dell888
+sudo dpkg -i ../*[a-z][0-9]*
+
+==================================================================================
