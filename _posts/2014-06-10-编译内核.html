@@ -25,10 +25,17 @@ wget -c `curl -s https://www.kernel.org/\
 	|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -\
 	|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
 	                                # 最新版本内核：下载、解压、解包、进入目录
+
 cp /boot/config-`uname -r` ./.config    # 以当前内核配置为模板
+
 make localmodconfig                     # 筛选出本机需要的模块
+
 make menuconfig	                        # 根据需要，增减模块
+
 make                                    # 编译内核
+
 modules_install                         # 安装模块
+
 make install                            # 安装内核
+
 sudo grub-update                        # 更新GRUB
