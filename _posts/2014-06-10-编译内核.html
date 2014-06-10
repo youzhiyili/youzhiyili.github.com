@@ -20,7 +20,11 @@ make distclean  mrproper删除的文件， 加上编辑备份文件和一些补�
 已编译过的内核，其实也没必要清除，可以大大节省本次编译时间
 
 <h3>精简内核</h3>
-wget -c `curl -s https://www.kernel.org/|grep -A 1 latest_link|grep -v latest_link|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]                             # 最新版本内核：下载、解压、解包、进入目录
+wget -c `curl -s https://www.kernel.org/\
+	|grep -A 1 latest_link|grep -v latest_link\
+	|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -\
+	|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
+	                                # 最新版本内核：下载、解压、解包、进入目录
 cp /boot/config-`uname -r` ./.config    # 以当前内核配置为模板
 make localmodconfig                     # 筛选出本机需要的模块
 make menuconfig	                        # 根据需要，增减模块
