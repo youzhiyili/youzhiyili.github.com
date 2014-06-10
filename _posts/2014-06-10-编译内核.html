@@ -10,19 +10,29 @@ wget -c `curl -s https://www.kernel.org/\
 	|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
 	                                # 最新版本内核：下载、解压、解包、进入目录
 
-cp /boot/config-`uname -r` ./.config    # 以当前内核配置为模板
-
-make localmodconfig                     # 筛选出本机需要的模块
-
-make menuconfig	                        # 根据需要，增减模块
+cp /boot/config-`uname -r` ./.config    # 以当前内核配置为模板，标记本机必须的驱动
+make localmodconfig                     # 标记本机需要的模块
+make menuconfig	                        # 根据需要微调，+-模块 或者 +-其他选项
 
 make                                    # 编译内核
-
 modules_install                         # 安装模块
-
 make install                            # 安装内核
 
 sudo grub-update                        # 更新GRUB
+==================================================================================
+
+
+
+================================= 筛 选 模 块 效 果=================================
+find /lib/modules/3.13.0-24-generic/kernel/ -name *.ko|wc -l
+4084
+
+find /lib/modules/3.14.5huihui000/kernel/ -name *.ko|wc -l
+86
+
+make localmodconfig 这个命令标记当前已载入的模块，把其他模块过滤掉
+优点：快速标记本机需要的模块
+缺点：有遗漏，比如：开机后没有开过摄像头，摄像头模块就就被遗漏
 ==================================================================================
 
 
