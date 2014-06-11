@@ -7,7 +7,7 @@ title: 编译内核
 wget -c `curl -s https://www.kernel.org/\
 	|grep -A 1 latest_link|grep -v latest_link\
 	|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -\
-	|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
+	|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9]
 	                                      # 最新版本内核：下载、解压、解包、进入目录
 
 cp /boot/config-`uname -r` ./.config          # 以当前内核配置为模板，标记本机必须的驱动
@@ -63,7 +63,7 @@ make distclean  mrproper删除的文件， 加上编辑备份文件和一些补�
 
 =================================== UBUNTU 编 译 =================================
 # 内核：下载、解压、解包、进入目录
-wget -c `curl -s https://www.kernel.org/|grep -A 1 latest_link|grep -v latest_link|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9].[0-9]
+wget -c `curl -s https://www.kernel.org/|grep -A 1 latest_link|grep -v latest_link|awk -F '"' '{print $2}'|sed 's#^.#https://www.kernel.org#'` -O -|xz -d -| tar xvf - && cd linux-[0-9].[0-9][0-9]
 
 # 准备编译
 sudo apt-get install libncurses5-dev kernel-package && sudo make-kpkg clean && cp /boot/config-`uname -r` ./.config
